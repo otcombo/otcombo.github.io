@@ -6,35 +6,37 @@ else
 	screenHeight = 1334
 Framer.Defaults.Animation.curve = "spring(200,30)"
 bg = new BackgroundLayer backgroundColor: "#EBEBEB"
+bg.scroll = true
 
 # --------- Initial Toolbar UI & input --------- 
-toolbar = new Layer height:100, backgroundColor: "#F7F7FA"
+toolbar = new Layer height: 100,backgroundColor: "#F7F7FA"
+#  y:screenHeight - 100, 
 toolbar.style["border-top"] = "1px solid #c9c9c9"
-toolbar.style["width"] = "100%"
-toolbar.style["position"] = "absolute"
-toolbar.style["bottom"] = "0"
+toolbar.style.width = "100%"
+toolbar.style.position = "fix"
+toolbar.style.bottom = "0"
 
 
 
 icon3 = new Layer image:"images/Add.png", width: 56, height: 56, superLayer: toolbar, y: 22, x: screenWidth - 66
-# icon3.style["position"] = "relative"
-# icon3.style["float"] = "right"
-# icon3.style["margin-left"] = "100"
+# icon3.style.position = "relative"
+# icon3.style.float = "right"
+# icon3.style.margin-left = "100"
 
 icon2 = new Layer image:"images/Emotion.png", width: 56, height: 56, superLayer: toolbar, y: 22, x: icon3.x - 72
 icon1 = new Layer image:"images/Voice.png", width: 56, height: 56, superLayer: toolbar, y: 22, x: 10
 
-iconSend = new Layer backgroundColor:"transparent", width: 56, height: 56, borderRadius:28, superLayer: toolbar, y: 22, x: screenWidth - 66, originY: 1, opacity: 0
+iconSend = new Layer width: 56, height: 56, borderRadius:28, superLayer: toolbar, y: 22, x: screenWidth - 66, originY: 1, opacity: 0, backgroundColor:"transparent"
 iconSend.html = "发送"
-iconSend.style["border"] = "2px solid #09bb07"
-iconSend.style["color"] = "#09bb07"
+iconSend.style.border = "2px solid #09bb07"
+iconSend.style.color = "#09bb07"
 iconSend.style["font-size"] = "32px"
-iconSend.style["line-height"] = "53px"
+iconSend.style["line-height"] = "54px"
 iconSend.style["font-weight"] = "bold"
 iconSend.style["text-align"] = "center"
 
 inputbar = new Layer opacity:0.8, width: icon2.x - icon1.x - icon1.width - 32, height: 70,  borderRadius:10, superLayer:toolbar, y: 15, x: icon1.x + icon1.width + 16, backgroundColor:"#FFF"
-inputbar.style = {"border": "1px solid #BFBFC3"}
+inputbar.style.border = "1px solid #BFBFC3"
 
 
 
@@ -74,15 +76,14 @@ stateDefault = () ->
 
 # This creates a text input and set the value.
 inputElement = document.createElement("input")
-# inputElement.type = "email"
-inputElement.style["width"]  = "#{inputbar.width}px"
-inputElement.style["height"] = "#{inputbar.height}px"
+inputElement.type = "email"
+inputElement.style.width = "#{inputbar.width}px"
+inputElement.style.height = "#{inputbar.height}px"
 inputElement.style["font-size"] = "30px"
-inputElement.style["-webkit-user-select"] = "text"
 inputElement.style["padding-left"] = "20px"
-inputElement.style["outline"] = "none"
+inputElement.style.outline = "none"
 # inputElement.placeholder = "#{document.documentElement.clientWidth} #{devicePixelRatio} #{Utils.isMobile()}"
-inputElement.placeholder = "Plan A"
+inputElement.placeholder = "Plan A #{document.documentElement.clientHeight}"
 inputElement.value = ""
 # Place input layer on screen
 inputbar._element.appendChild(inputElement)
@@ -92,6 +93,11 @@ inputbar._element.appendChild(inputElement)
 # --------- Events --------- 
 inputElement.onfocus = () ->
 # 	toolbar.states.switchInstant("up")
+	inputElement.placeholder = "#{window.screen.height}"
+# 	document.body.style.height = "200px"
+# 	toolbar.y = window.screen.height
+# 	document.write('<meta name="viewport" content="height=600">')
+
 	
 inputElement.onkeyup = (e) ->
 	if inputElement.value
@@ -103,5 +109,17 @@ iconSend.on Events.Click, ->
 	inputElement.value = ""
 	stateDefault()
 
-# bg.on Events.Click, ->
-# 	stateDefault()
+planChoice = "A"
+bg.on Events.Click, ->
+	if planChoice is "A"
+		planChoice = "B"
+		iconSend.backgroundColor = "#09bb07"
+		iconSend.style.color = "#FFF"
+		inputElement.placeholder = "Plan B"
+	else
+		planChoice = "A"
+		iconSend.backgroundColor = "transparent"
+		iconSend.style.color = "#09bb07"
+		inputElement.placeholder = "Plan A"
+
+
