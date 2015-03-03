@@ -83,7 +83,7 @@ inputElement.style["font-size"] = "30px"
 inputElement.style["padding-left"] = "20px"
 inputElement.style.outline = "none"
 # inputElement.placeholder = "#{document.documentElement.clientWidth} #{devicePixelRatio} #{Utils.isMobile()}"
-inputElement.placeholder = "Plan A #{document.documentElement.clientHeight}"
+inputElement.placeholder = "Plan A"
 inputElement.value = ""
 # Place input layer on screen
 inputbar._element.appendChild(inputElement)
@@ -92,8 +92,10 @@ inputbar._element.appendChild(inputElement)
 
 # --------- Events --------- 
 inputElement.onfocus = () ->
+	if inputElement.value
+		stateKeydown()
 # 	toolbar.states.switchInstant("up")
-	inputElement.placeholder = "#{window.screen.height}"
+# 	inputElement.placeholder = "#{window.screen.height}"
 # 	document.body.style.height = "200px"
 # 	toolbar.y = window.screen.height
 # 	document.write('<meta name="viewport" content="height=600">')
@@ -109,17 +111,23 @@ iconSend.on Events.Click, ->
 	inputElement.value = ""
 	stateDefault()
 
-planChoice = "A"
 bg.on Events.Click, ->
+	inputElement.blur()
+	stateDefault()	
+	
+planChoice = "A"
+icon1.on Events.Click, ->
+	stateDefault()
+	inputElement.value = ""
+	inputElement.blur()	
 	if planChoice is "A"
 		planChoice = "B"
 		iconSend.backgroundColor = "#09bb07"
 		iconSend.style.color = "#FFF"
-		inputElement.placeholder = "Plan B"
+		inputElement.placeholder = "Plan B (˙ε ˙)  "
 	else
 		planChoice = "A"
 		iconSend.backgroundColor = "transparent"
 		iconSend.style.color = "#09bb07"
 		inputElement.placeholder = "Plan A"
-
 
