@@ -3707,7 +3707,8 @@ var colors = [
 	"#3c8d86", 
 	"#4b5453", 
 	"#273737",
-	"#4f5d6a"],
+	"#4f5d6a",
+	"#FFF"],
 randomColor = function() {
 	return colors[Math.floor(Math.random() * colors.length)]
 },
