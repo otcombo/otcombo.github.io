@@ -74,12 +74,6 @@ body{
 	box-sizing:border-box;
 	-webkit-overflow-scrolling:touch;
 }
-.max-width{
-	max-width:1440px;
-	width:100%;
-	margin:0 auto;
-}
-
 .headline{
 	font-size:40px;
 	font-weight: 700;
@@ -168,7 +162,7 @@ body{
 }
 footer{
 	position: absolute;
-	width:60px;
+	width:100%;
 	bottom: 10%;
 	margin-left:40px;
 	padding-bottom: 3px;
@@ -180,7 +174,7 @@ footer{
 	color:rgba(255,255,255,0.4);
 }
 footer .year{ letter-spacing: 9.4px; }
-footer .day{ letter-spacing: 1.6px; }
+footer .day{ letter-spacing: 2.2px; }
 footer .address{ letter-spacing: 1.8px; }
 footer .at{ font-size: 9px;}
 footer .bottomline{
@@ -194,21 +188,21 @@ footer .bottomline{
 	.content{ padding:0 20px; }
 	.about{ font-size:18px; margin-top:45px;}
 	.headline{ font-size:32px; line-height: 28px; }
-	/*.headline b{ font-size:28px; }*/
 	footer{ margin-left:20px; }
+
 }
-@media screen and (min-width:640px){
-	.content{ padding:0 60px; }
+
+@media screen and (min-width:960px){
+	.content{padding:0 150px}
 	.about{ font-size:32px; margin-top:70px;}
 	.headline{ font-size:72px; line-height: 60px; }
-	footer{ margin-left:60px; font-size:24px;line-height:24px; width:120px;font-weight: 300;}
-	footer .year{ letter-spacing: 15px; }
-	footer .day{ letter-spacing: 1.7px; }
+	footer{ margin-left:150px; font-size:24px;line-height:24px; font-weight: 300;}
+	footer .year{ letter-spacing: 14.5px; }
+	footer .day{ letter-spacing: 2.2px; }
 	footer .address{ letter-spacing: 1.6px; }
 	footer .at{ font-size: 18px;line-height:24px; }
 	footer .bottomline{width: 86px;margin-top: 4px;}
 }
-
 
 
 

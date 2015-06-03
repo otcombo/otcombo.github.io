@@ -228,7 +228,7 @@ jQuery(document).ready(function(a){
 		p = 150,
 		q = 500,
 		r = q + 800,
-		s = 600,
+		s = 1600,
 		t = 1500;
 	b()
 })
