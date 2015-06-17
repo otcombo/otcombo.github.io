@@ -7,7 +7,7 @@ else
 	screenW = 750
 	screenH = 1334
 	
-screenRatio = screenH / 1334
+screenRatio = 1
 
 
 scrollingLayer = new Layer({width: screenW, height: screenH})
