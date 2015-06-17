@@ -16,7 +16,7 @@ myCover = new Layer({width: screenW, height: 500 * screenRatio, backgroundColor:
 myCover.originX = 0.5
 myCover.originY = 0
 
-CoverPhoto = new Layer({width: myCover.width, height: myCover.height, image: "images/cover.jpg"})
+CoverPhoto = new Layer({width: myCover.width, height: myCover.height, image: "images/coverphoto.jpg"})
 CoverPhoto.superLayer = myCover
 
 CoverMask = new Layer({	width: myCover.width, height: myCover.height, image: "images/mask.png"})
@@ -88,22 +88,24 @@ scroll.on Events.Move, ->
 		if scroll.content.y > 150
 			scroll.content.y = 150
 			scroll.on Events.ScrollEnd, ->
-				loading.animate({
-					properties: {scale: 1}
-				})
-				loading.animate({
-					properties: {rotationZ: 1000 }
-					curve: "ease-in-out"
-					time:3
-				})
-				Utils.delay 3.2, ->
+				Utils.delay 0.2, ->
 					loading.animate({
-						properties: {scale: 1.1}
+						properties: {scale: 1}
+						curve: "ease-out"]
 					})
-					Utils.delay 0.1, ->
+					loading.animate({
+						properties: {rotationZ: 1000 }
+						curve: "ease-in-out"
+						time:3
+					})
+					Utils.delay 3.2, ->
 						loading.animate({
-							properties: {scale: 0.4}
-							curve: "ease-in"
+							properties: {scale: 1.1}
 						})
+						Utils.delay 0.1, ->
+							loading.animate({
+								properties: {scale: 0.4}
+								curve: "ease-in"
+							})
 
 					
