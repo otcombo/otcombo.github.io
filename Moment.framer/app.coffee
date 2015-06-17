@@ -12,19 +12,15 @@ screenRatio = 1
 
 scrollingLayer = new Layer({width: screenW, height: screenH})
 
-myCover = new Layer({width: screenW, height: 500 * screenRatio, backgroundColor: "transparent"})
+myCover = new Layer({width: screenW, height: 500 * screenRatio, backgroundColor: "#090D0E"})
 myCover.originX = 0.5
 myCover.originY = 0
-
-CoverBG = new Layer({width: screenW, height: 500 * screenRatio, backgroundColor: "#090D0E"})
-CoverBG.superLayer = myCover
 
 CoverPhoto = new Layer({width: myCover.width, height: myCover.height, image: "images/cover.jpg"})
 CoverPhoto.superLayer = myCover
 
 CoverMask = new Layer({	width: myCover.width, height: myCover.height, image: "images/mask.png"})
 CoverMask.superLayer = myCover
-
 
 
 loadingArea = new Layer({width: screenW, height: 500 * screenRatio, backgroundColor: "transparent"})
