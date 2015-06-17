@@ -16,7 +16,7 @@ myCover = new Layer({width: screenW, height: 500 * screenRatio, backgroundColor:
 myCover.originX = 0.5
 myCover.originY = 0
 
-CoverPhoto = new Layer({width: myCover.width, height: myCover.height, image: "images/cover.jpg"})
+CoverPhoto = new Layer({width: myCover.width, height: myCover.height, image: "images/coverphoto.jpg"})
 CoverPhoto.superLayer = myCover
 
 CoverMask = new Layer({	width: myCover.width, height: myCover.height, image: "images/mask.png"})
