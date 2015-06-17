@@ -88,10 +88,11 @@ scroll.on Events.Move, ->
 		if scroll.content.y > 150
 			scroll.content.y = 150
 			scroll.on Events.ScrollEnd, ->
-				Utils.delay 0.2, ->
+				Utils.delay 0.1, ->
 					loading.animate({
 						properties: {scale: 1}
-						curve: "ease-out"]
+						curve: "ease-out"
+						time:0.5
 					})
 					loading.animate({
 						properties: {rotationZ: 1000 }
