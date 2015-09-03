@@ -90,7 +90,7 @@ inputbar._element.appendChild(inputElement)
 
 
 #Test
-banner = new Layer image:"images/promo-recommand-share.png", width: screenWidth, height:180;
+banner = new Layer image:"images/Add.png", width: 750, height:180;
 
 # --------- Events --------- 
 inputElement.onfocus = () ->

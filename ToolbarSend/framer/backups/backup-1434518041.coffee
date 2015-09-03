@@ -89,8 +89,6 @@ inputElement.value = ""
 inputbar._element.appendChild(inputElement)
 
 
-#Test
-banner = new Layer image:"images/promo-recommand-share.png", width: screenWidth, height:180;
 
 # --------- Events --------- 
 inputElement.onfocus = () ->
@@ -132,3 +130,4 @@ icon1.on Events.Click, ->
 		iconSend.backgroundColor = "transparent"
 		iconSend.style.color = "#09bb07"
 		inputElement.placeholder = "Plan A"
+
