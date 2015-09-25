@@ -7,61 +7,61 @@ bg = new BackgroundLayer
 
 # Create Layers
 layerA = new Layer
-	width: 150
-	height: 150
-	midX: Screen.width / 2 - 160
+	width: 200
+	height: 200
+	midX: Screen.width / 2 - 220
 	backgroundColor: "#FAFAFA"
 
 contentA = new Layer
-	width: 150
-	height: 150
+	width: 200
+	height: 200
 	backgroundColor: "#FFF"
 	borderColor: "#07AA08"
 layerA.addSubLayer(contentA)
 contentA.style = {
 	"color": "#353535",
-	"font-size": "60px",
+	"font-size": "100px",
 	"text-align": "center"
-	"line-height": "150px"
+	"line-height": "210px"
 	"font-family": "Avenir"
 }
 
 layerC = new Layer
-	width: 150
-	height: 150
+	width: 200
+	height: 200
 	backgroundColor: "#FAFAFA"
-	midX: Screen.width / 2 + 160
+	midX: Screen.width / 2 + 220
 contentC = new Layer
-	width: 150
-	height: 150
+	width: 200
+	height: 200
 	backgroundColor: "#FFF"
 	borderColor: "#07AA08"
 layerC.addSubLayer(contentC)
 contentC.style = {
 	"color": "#353535",
-	"font-size": "60px",
+	"font-size": "100px",
 	"text-align": "center"
-	"line-height": "150px"
+	"line-height": "210px"
 	"font-family": "Avenir"
 }
 
 layerB = new Layer
-	width: 150
-	height: 150
+	width: 200
+	height: 200
 	backgroundColor: "#FAFAFA"
 	midX: Screen.width / 2
 	borderColor: "#07AA08"
 contentB = new Layer
-	width: 150
-	height: 150
+	width: 200
+	height: 200
 	backgroundColor: "#FFF"
 	borderColor: "#07AA08"
 layerB.addSubLayer(contentB)
 contentB.style = {
 	"color": "#353535",
-	"font-size": "60px",
+	"font-size": "100px",
 	"text-align": "center"
-	"line-height": "150px"
+	"line-height": "210px"
 	"font-family": "Avenir"
 }
 layerA.states.add

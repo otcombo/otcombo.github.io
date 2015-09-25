@@ -1,67 +1,42 @@
 ShakeEvent = require "shake"
-Framer.Defaults.Animation = time: .25, curve: "spring(250, 10, 0)"
+Framer.Defaults.Animation = time: .25, curve: "spring(120, 10, 0)"
 
 # Set background
 bg = new BackgroundLayer 
 	backgroundColor: "#FAFAFA"
 
 # Create Layers
-shadowA = new Layer
-	width: 140
-	height: 140
-	backgroundColor: "#000"
-	blur: 10
-	opacity: 0
-	midX: Screen.width / 2 - 160
-	midY: Screen.height / 2
 layerA = new Layer
-	width: 150
-	height: 150
-	backgroundColor: "#FAFAFA"
-	opacity: 0
+	width: 200
+	height: 200
 	midX: Screen.width / 2 - 160
-	midY: Screen.height / 2
+	backgroundColor: "#FAFAFA"
+
 contentA = new Layer
-	width: 150
-	height: 150
-	backgroundColor: "#fff"
-	opacity: 0
+	width: 200
+	height: 200
+	backgroundColor: "#FFF"
+	borderColor: "#07AA08"
 layerA.addSubLayer(contentA)
-contentA.html = "4"
 contentA.style = {
 	"color": "#353535",
-	"font-size": "60px",
+	"font-size": "100px",
 	"text-align": "center"
-	"line-height": "150px"
+	"line-height": "200px"
 	"font-family": "Avenir"
 }
-layerA.states.add
-	one:
-		scale: 0.75
-	two:
-		scale: 1
-shadowC = new Layer
-	width: 140
-	height: 130
-	backgroundColor: "#000"
-	blur: 10
-	opacity: 0
-	midX: Screen.width / 2 + 160
-	midY: Screen.height / 2
+
 layerC = new Layer
-	width: 150
-	height: 150
+	width: 200
+	height: 200
 	backgroundColor: "#FAFAFA"
-	opacity: 0
 	midX: Screen.width / 2 + 160
-	midY: Screen.height / 2
 contentC = new Layer
-	width: 150
-	height: 150
-	backgroundColor: "#fff"
-	opacity: 0
+	width: 200
+	height: 200
+	backgroundColor: "#FFF"
+	borderColor: "#07AA08"
 layerC.addSubLayer(contentC)
-contentC.html = "4"
 contentC.style = {
 	"color": "#353535",
 	"font-size": "60px",
@@ -70,29 +45,18 @@ contentC.style = {
 	"font-family": "Avenir"
 }
 
-
-shadowB = new Layer
-	width: 140
-	height: 140
-	backgroundColor: "#000"
-	blur: 10
-	opacity: 0
-	midX: Screen.width / 2
-	midY: Screen.height / 2
 layerB = new Layer
 	width: 150
 	height: 150
 	backgroundColor: "#FAFAFA"
-	opacity: 0
 	midX: Screen.width / 2
-	midY: Screen.height / 2
+	borderColor: "#07AA08"
 contentB = new Layer
 	width: 150
 	height: 150
-	backgroundColor: "#fff"
-	opacity: 0
+	backgroundColor: "#FFF"
+	borderColor: "#07AA08"
 layerB.addSubLayer(contentB)
-contentB.html = "0"
 contentB.style = {
 	"color": "#353535",
 	"font-size": "60px",
@@ -100,50 +64,109 @@ contentB.style = {
 	"line-height": "150px"
 	"font-family": "Avenir"
 }
+layerA.states.add
+	one: 
+		opacity: 0, midY: Screen.height / 2,
+		shadowY: 0, shadowBlur: 0, shadowColor: "rgba(0,0,0,0.2)"
+	two:
+		opacity: 1, midY: Screen.height / 2 - 10
+		shadowY: 15, shadowBlur: 15
+	three:
+		midY: Screen.height / 2 -9
+layerA.states.switchInstant("one")
+layerB.states.add
+	one: 
+		opacity: 0, midY: Screen.height / 2,
+		shadowY: 0, shadowBlur: 0, shadowColor: "rgba(0,0,0,0.2)"
+	two:
+		opacity: 1, midY: Screen.height / 2 - 10
+		shadowY: 15, shadowBlur: 15
+	three:
+		midY: Screen.height / 2 -9
+layerB.states.switchInstant("one")
+layerC.states.add
+	one: 
+		opacity: 0, midY: Screen.height / 2,
+		shadowY: 0, shadowBlur: 0, shadowColor: "rgba(0,0,0,0.2)"
+	two:
+		opacity: 1, midY: Screen.height / 2 - 10
+		shadowY: 15, shadowBlur: 15
+	three:
+		midY: Screen.height / 2 -9
+layerC.states.switchInstant("one")
 
-# Easing Animation Curve 
-Utils.delay .5, ->
-	layerA.animate 
-		properties:
-			midY: Screen.height / 2 - 20
-			opacity: 1
-	contentA.animate 
-		properties:
-			opacity: 1
-		delay: .2
-	shadowA.animate
-		properties: 
-			midY: Screen.height / 2 - 0
-			opacity: .25
-		delay: .2
+# Initial
+initial = () ->
+	temp = 0
+	contentA.html = "4"
+	contentB.html = "0"
+	contentC.html = "4"
+	Utils.delay .5, ->
+		layerA.states.switch("two")
+	Utils.delay .6, ->
+		layerB.states.switch("two")
+	Utils.delay .7, ->
+		layerC.states.switch("two")
 
-Utils.delay .7, ->
-	layerB.animate 
-		properties:
-			midY: Screen.height / 2 - 20
-			opacity: 1
-	contentB.animate 
-		properties:
-			opacity: 1
-		delay: .2
-	shadowB.animate
-		properties: 
-			opacity: .25
-		delay: .2
+myInterval = null
+temp = 0
+cycler = () ->
+	if temp is 0
+		contentA.style["color"] = Utils.randomChoice(["#4389FD", "#F04536","#FBBF11","#37B258"])
+		contentB.style["color"] = Utils.randomChoice(["#4389FD", "#F04536","#FBBF11","#37B258"])
+		contentC.style["color"] = Utils.randomChoice(["#4389FD", "#F04536","#FBBF11","#37B258"])
+		temp = 1
+	else
+		temp = 0
+		contentA.style["color"] = Utils.randomChoice(["#4389FD", "#F04536","#FBBF11","#37B258"])
+		contentB.style["color"] = Utils.randomChoice(["#4389FD", "#F04536","#FBBF11","#37B258"])
+		contentC.style["color"] = Utils.randomChoice(["#4389FD", "#F04536","#FBBF11","#37B258"])
+startInterval = ->
+	myInterval = Utils.interval .05, ->
+		cycler()
+stopInterval = ->
+	clearInterval(myInterval)
+	contentA.style["color"] = "#353535"
+	contentB.style["color"] = "#353535"
+	contentC.style["color"] = "#353535"
 
-Utils.delay .9, ->
-	layerC.animate 
-		properties:
-			midY: Screen.height / 2 - 20
-			opacity: 1
-	contentC.animate 
-		properties:
-			opacity: 1
-		delay: .2
-	shadowC.animate
-		properties: 
-			opacity: .25
-		delay: .2
 
+
+
+
+initial()
 ShakeEvent.onShake = ()->
-	alert "shaked!"
+	if temp is 1
+		temp = 0
+		initial()
+	else
+		layerA.states.animationOptions = curve: "spring(400, 0, 200)"
+		layerB.states.animationOptions = curve: "spring(400, 0, 200)"
+		layerC.states.animationOptions = curve: "spring(400, 0, 200)"
+	# 	tmpA = parseInt(Utils.randomNumber(0, 10))
+	# 	tmpB = parseInt(Utils.randomNumber(0, 10))
+	# 	tmpC = parseInt(Utils.randomNumber(0, 10))
+		layerA.states.next("two","three")
+		Utils.delay .1, ->
+			contentA.html = Utils.randomChoice(["4", "0"])
+			layerB.states.next("two","three")
+		Utils.delay .2, ->
+			contentB.html = Utils.randomChoice(["4", "0"])
+			layerC.states.next("two","three")
+		Utils.delay .3, ->
+			contentC.html = Utils.randomChoice(["4", "0"])
+			if parseInt(contentA.html) == parseInt(contentB.html) && parseInt(contentB.html) == parseInt(contentC.html) 
+				startInterval()
+				Utils.delay .5, ->
+					Utils.delay 1.5, ->
+						layerA.states.animationOptions = time: .25, curve: "spring(120, 10, 0)"
+						layerB.states.animationOptions = time: .25, curve: "spring(120, 10, 0)"
+						layerC.states.animationOptions = time: .25, curve: "spring(120, 10, 0)"
+						layerA.states.switch("one")
+					Utils.delay 1.6, ->
+						layerB.states.switch("one")
+					Utils.delay 1.7, ->
+						layerC.states.switch("one")	
+						stopInterval()
+						temp = 1
+	
