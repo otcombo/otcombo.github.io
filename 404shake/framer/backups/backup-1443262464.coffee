@@ -72,7 +72,7 @@ layerA.states.add
 		opacity: 1, midY: Screen.height / 2 - 10
 		shadowY: 15, shadowBlur: 15
 	three:
-		midY: Screen.height / 2 - 20
+		midY: Screen.height / 2 -9
 layerA.states.switchInstant("one")
 layerB.states.add
 	one: 
@@ -82,7 +82,7 @@ layerB.states.add
 		opacity: 1, midY: Screen.height / 2 - 10
 		shadowY: 15, shadowBlur: 15
 	three:
-		midY: Screen.height / 2 - 20
+		midY: Screen.height / 2 -9
 layerB.states.switchInstant("one")
 layerC.states.add
 	one: 
@@ -92,15 +92,12 @@ layerC.states.add
 		opacity: 1, midY: Screen.height / 2 - 10
 		shadowY: 15, shadowBlur: 15
 	three:
-		midY: Screen.height / 2 - 20
+		midY: Screen.height / 2 -9
 layerC.states.switchInstant("one")
 
 # Initial
 initial = () ->
 	temp = 0
-	layerA.states.animationOptions = time: .25, curve: "spring(120, 10, 0)"
-	layerB.states.animationOptions = time: .25, curve: "spring(120, 10, 0)"
-	layerC.states.animationOptions = time: .25, curve: "spring(120, 10, 0)"
 	contentA.html = "4"
 	contentB.html = "0"
 	contentC.html = "4"
@@ -135,11 +132,12 @@ stopInterval = ->
 
 
 
-ShakeEvent.throttleInterval = 2
-ShakeEvent.sensitivity = 2
+ShakeEvent.throttleInterval = 1
+ShakeEvent.sensitivity = 10
 
 initial()
-roll = ->
+# ShakeEvent.onShake = ()->
+bg.on Events.Click, ->
 	if temp is 1
 		temp = 0
 		initial()
@@ -147,6 +145,9 @@ roll = ->
 		layerA.states.animationOptions = curve: "spring(400, 0, 200)"
 		layerB.states.animationOptions = curve: "spring(400, 0, 200)"
 		layerC.states.animationOptions = curve: "spring(400, 0, 200)"
+	# 	tmpA = parseInt(Utils.randomNumber(0, 10))
+	# 	tmpB = parseInt(Utils.randomNumber(0, 10))
+	# 	tmpC = parseInt(Utils.randomNumber(0, 10))
 		layerA.states.next("two","three")
 		Utils.delay .1, ->
 			contentA.html = Utils.randomChoice(["4", "0"])
@@ -170,10 +171,3 @@ roll = ->
 						layerC.states.switch("one")	
 						stopInterval()
 						temp = 1
-
-if Utils.isMobile()
-	ShakeEvent.onShake = ()->
-		roll()
-else
-	bg.on Events.Click, () ->
-		roll()
