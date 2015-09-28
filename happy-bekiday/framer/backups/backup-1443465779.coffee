@@ -131,7 +131,6 @@ mbotOriginy = mbot.midY
 
 # Create sound
 beep = new UISound("sounds/beeeeee.mp3")
-playing = 0
 
 # Sets smoothing for all smooth[Variable]
 module.smoothOrientation = 1
@@ -281,29 +280,14 @@ mbotShadow.animate
 	curve: "spring(400,23,0)"
 	delay: .4
 startInterval()
-
-
 card.on Events.TouchStart, ()->
+	beep.play()
 	container.animate
 		properties:
 			scale: 0.9
 	curve: "spring(400,23,0)"
-	
 card.on Events.TouchEnd, ()->
 	container.animate
 		properties:
 			scale: 1
 		curve: "spring(400,23,0)"
-	if playing
-		beep.stop()
-		playing = 0
-		mtop.image = "images/melody-top.png"
-		mmid.image = "images/melody-mid.png"
-		mbot.image = "images/melody-bot.png"
-	else
-		beep.play()
-		playing = 1
-		mtop.image = "images/melody-top-on.png"
-		mmid.image = "images/melody-mid-on.png"
-		mbot.image = "images/melody-bot-on.png"
-		
