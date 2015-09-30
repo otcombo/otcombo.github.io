@@ -17,7 +17,7 @@ window.Framer.Defaults.DeviceComponent = {
 
 window.FramerStudioInfo = {
   "deviceImagesUrl" : "file:\/\/\/Applications\/Framer%20Studio.app\/Contents\/Resources\/DeviceImages\/",
-  "documentTitle" : "Moment.framer"
+  "documentTitle" : "Moments💈"
 };
 
 Framer.Device = new Framer.DeviceView();
