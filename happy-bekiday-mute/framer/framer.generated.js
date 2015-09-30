@@ -6,7 +6,7 @@ window.Framer.Defaults.DeviceView = {"deviceScale":0.25,"deviceType":"iphone-6-s
 
 window.Framer.Defaults.DeviceComponent = {"deviceScale":0.25,"deviceType":"iphone-6-silver","contentScale":1,"orientation":0};
 
-window.FramerStudioInfo = {"deviceImagesUrl":"\/_server\/resources\/DeviceImages","documentTitle":"👉Happy Bekisday👈"};
+window.FramerStudioInfo = {"deviceImagesUrl":"\/_server\/resources\/DeviceImages","documentTitle":"Happy Bekisday"};
 
 Framer.Device = new Framer.DeviceView();
 Framer.Device.setupContext();
