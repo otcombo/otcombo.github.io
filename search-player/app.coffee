@@ -22,7 +22,7 @@ imgshow.states.add
 		opacity: 1, scale: 1, rotation: 0
 imgshow.states.switchInstant("default")
 imgshow.center()
-imgcover = new Layer backgroundColor: "Black", height: 90,width: 90, x: 330, y: 35, superLayer: player, opacity: .3
+imgcover = new Layer backgroundColor: "Black", height: 90,width: 90, x: 330, y: 35, superLayer: player, opacity: .5
 
 btnbg = new Layer image: "images/btnbg.png", width: 750, height: 160, superLayer: player
 btnplay = new Layer image: "images/btn-play.png", height: 90,width: 90, x: 330, y: 35, superLayer: player
@@ -75,41 +75,46 @@ btnWaiting = () ->
 				n++
 			imglist[n].states.switch("spin")
 
-btnWaiting()
-
-btnplay.on Events.Click, ->
-	playstate = "on"
-	player.animate
+Utils.delay 1, ->
+	imgcover.animate
 		properties: 
-			x: -230
-	btnplay.states.switch("off")
-	btnpause.states.switch("on")
-	txtloading.states.switch("on")
-	imgshow.states.switch("show")
-	Utils.delay 2, ->
-		if playstate is "on"
-			txtloading.states.switch("off")
-			Utils.delay .2, ->
-				txtsong.states.switch("on")
-
-btnpause.on Events.Click, ->	
-	playstate = "off"
-	player.animate
-		properties: 
-			x: 0
-	btnplay.states.switch("on")
-	btnpause.states.switch("off")
-	txtloading.states.switch("off")
-	txtsong.states.switch("off")
-
-bg.on Events.Click, ->
-	playstate = "off"
-	player.animate
-		properties: 
-			x: 0
-	btnplay.states.switch("on")
-	btnpause.states.switch("off")
-	txtsong.states.switch("off")
-	txtloading.states.switch("off")
-	imgshow.states.switch("default")
+			opacity: .3
+	
 	btnWaiting()
+	
+	btnplay.on Events.Click, ->
+		playstate = "on"
+		player.animate
+			properties: 
+				x: -230
+		btnplay.states.switch("off")
+		btnpause.states.switch("on")
+		txtloading.states.switch("on")
+		imgshow.states.switch("show")
+		Utils.delay 2, ->
+			if playstate is "on"
+				txtloading.states.switch("off")
+				Utils.delay .2, ->
+					txtsong.states.switch("on")
+	
+	btnpause.on Events.Click, ->	
+		playstate = "off"
+		player.animate
+			properties: 
+				x: 0
+		btnplay.states.switch("on")
+		btnpause.states.switch("off")
+		txtloading.states.switch("off")
+		txtsong.states.switch("off")
+	
+	bg.on Events.Click, ->
+		playstate = "off"
+		player.animate
+			properties: 
+				x: 0
+		btnplay.states.switch("on")
+		btnpause.states.switch("off")
+		txtsong.states.switch("off")
+		txtloading.states.switch("off")
+		imgshow.states.switch("default")
+		btnWaiting()
