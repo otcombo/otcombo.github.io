@@ -1,0 +1,1 @@
+bg = new BackgroundLayer image: "images/normal.png"
