@@ -1,4 +1,4 @@
-bg = new BackgroundLayer image: "images/normal.jpg"
+bg = new BackgroundLayer image: "images/bg.jpg"
 player = new Layer width: 750, height: 160, y: 128, backgroundColor: "#b2b2b2"
 Framer.Defaults.animations = curve:"spring(190,80,0)"
 
