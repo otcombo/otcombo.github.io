@@ -7,7 +7,7 @@ window.Framer.Defaults.DeviceView = {"deviceScale":0.5,"selectedHand":"","device
 
 window.Framer.Defaults.DeviceComponent = {"deviceScale":0.5,"selectedHand":"","deviceType":"apple-iphone-6s-silver","contentScale":1,"orientation":0};
 
-window.FramerStudioInfo = {"deviceImagesUrl":"\/_server\/resources\/DeviceImages","documentTitle":"Search-Player.framer"};
+window.FramerStudioInfo = {"deviceImagesUrl":"\/_server\/resources\/DeviceImages","documentTitle":"wechat-search-player.framer"};
 
 Framer.Device = new Framer.DeviceView();
 Framer.Device.setupContext();
