@@ -1,0 +1,57 @@
+app.coffee
+framer/backups/backup-2016-11-01 17.17.54.coffee
+framer/backups/backup-2016-11-01 18.40.54.coffee
+framer/backups/backup-2016-11-01 19.11.37.coffee
+framer/backups/backup-2016-11-01 19.35.29.coffee
+framer/backups/backup-2016-11-01 19.37.29.coffee
+framer/backups/backup-2016-11-01 19.38.30.coffee
+framer/backups/backup-2016-11-01 19.42.30.coffee
+framer/backups/backup-2016-11-01 19.43.30.coffee
+framer/backups/backup-2016-11-01 19.44.30.coffee
+framer/backups/backup-2016-11-01 19.46.30.coffee
+framer/backups/backup-2016-11-01 19.47.30.coffee
+framer/backups/backup-2016-11-01 19.49.30.coffee
+framer/backups/backup-2016-11-01 19.50.30.coffee
+framer/backups/backup-2016-11-01 19.51.30.coffee
+framer/backups/backup-2016-11-02 17.59.58.coffee
+framer/backups/backup-2016-11-02 18.00.58.coffee
+framer/backups/backup-2016-11-02 18.01.58.coffee
+framer/backups/backup-2016-11-02 18.02.58.coffee
+framer/backups/backup-2016-11-02 18.03.58.coffee
+framer/backups/backup-2016-11-02 18.04.58.coffee
+framer/backups/backup-2016-11-02 18.05.58.coffee
+framer/coffee-script.js
+framer/config.json
+framer/framer.generated.js
+framer/framer.init.js
+framer/framer.js
+framer/framer.js.map
+framer/framer.modules.js
+framer/images/cursor-active.png
+framer/images/cursor-active@2x.png
+framer/images/cursor.png
+framer/images/cursor@2x.png
+framer/images/icon-120.png
+framer/images/icon-152.png
+framer/images/icon-180.png
+framer/images/icon-192.png
+framer/images/icon-76.png
+framer/manifest.txt
+framer/metadata.json
+framer/preview.png
+framer/social-1200x630.png
+framer/social-880x460.png
+framer/style.css
+framer/version
+imported/bid@1x/images/Layer-bg-nzqyodi0.png
+imported/bid@1x/images/Layer-BG-qjqwrtg3.png
+imported/bid@1x/images/Layer-button-meu5rkfe.png
+imported/bid@1x/images/Layer-c1-odreody1.png
+imported/bid@1x/images/Layer-c2-ntngrjhe.png
+imported/bid@1x/images/Layer-c3-ruu5q0je.png
+imported/bid@1x/images/Layer-navbar-rtjfq0y3.png
+imported/bid@1x/images/Layer-time-qji3oda0.png
+imported/bid@1x/layers.json
+imported/bid@1x/layers.json.js
+index.html
+modules/myModule.coffee
