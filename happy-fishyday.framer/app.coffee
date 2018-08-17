@@ -1,4 +1,4 @@
-Framer.Extras.Preloader.enable()
+# Framer.Extras.Preloader.enable()
 
 # Require module
 {UISound} = require "uisound"
@@ -272,14 +272,14 @@ card.on Events.TouchEnd, ()->
 		mbot.image = "images/melody-bot-on.png"
 				
 				
-		starCount = 10
-		popStar = new Layer
-			parent: container
-		popStar.placeBefore(bdayShadow)
-		popStar.center()
-		popStar.y = 240
+# 		starCount = 10
+# 		popStar = new Layer
+# 			parent: container
+# 		popStar.placeBefore(bdayShadow)
+# 		popStar.center()
+# 		popStar.y = 240
 		
-		Utils.interval 0.5, ->
+# 		Utils.interval 0.5, ->
 			
 			
 # 			star = new TextLayer
