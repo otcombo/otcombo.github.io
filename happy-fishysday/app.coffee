@@ -1,4 +1,4 @@
-# Framer.Extras.Preloader.enable()
+Framer.Extras.Preloader.enable()
 
 # Require module
 {UISound} = require "uisound"
@@ -13,18 +13,18 @@ Framer.Defaults.Animation =
 
 
 footer = new TextLayer
-	x: Align.center, y: screenHeight - 64
+	x: Align.center, y: screenHeight - 164
 	text: "We were meant to be together. That's my hunch."
 	fontSize: 12
 	color: "#212121"
-	opacity: 0.2
+	opacity: 0.4
 	textAlign: Align.center
 
 # Create container, for perspective
 container = new Layer
 	width: screenWidth
 	height: screenHeight
-	y:-50
+	y:-100
 	backgroundColor: "transparent"
 	perspective: 5000
 	parent: main
@@ -32,7 +32,7 @@ container = new Layer
 # Create card and its shadow
 cardShadow = new Layer
 	width: 482/2, height: 780/2
-	z: -200
+	z: -300
 	superLayer: container
 cardShadow.style["background"] = "-webkit-radial-gradient(#A1907B, #CFC8C1)"
 cardShadow.center()
@@ -191,7 +191,7 @@ window.addEventListener "deviceorientation", (event) ->
 		rotationX: Utils.modulate(event.beta, [-120, 40], [90, 0])
 		rotationY: Utils.modulate(event.gamma, [-90, 90], [-50, 50])
 		midX: Utils.modulate(event.gamma, [-90, 90], [Screen.width/2 + 75, Screen.width/2 - 75])
-		midY: Utils.modulate(event.beta, [-120, 30], [Screen.height/2 + 200, Screen.height/2 + 40])
+		midY: Utils.modulate(event.beta, [-120, 30], [Screen.height/2 + 250, Screen.height/2 + 100])
 		blur: Utils.modulate(Math.abs(event.gamma), [0, 90], [15, 50])
 		options: 
 			time: 0.1

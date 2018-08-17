@@ -7,7 +7,7 @@
   "cachedDeviceWidth" : 375,
   "fullScreen" : false,
   "deviceType" : "apple-iphone-x-space-gray",
-  "sharedPrototype" : 0,
+  "sharedPrototype" : true,
   "propertyPanelToggleStates" : {
 
   },
