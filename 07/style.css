@@ -1,0 +1,63 @@
+body{
+  background: rgb(240, 64, 0);
+}
+
+.wrapper, html, body {
+    height: 100%;
+    margin: 0;
+}
+.wrapper {
+    display: flex;
+
+    flex-direction: row;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+
+    /* justify-content:center;
+    align-items: center; */
+
+}
+
+#row1 {
+    background-color: red;
+		width: 500px;
+    height: 500px;
+    flex: 0 0 auto;
+}
+#row2 {
+    background-color: blue;
+    width: 500px;
+    height: 500px;
+    flex: 0 0 auto;
+}
+#row3 {
+    background-color: green;
+    display: flex;
+    /* flex: 2; */
+    width: 500px;
+    height: 200px;
+    flex: 0 0 auto;
+}
+#col1 {
+    background-color: yellow;
+    flex: 1;
+}
+#col2 {
+    background-color: orange;
+    flex: 1;
+}
+#col3 {
+    background-color: purple;
+    flex: 2;
+}
+
+.title{
+    font-size: 30px;
+    font-family: "SF Pro Text","Helvetica Neue","Helvetica","Arial",sans-serif;
+    color: white;
+    font-weight: bold;
+
+    position: relative;
+    top: 450px;
+    left: -50px;
+}
