@@ -1,27 +1,83 @@
+.wrapper, html, body {
+    height: 100%;
+    margin: 0;
+    font-family: "New York Extra Large","SF Pro Text","Helvetica Neue","Helvetica","Arial",sans-serif;
+    line-height: 55px;
+    letter-spacing: -0.01em;
 
+    color: #080808;
+}
+.wrapper {
+    display: flex;
 
-body {
-	background-color: #202021;
-	color: #FFF;
-	overflow: hidden;
-	font-family: 'Open Sans', sans-serif;
-	padding: 15px 0 0 10px;
+    flex-direction: row;
+    overflow-x: auto;
+    overflow-y: hidden;
+    flex-wrap: nowrap;
+
+    justify-content:center;
+    align-items: center;
+
+    -webkit-overflow-scrolling: touch; /* for iOS */
+
+    position: absolute;
+    left: 100px;
+}
+.wrapper > div{
+    padding: 10px;
+    width: 500px;
+    height: 500px;
 }
 
-.item{
-	height: 80px;
-	line-height: 80px;
+.section-1 {
+    background: #F9F9F9;
+    /* flex: 1; */
+    flex: 1 0 auto;
 }
-a {
-	color: #BCBCBC;
-	text-decoration: none;
-	font-size: 15px;
-	letter-spacing: 2px;
-	font-weight: 400;
+.section-2 {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 auto;
 }
-.number{
-	height: 20px;
-	font-size: 20px;
-	opacity: 0.2;
-	font-weight: 300;
+.section-3 {
+    display: flex;
+    flex: 0 0 auto;
+}
+.col1 {
+    background-color: black;
+    opacity: 0.1;
+    flex: 1;
+}
+.col2 {
+    background-color: black;
+    opacity: 0.15;
+    flex: 1;
+}
+.col3 {
+    background-color: black;
+    opacity: 0.2;
+    flex: 2;
+}
+
+.main-desc{
+
+  width: 656px;
+
+  font-family: "New York Extra Large";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 60px;
+  line-height: 64px;
+
+  color: #232323;
+
+}
+
+#sketch-holder{
+    position: relative;
+    top: -36px; /* the height of .title */
+    z-index: 100px;
+    height: 500px;
+    width: 500px;
+    /* top:-50px; */
 }

@@ -1,0 +1,27 @@
+
+
+body {
+	background-color: #202021;
+	color: #FFF;
+	overflow: hidden;
+	font-family: 'Open Sans', sans-serif;
+	padding: 15px 0 0 10px;
+}
+
+.item{
+	height: 80px;
+	line-height: 80px;
+}
+a {
+	color: #BCBCBC;
+	text-decoration: none;
+	font-size: 15px;
+	letter-spacing: 2px;
+	font-weight: 400;
+}
+.number{
+	height: 20px;
+	font-size: 20px;
+	opacity: 0.2;
+	font-weight: 300;
+}

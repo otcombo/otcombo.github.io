@@ -1,21 +1,20 @@
-var color_bg, color_rect, color_storke;
-var rotation, angle, step;
+var color_rect, color_storke;
+var rotate_speed, next_angle;
 
 function setup() {
 	var canvas = createCanvas(500, 500);
 	canvas.parent('sketch-holder');
 
 	//Define color
-	color_bg = color(240, 64, 0);
 	color_rect = color(255, 70, 0);
-	color_line = color(255, 240, 230, 250);
+	color_line = color('#FFFA83');
 
-	rotation = 0;
+	angleMode(DEGREES);
+	rotate_speed = 0;
 }
 
 function draw() {
 	//Draw Background
-	background(color_bg);
 	fill(color_rect);
 	noStroke();
 	rect(0, 0, width, height);
@@ -31,30 +30,26 @@ function draw() {
 function spinRays(center_x,center_y) {
 		push()
 			translate(center_x, center_y);
-			// scale(-1, 1);
 
-			rotate(rotation);
-			rotation -= 0.5;
-			rotation = rotation % 360;
+			rotate(rotate_speed);
+			rotate_speed += 0.5;
+			rotate_speed = rotate_speed % 360;
 
-			line(0, 0, width*1.5, 0)
-			angle = 0;
-			step = 3;
-			// for (var i = 0; i < 360; i++) {
-			// 	rotate(step)
-			// 	line(0, 0, 1000, 20)
-			// 	angle += step;
-			// }
+			next_angle = 3;
+			for (var i = 0; i < 360; i += next_angle) {
+				rotate(next_angle);
+				line(0, 0, width*1.5, 0);
+			}
 		pop();
-		//
-		// img_1 = get(0, 0, width, height);
-		// img_1.loadPixels();
-		// for (let i = 0; i < width / 2; i++) {
-		// 	for (let j = 0; j < height / 2; j++) {
-		// 		img_1.set(i + height / 2, j, color(0, 0, 0, 0));
-		// 	}
-		// }
-		// img_1.updatePixels();
+
+		img_1 = get(0, 0, width, height);
+		img_1.loadPixels();
+		for (let i = 0; i < width / 2; i++) {
+			for (let j = 0; j < height / 2; j++) {
+				img_1.set(i + height / 2, j, color(0, 0, 0, 0));
+			}
+		}
+		img_1.updatePixels();
 }
 
 
