@@ -1,83 +1,184 @@
-.wrapper, html, body {
-    height: 100%;
-    margin: 0;
-    font-family: "New York Extra Large","SF Pro Text","Helvetica Neue","Helvetica","Arial",sans-serif;
-    line-height: 55px;
-    letter-spacing: -0.01em;
+:root {
+  font-size: 62.5%;
+  --section-height: 80rem;
+}
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: "New York Extra Large","SF Pro Text","Helvetica","Arial",sans-serif;
+  color: #232323;
+  overflow-y: hidden;
+  text-rendering: optimizeLegibility;
+}
 
-    color: #080808;
+
+p {
+  margin: 0;
 }
 .wrapper {
-    display: flex;
+  height: 100%;
+  margin: 0;
+  overflow-y: hidden;
 
-    flex-direction: row;
-    overflow-x: auto;
-    overflow-y: hidden;
-    flex-wrap: nowrap;
+  display: flex;
 
-    justify-content:center;
-    align-items: center;
+  flex-direction: row;
+  overflow-x: auto;
+  overflow-y: hidden;
+  flex-wrap: nowrap;
 
-    -webkit-overflow-scrolling: touch; /* for iOS */
+  /* justify-content:center; */
+  align-items: center;
 
-    position: absolute;
-    left: 100px;
-}
-.wrapper > div{
-    padding: 10px;
-    width: 500px;
-    height: 500px;
-}
+  -webkit-overflow-scrolling: touch; /* for iOS */
 
-.section-1 {
-    background: #F9F9F9;
-    /* flex: 1; */
-    flex: 1 0 auto;
 }
-.section-2 {
-    display: flex;
-    flex-direction: column;
-    flex: 0 0 auto;
-}
-.section-3 {
-    display: flex;
-    flex: 0 0 auto;
-}
-.col1 {
-    background-color: black;
-    opacity: 0.1;
-    flex: 1;
-}
-.col2 {
-    background-color: black;
-    opacity: 0.15;
-    flex: 1;
-}
-.col3 {
-    background-color: black;
-    opacity: 0.2;
-    flex: 2;
+.wrapper > div {
+  margin-right: 2rem;
+  height: var(--section-height);
 }
 
-.main-desc{
+/* ========== Sections ========== */
+.section-intro {
+  /* position: relative; */
+  display: flex;
+  align-items: center;
+  flex: 1 0 95%;
+}
+.section-intro .content {
+  margin-left: 10%;
+  /* max-width: 65.6rem; */
+  flex: 1 1 60rem;
+}
+.intro-name {
+  margin-bottom: 4rem;
+}
+.intro-os {
+  position: relative;
+  left: 12rem;
+  transform: rotate(-5deg);
+}
+.intro-go-to-ins {
+  color: #EB0000;
+  text-decoration: underline;
+}
+.intro-go-to-ins:hover {
+  color: #232323;
+}
 
-  width: 656px;
 
+.section-echo {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 48rem;
+  background-color: #DE3E29;
+  color: #F1EC6B;
+}
+.section-wechat {
+  display: flex;
+  flex: 1 0 48rem;
+  background-color: #2C7631;
+  color: #D7BF91;
+}
+.section-ddz {
+  display: flex;
+  flex: 1 0 48rem;
+  background-color: #353535;
+  color: #FFF;
+}
+.section-flyme {
+  display: flex;
+  flex: 1 0 32rem;
+  background-color: #46C8FF;
+  color: #FFF;
+}
+.section-qq {
+  display: flex;
+  flex: 1 0 32rem;
+  background-color: #0050EC;
+  color: #FFF;
+}
+.section-others {
+  display: flex;
+  flex: 1 0 32rem;
+  flex-direction: column;
+  background-color: none;
+}
+.section-others > div:first-child {
+  margin-bottom: 2rem;
+}
+
+.section-olddays {
+  background-color: #FFC2E3;
+  color: #FFF;
+  flex: 1 1 20%;
+}
+.section-learning {
+  background-color: #004251;
+  color: #FFF;
+  flex: 1;
+}
+
+
+/* ========== Text Styles ========== */
+
+.font-overview-headline {
+  font-size: 6rem;
+  line-height: 6.4rem;
+  letter-spacing: -0.01rem;
+  color: #232323;
+}
+
+.font-overview-subtitle {
+  font-size: 4rem;
+  line-height: 4.8rem;
+  letter-spacing: -0.01rem;
+  color: #232323;
+  opacity: 0.2;
+}
+
+.font-overlapping {
+  font-family: "Rock Salt";
+  font-size: 1.4rem;
+  line-height: 3.3rem;
+  letter-spacing: 0.1em;
+  color: #EB0000;
+}
+
+.font-section-title {
   font-family: "New York Extra Large";
   font-style: normal;
   font-weight: normal;
-  font-size: 60px;
-  line-height: 64px;
-
-  color: #232323;
-
+  font-size: 4.8rem;
+  line-height: 5.7rem;
+  text-align: center;
+  letter-spacing: -0.01em;
+}
+.font-section-desc {
+  font-family: "SF Pro Text","Helvetica","Arial",sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.6rem;
+  line-height: 150%;
+  display: flex;
+  align-items: flex-end;
+  text-align: center;
 }
 
-#sketch-holder{
-    position: relative;
-    top: -36px; /* the height of .title */
-    z-index: 100px;
-    height: 500px;
-    width: 500px;
-    /* top:-50px; */
+
+
+/* ========== Poccessing Part ========== */
+#section-sketch-seeking {
+  margin-left: -18%;
+  height: 100%;
+  min-width: 3rem;
+  flex: 999 1 auto;
+  background-color: #F4F4F4;
+  z-index: -10;
+}
+
+#section-sketch-echo {
+  /* position: relative; */
+  height: 48rem;
+  width: 48rem;
 }

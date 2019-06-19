@@ -2,8 +2,8 @@ var color_rect, color_storke;
 var rotate_speed, next_angle;
 
 function setup() {
-	var canvas = createCanvas(500, 500);
-	canvas.parent('sketch-holder');
+	var canvas = createCanvas(480, 480);
+	canvas.parent('section-sketch-echo');
 
 	//Define color
 	color_rect = color(255, 70, 0);

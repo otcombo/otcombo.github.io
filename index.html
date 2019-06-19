@@ -1,48 +1,59 @@
 <!DOCTYPE html>
 <html lang="">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Positioning P5</title>
-    <style> body {padding: 0; margin: 0;} </style>
-    <script src="addons/p5.min.js"></script>
-    <script src="addons/p5.dom.min.js"></script>
-    <script src="addons/p5.sound.min.js"></script>
-    <script src="sketch.js"></script>
-    <link rel="stylesheet" type="text/css" href="style.css">
-  </head>
-  <body>
-    <div class="wrapper">
-        <div class="section-1">
-          <name>HAN LI</name>
-          <p class="main-desc">Specializing in interface and interaction design, with a great interest in coding.</p>
-          <p>LOVE GAMING AND <a href="#">CATS</a>!</p>
-        </div>
-        <div class="section-2">
-          <div id="sketch-holder"></div>
-          <h1>echo</h1>
-          <p>As the Design Lead for this start-up project, I led not only UI design but also product design on the early stage, and worked on building design team.</p>
-        </div>
-        <div class="section-3">
-            <div class="col1"></div>
-            <div class="col2"></div>
-            <div class="col3"></div>
-        </div>
-        <div class="section-3">
-            <div class="col1"></div>
-            <div class="col2"></div>
-            <div class="col3"></div>
-        </div>
-        <div class="section-3">
-            <div class="col1"></div>
-            <div class="col2"></div>
-            <div class="col3"></div>
-        </div>
-        <div class="section-3">
-            <div class="col1"></div>
-            <div class="col2"></div>
-            <div class="col3"></div>
-        </div>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LH</title>
+  <style> body {padding: 0; margin: 0;} </style>
+  <script type='text/javascript' src="addons/p5.min.js"></script>
+  <script type='text/javascript' src="addons/p5.dom.min.js"></script>
+  <script type='text/javascript' src="addons/p5.sound.min.js"></script>
+  <script type='text/javascript' src="js/sketch.js"></script>
+  <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+  <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js'></script>
+  <link href="https://fonts.googleapis.com/css?family=Rock+Salt&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script type='text/javascript'>
+  $(document).ready(function() {
+    $('html, body, *').mousewheel(function(event, delta) {
+      this.scrollLeft -= (delta);
+      event.preventDefault();
+    });
+  });
+  </script>
+</head>
+<body>
+  <div class="wrapper">
+
+    <div class="section-intro">
+      <div class="content">
+        <p class="intro-name font-overview-subtitle">HAN LI</p>
+        <p class="font-overview-headline">
+          Specializing in interface and interaction design, with a great interest in coding.
+        </p>
+        <p class="intro-os font-overlapping">Love gaming and <a class="intro-go-to-ins" href="#">cats</a> !</p>
+      </div>
+      <div id="section-sketch-seeking"></div>
+    </div>
+
+    <div class="section-echo">
+      <div id="section-sketch-echo"></div>
+      <h1>echo</h1>
+      <p>As the Design Lead for this start-up project, I led not only UI design but also product design on the early stage, and worked on building design team.</p>
+    </div>
+
+    <div class="section-wechat">
+    </div>
+    <div class="section-ddz">
+    </div>
+    <div class="section-flyme">
+    </div>
+    <div class="section-qq">
+    </div>
+    <div class="section-others">
+      <div class="section-olddays"></div>
+      <div class="section-learning">
+      </div>
     </div>
   </body>
-</html>
+  </html>
