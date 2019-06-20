@@ -49,7 +49,7 @@ p,h1 {
 }
 .section-intro .content {
   margin-left: 10%;
-  max-width: 66rem;
+  max-width: 70rem;
   min-width: 30rem;
   flex: 1 2 15rem;
   transform: translateZ(10rem);
@@ -84,7 +84,7 @@ p,h1 {
 .section{
   position: relative;
   height: 100%;
-  overflow: hidden;
+  overflow-y: hidden;
   flex: 1 0 48rem;
 
   display: flex;
