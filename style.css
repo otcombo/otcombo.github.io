@@ -1,55 +1,62 @@
+@font-face {
+  font-family: 'New York';
+  src: url('fonts/NewYork.otf')  format('opentype');
+}
+
 :root {
   font-size: 62.5%;
   --section-height: 80rem;
+  --curve-show: cubic-bezier(0.8,0,1,0);
 }
+
 html, body {
   height: 100%;
   margin: 0;
-  font-family: "New York Extra Large","SF Pro Text","Helvetica","Arial",sans-serif;
+  font-family: "New York","SF Pro Text","Helvetica","Tahoma",sans-serif;
   color: #232323;
   overflow-y: hidden;
   text-rendering: optimizeLegibility;
 }
-
-
 p,h1 {
   margin: 0;
 }
+
+
 .wrapper {
   height: 100%;
   margin: 0;
   overflow-y: hidden;
 
   display: flex;
-
   flex-direction: row;
   overflow-x: auto;
   overflow-y: hidden;
   flex-wrap: nowrap;
-
-  /* justify-content:center; */
   align-items: center;
 
+  perspective: 100rem;/* for parallax */
   -webkit-overflow-scrolling: touch; /* for iOS */
-
 }
 .wrapper > div {
   margin-right: 2rem;
   height: var(--section-height);
 }
 
+
+
 /* ========== Sections ========== */
 .section-intro {
   /* position: relative; */
   display: flex;
   align-items: center;
-  flex: 1 0 75%;
+  flex: 1 0 95%;
 }
 .section-intro .content {
   margin-left: 10%;
   max-width: 66rem;
   min-width: 30rem;
   flex: 1 2 15rem;
+  transform: translateZ(10rem);
 }
 .intro-name {
   margin-bottom: 4rem;
@@ -77,11 +84,9 @@ p,h1 {
 }
 
 
-
-
-
 /* General settings */
 .section{
+  position: relative;
   height: 100%;
   flex: 1 0 48rem;
 
@@ -89,13 +94,13 @@ p,h1 {
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
+
 }
 .section:hover{
   cursor: pointer;
 }
 .section > .content{
   max-width: 80%;
-  /* height: 30%; */
   margin-bottom: 5rem;
 
   display: flex;
@@ -108,45 +113,33 @@ p,h1 {
 }
 
 
-
-
 /* Specific sections */
 .section-echo {
-  position: relative;
   color: #F1EC6B;
-}
-.section-echo > .sketch{
-  position: absolute;
-  width: 100%;
-  height: 100%;
   background-color: #DC2107;
-  z-index: -1;
 }
 #section-sketch-echo {
+  position: absolute;
+  top: 10rem;
   height: 400px;
   width: 300px;
-  margin: 10rem auto 0 auto;
 }
 .hover-echo{
   position: absolute;
-  bottom: 20rem;
-  transition: all 0.5s cubic-bezier(0.6,0,0,1);
+  z-index: 20;
+  left: -15rem;
+  bottom: 15rem;
+  filter: drop-shadow(1.5rem 1rem 1.5rem rgba(151, 100, 0, 0.4));
 
-  transform-origin: left;
-  left: -5rem;
-  /* opacity: 0; */
-}
-.hover-echo .shadow{
-  mix-blend-mode: multiply;
-  margin-left: -250px;
-  /* opacity: 0.5; */
+  transition: all 0.5s cubic-bezier(0.8,0,1,0.5);
+  transform: translate3d(10rem,5rem,0) rotateZ(10deg);
+  opacity: 0;
+
 }
 .section-echo:hover > .hover-echo{
-  transition: all 1s cubic-bezier(0.5,0,0,1);
-  left: -15rem;
-  /* opacity: 1; */
-
-  /* -webkit-animation: key-hover-echo 1s cubic-bezier(0.5,0,0,1.2) forwards; */
+  transition: all 1s cubic-bezier(0.6,0,0,1);
+  transform: translate3d(0,0,5rem) ;
+  opacity: 1;
 }
 
 
@@ -154,6 +147,35 @@ p,h1 {
   background-color: #2C7631;
   color: #D7BF91;
 }
+.hover-wechat{
+  position: absolute;
+  z-index: 20;
+  filter: drop-shadow(1.5rem 1rem 1.5rem rgba(0, 114, 8, 0.4));
+  transition: all 0.8s cubic-bezier(0.8,0,1,0);
+  opacity: 0;
+}
+.hover-wechat-big{
+  top: 10rem;
+  left: -1rem;
+  transform: translate3d(10rem,1rem,0) rotateZ(10deg);
+}
+.hover-wechat-small{
+  bottom: 25rem;
+  right: -1rem;
+  transform: translate3d(-5rem,5rem,0) rotateZ(-20deg);
+}
+.section-wechat:hover > .hover-wechat-big{
+  transition: all 1s cubic-bezier(0.6,0,0,1);
+  transform: translate3d(0,0,10rem) ;
+  opacity: 1;
+}
+.section-wechat:hover > .hover-wechat-small{
+  transition: all 1s cubic-bezier(0.6,0,0,1);
+  transform: translate3d(0,0,5rem) ;
+  opacity: 1;
+}
+
+
 .section-ddz {
   background-color: #353535;
   color: #FFF;
@@ -193,14 +215,18 @@ p,h1 {
 /* ========== Text Styles ========== */
 
 .font-overview-headline {
+  font-family: "New York";
   font-size: 6rem;
+  font-weight: 500;
   line-height: 6.4rem;
   letter-spacing: -0.05rem;
   color: #232323;
 }
 
 .font-overview-subtitle {
+  font-family: "New York";
   font-size: 4rem;
+  font-weight: 500;
   line-height: 4.8rem;
   letter-spacing: -0.05rem;
   color: #232323;
@@ -216,16 +242,15 @@ p,h1 {
 }
 
 .font-section-title {
-  font-family: "New York Extra Large";
-  font-style: normal;
-  font-weight: normal;
+  font-family: "New York";
+  font-weight: 500;
   font-size: 4.8rem;
   line-height: 5.7rem;
   text-align: center;
   letter-spacing: -0.01em;
 }
 .font-section-desc {
-  font-family: "SF Pro Text","Helvetica","Arial",sans-serif;
+  font-family: "SF Pro Text","Helvetica","Tahoma",sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 1.6rem;
