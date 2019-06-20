@@ -7,7 +7,7 @@ function setup() {
 	canvas.parent('section-sketch-echo');
 
 	//Define color
-	color_rect = color('#DE3E29');
+	color_rect = color('#DC2107');
 	color_line = color('#FFFA83');
 
 	angleMode(DEGREES);

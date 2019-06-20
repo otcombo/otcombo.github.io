@@ -3,13 +3,8 @@
   src: url('fonts/NewYork.otf')  format('opentype');
 }
 
-:root {
-  font-size: 62.5%;
-  --section-height: 80rem;
-  --curve-show: cubic-bezier(0.8,0,1,0);
-}
-
 html, body {
+  font-size: 62.5%;
   height: 100%;
   margin: 0;
   font-family: "New York","SF Pro Text","Helvetica","Tahoma",sans-serif;
@@ -39,7 +34,8 @@ p,h1 {
 }
 .wrapper > div {
   margin-right: 2rem;
-  height: var(--section-height);
+  height: 80vh;
+  max-height: 80rem;
 }
 
 
@@ -88,6 +84,7 @@ p,h1 {
 .section{
   position: relative;
   height: 100%;
+  overflow: hidden;
   flex: 1 0 48rem;
 
   display: flex;
@@ -102,6 +99,7 @@ p,h1 {
 .section > .content{
   max-width: 80%;
   margin-bottom: 5rem;
+  z-index: 2;
 
   display: flex;
   flex-direction: column;
@@ -110,6 +108,13 @@ p,h1 {
 }
 .section > .content > h1{
   margin-bottom: 3rem;
+}
+.section > .hover{
+  position: absolute;
+  width: 25rem;
+  height: 25rem;
+  z-index: 20;
+  opacity: 0;
 }
 
 
@@ -123,18 +128,15 @@ p,h1 {
   top: 10rem;
   height: 400px;
   width: 300px;
+  z-index: 1;
 }
 .hover-echo{
-  position: absolute;
-  z-index: 20;
   left: -15rem;
   bottom: 15rem;
   filter: drop-shadow(1.5rem 1rem 1.5rem rgba(151, 100, 0, 0.4));
 
   transition: all 0.5s cubic-bezier(0.8,0,1,0.5);
   transform: translate3d(10rem,5rem,0) rotateZ(10deg);
-  opacity: 0;
-
 }
 .section-echo:hover > .hover-echo{
   transition: all 1s cubic-bezier(0.6,0,0,1);
@@ -148,11 +150,8 @@ p,h1 {
   color: #D7BF91;
 }
 .hover-wechat{
-  position: absolute;
-  z-index: 20;
   filter: drop-shadow(1.5rem 1rem 1.5rem rgba(0, 114, 8, 0.4));
   transition: all 0.8s cubic-bezier(0.8,0,1,0);
-  opacity: 0;
 }
 .hover-wechat-big{
   top: 10rem;
@@ -218,7 +217,7 @@ p,h1 {
   font-family: "New York";
   font-size: 6rem;
   font-weight: 500;
-  line-height: 6.4rem;
+  line-height: 108%;
   letter-spacing: -0.05rem;
   color: #232323;
 }
@@ -227,7 +226,6 @@ p,h1 {
   font-family: "New York";
   font-size: 4rem;
   font-weight: 500;
-  line-height: 4.8rem;
   letter-spacing: -0.05rem;
   color: #232323;
   opacity: 0.2;
@@ -245,7 +243,7 @@ p,h1 {
   font-family: "New York";
   font-weight: 500;
   font-size: 4.8rem;
-  line-height: 5.7rem;
+  line-height: 120%;
   text-align: center;
   letter-spacing: -0.01em;
 }
@@ -253,8 +251,8 @@ p,h1 {
   font-family: "SF Pro Text","Helvetica","Tahoma",sans-serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 1.6rem;
-  line-height: 2.4rem;
+  font-size: 16px;
+  line-height: 150%;
   display: flex;
   align-items: flex-end;
   text-align: center;
@@ -265,9 +263,16 @@ p,h1 {
 
 
 
-/* ========== Animation ========== */
-@keyframes key-hover-echo
-{
-0%   {left: 10rem;}
-100% {left: -10rem;}
+/* ========== Scaling ========== */
+@media screen and (max-width: 500px) {
+    html {
+      font-size:40%;
+    }
+    .section{
+      flex: 1 0 100vw;
+    }
+    #section-sketch-seeking {
+      margin-left: -25%;
+      min-width: 30rem;
+    }
 }
