@@ -2,11 +2,12 @@ var color_rect, color_storke;
 var rotate_speed, next_angle;
 
 function setup() {
-	var canvas = createCanvas(480, 480);
+	var canvas = createCanvas(300, 400);
+	//resizeCanvas(w,h,[noRedraw])
 	canvas.parent('section-sketch-echo');
 
 	//Define color
-	color_rect = color(255, 70, 0);
+	color_rect = color('#DE3E29');
 	color_line = color('#FFFA83');
 
 	angleMode(DEGREES);
@@ -24,7 +25,7 @@ function draw() {
 	strokeWeight(1);
 
 	spinRays(mouseX, mouseY);
-	// noLoop();
+	noLoop();
 }
 
 function spinRays(center_x,center_y) {
