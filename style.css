@@ -17,6 +17,7 @@ html, body {
   font-size: 62.5%;
   height: 100%;
   margin: 0;
+  padding: 0;
   font-family: "New York","SF Pro Text","Helvetica","Tahoma",sans-serif;
   color: var(--COLOR-DARK);
   overflow-y: hidden;
@@ -31,12 +32,11 @@ p,h1,a,button {
 .wrapper {
   height: 100%;
   margin: 0;
+  overflow-x: auto;
   overflow-y: hidden;
 
   display: flex;
   flex-direction: row;
-  overflow-x: auto;
-  overflow-y: hidden;
   flex-wrap: nowrap;
   align-items: center;
 
@@ -59,11 +59,10 @@ p,h1,a,button {
   flex: 1 0 95vw;
 }
 .section-intro .content {
-  margin-left: 10%;
-  max-width: 70rem;
-  min-width: 30rem;
-  flex: 1 2 15rem;
-  transform: translateZ(10rem);
+  margin-left: 10vw;
+  max-width: 73rem;
+  flex: 1 1 auto;
+  transform: translateZ(5rem);
 }
 .intro-name {
   margin-bottom: 4rem;
@@ -83,12 +82,12 @@ p,h1,a,button {
 }
 
 #section-sketch-seeking {
-  margin-left: -18%;
+  margin-left: -18vw;
   height: 100%;
-  min-width: 10rem;
   flex: 1 1 auto;
   background-color: #F4F4F4;
   z-index: -10;
+  overflow: hidden;
 }
 
 
@@ -134,6 +133,7 @@ p,h1,a,button {
   background-color: #DC2107;
 }
 #section-sketch-echo {
+  border: 0;
   position: absolute;
   top: 10rem;
   height: 400px;
@@ -255,6 +255,7 @@ p,h1,a,button {
   flex: 1 1 auto;
   background-color: #F4F4F4;
   z-index: -10;
+  overflow: hidden;
 }
 
 /* ========== Text Styles ========== */
@@ -263,7 +264,7 @@ p,h1,a,button {
   font-family: "New York";
   font-size: 6rem;
   font-weight: 500;
-  line-height: 108%;
+  line-height: 110%;
   letter-spacing: -0.05rem;
   color: var(--COLOR-DARK);
 }
@@ -317,15 +318,24 @@ p,h1,a,button {
 
 
 /* ========== Scaling ========== */
+@media screen and (max-width: 1280px) {
+    html {
+      font-size: 52%;
+    }
+}
 @media screen and (max-width: 500px) {
     html {
-      font-size:40%;
+      font-size: 43%;
     }
     .section{
       flex: 1 0 100vw;
     }
+    .section-intro .content {
+      flex: 0 1 80vw;
+      transform: translateZ(0rem);
+    }
     #section-sketch-seeking {
-      margin-left: -25%;
-      min-width: 30rem;
+      margin-left: -50vw;
+      max-width: 130vw;
     }
 }
