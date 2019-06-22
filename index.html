@@ -19,6 +19,7 @@
     $('html, body, *').mousewheel(function(event, delta) {
       this.scrollLeft -= (delta);
       event.preventDefault();
+      console.log(delta);
     });
   });
   </script>
