@@ -25,7 +25,7 @@ function draw() {
 	strokeWeight(1);
 
 	spinRays(mouseX, mouseY);
-	noLoop();
+	// noLoop();
 }
 
 function spinRays(center_x,center_y) {

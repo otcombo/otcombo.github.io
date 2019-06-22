@@ -22,10 +22,11 @@ html, body {
   color: var(--COLOR-DARK);
   overflow-y: hidden;
 }
-p,h1,a,button {
+p,h1,a,button,iframe {
   margin: 0;
   border: 0;
   padding: 0;
+  overflow: hidden;
 }
 
 
@@ -186,6 +187,16 @@ p,h1,a,button {
   transform: translate3d(0,0,5rem) ;
   opacity: 1;
 }
+#section-sketch-wechat {
+  border: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 400px;
+  width: 400px;
+  z-index: 1;
+}
+
 
 
 .section-ddz {
