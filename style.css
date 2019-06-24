@@ -51,7 +51,6 @@ p,h1,a,button,iframe {
 }
 
 
-
 /* ========== Sections ========== */
 .section-intro {
   /* position: relative; */
@@ -159,9 +158,6 @@ p,h1,a,button,iframe {
 .section-wechat {
   background-color: #2C7631;
   color: #D7BF91;
-}
-.section-wechat .contant{
-  z-index: 2;
 }
 .hover-wechat{
   filter: drop-shadow(1.5rem 1rem 1.5rem rgba(0, 114, 8, 0.4));
@@ -277,7 +273,6 @@ p,h1,a,button,iframe {
   font-family: "New York";
   font-size: 6rem;
   font-weight: 500;
-  line-height: 110%;
   letter-spacing: -0.05rem;
   color: var(--COLOR-DARK);
 }
@@ -294,8 +289,7 @@ p,h1,a,button,iframe {
 .font-overlapping-sound {
   font-family: "Rock Salt";
   font-size: 1.4rem;
-  line-height: 3.3rem;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.2em;
 }
 
 .font-section-title {
