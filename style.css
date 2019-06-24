@@ -160,6 +160,9 @@ p,h1,a,button,iframe {
   background-color: #2C7631;
   color: #D7BF91;
 }
+.section-wechat .contant{
+  z-index: 2;
+}
 .hover-wechat{
   filter: drop-shadow(1.5rem 1rem 1.5rem rgba(0, 114, 8, 0.4));
 }
@@ -188,12 +191,11 @@ p,h1,a,button,iframe {
   opacity: 1;
 }
 #section-sketch-wechat {
-  border: 0;
   position: absolute;
   top: 0;
   left: 0;
-  height: 400px;
-  width: 400px;
+  height: 800px;
+  width: 480px;
   z-index: 1;
 }
 
