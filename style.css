@@ -329,7 +329,7 @@ p,h1,a,button,iframe {
 
 
 /* ========== Scaling ========== */
-@media screen and (max-height: 900px) {
+@media screen and (max-height: 1024px) {
   :root{
     --SIZE-SECTION-HEIGHT: 80vh;
   }
@@ -363,9 +363,9 @@ p,h1,a,button,iframe {
     max-width: 130vw;
   }
   .hover-wechat-big{
-    transform: translate3d(25rem,25rem,-20rem) rotateY(90deg);
+    transform: translate3d(25rem,25rem,-20rem);
   }
   .hover-wechat-small{
-    transform: translate3d(-25rem,-25rem,-20rem) rotateY(-90deg);
+    transform: translate3d(-25rem,-25rem,-20rem);
   }
 }
