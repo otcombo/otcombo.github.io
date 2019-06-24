@@ -17,6 +17,7 @@ function setup() {
 
   canvas.mouseOver(checkState);
   canvas.mouseOut(checkState);
+  // canvas.mouseClicked(setParticles);
 
   setParticles();
   frameRate(60);
@@ -64,7 +65,6 @@ function draw() {
 
     point(x[t], y[t]);
   }
-
 }
 
 
@@ -74,7 +74,7 @@ function setParticles() {
   for (var i = 0; i < particle_amount; i++) {
     m[i] = randomGaussian() * 20;
     x[i] = random(width);
-    y[i] = random(width);
+    y[i] = random(height);
 
     vx[i] = 0;
     vy[i] = 0;
