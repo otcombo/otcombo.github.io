@@ -45,8 +45,17 @@ p,h1,a,button,iframe {
 
   perspective: 100rem;/* for parallax */
   -webkit-overflow-scrolling: touch; /* for iOS */
+
+  overflow-y: scroll; /* hide scroll bar */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* IE 10+ */
 }
-.wrapper > div {
+.wrapper::-webkit-scrollbar { /* WebKit */
+    width: 0;
+    height: 0;
+}
+
+.wrapper > section {
   margin-right: 2rem;
   height: 80vh;
   max-height: var(--SIZE-SECTION-HEIGHT);
@@ -135,14 +144,6 @@ p,h1,a,button,iframe {
 .section-echo {
   color: #F1EC6B;
   background-color: #DC2107;
-}
-#section-sketch-echo {
-  border: 0;
-  position: absolute;
-  top: 10rem;
-  height: 400px;
-  width: 300px;
-  z-index: 1;
 }
 .hover-echo{
   width: 15rem;
@@ -310,8 +311,6 @@ p,h1,a,button,iframe {
   font-weight: normal;
   font-size: 16px;
   line-height: 150%;
-  display: flex;
-  align-items: flex-end;
   text-align: center;
 }
 .font-section-footer{

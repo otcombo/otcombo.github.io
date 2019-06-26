@@ -1,0 +1,88 @@
+:root{
+  --COLOR-BG: #DC2107;
+  --COLOR-FONT: #F1EC6B;
+  --SIZE-SHOWCASE-HEIGHT: 100rem;
+}
+
+
+.theme-bg{
+  height: 100%;
+  margin: 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+
+  perspective: 100rem;/* for parallax */
+  -webkit-overflow-scrolling: touch; /* for iOS */
+}
+
+.theme-bg > .wrapper{
+  background-color: var(--COLOR-BG);
+  height: 100vh;
+  max-height: var(--SIZE-SHOWCASE-HEIGHT);
+}
+
+.wrapper > section {
+  margin-right: 0.5rem;
+  height: 100%;
+  max-height: 98%;
+}
+
+
+.openning{
+  color: var(--COLOR-FONT);
+  display: flex;
+  align-items: center;
+
+  flex: 1 0 90vw;
+}
+.openning > h1 {
+  text-align: left;
+  margin-left: 10vw;
+}
+.openning > .divider{
+  width: 0.2rem;
+  height: 16rem;
+  background-color: var(--COLOR-FONT);
+  margin: 0 12rem;
+}
+.openning > .brief{
+  max-width: 78rem;
+  z-index: 2;
+}
+.brief > p {
+  text-align: left;
+  margin-bottom: 2rem;
+}
+.brief > p:last-child {
+  margin-bottom: 0;
+}
+#sketch-echo {
+  position: absolute;
+  top: 1rem;
+  right: 30vw;
+  height: 60rem;
+  width: 35rem;
+  z-index: 1;
+}
+
+/* ========== Sections ========== */
+.showcase{
+  /* position: relative; */
+  height: 100%;
+  min-width: 100px;
+  flex: 1 0 auto;
+  overflow: hidden;
+  background-color: #FFF;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+/* ========== Font Styles ========== */

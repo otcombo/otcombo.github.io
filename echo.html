@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>> echo</title>
+  <link rel='shortcut icon' type='image/png' href='images/favicon.png' />
+  <script type='text/javascript' src="addons/p5.min.js"></script>
+  <script type='text/javascript' src="addons/p5.dom.min.js"></script>
+  <script type='text/javascript' src="js/sketch-echo.js"></script>
+  <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+  <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js'></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="style_work.css">
+  <script type='text/javascript'>
+    $(document).ready(function() {
+      $('html, body, *').mousewheel(function(event, delta) {
+        this.scrollLeft -= (delta);
+        event.preventDefault();
+      });
+    });
+  </script>
+</head>
+<body>
+  <div class="theme-bg">
+    <div class="wrapper">
+
+
+
+      <section class="openning">
+        <h1 class="font-section-title">echo</h1>
+        <span class="divider"></span>
+        <div class="brief">
+        <p class="font-section-desc">
+          Echo is primarily used for capturing daily life as photos or short videos and sharing with close friends & families, which can be edited with various stickers, text captions etc. Besides from interacting with close friends, echo also allow users to have a peek of the “outside world”, discover strangers who share their interesting moments.
+        </p>
+        <p class="font-section-desc">
+          As the Design Lead for this start-up project, I led not only UI design but also product design on the early stage, and worked on building design team.
+        </p>
+        </div>
+        <div id="sketch-echo"></div>
+      </section>
+
+
+
+      <section class="showcase">
+        <img src="images/test.png">
+      </section>
+
+      <section class="showcase">
+        132
+      </section>
+
+      <section class="showcase">
+        <img src="images/test.png">
+      </section>
+    </div>
+  </div>
+
+</body>
+</html>

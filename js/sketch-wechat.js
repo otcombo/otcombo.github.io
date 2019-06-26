@@ -29,19 +29,19 @@ function setup() {
 function draw() {
   background('#2C7631');
 
+  //Set particle position
   for (var i = 0; i < particle_amount; i++) {
-    //Set particle position, using equation of a circle (x-x0)2+(y-y0)2=r2
     var target_x = mouseX - x[i];
     var target_y = mouseY - y[i];
 
-    var r = sqrt(sq(target_x) + sq(target_y));
+    //equation of circle (x-x0)2+(y-y0)2=r2
+    var dis = sqrt(sq(target_x) + sq(target_y));
 
-    var f = sin(r * 0.04) * m[i] / r;
+    var f = Math.sin(dis * 0.04) * m[i] / dis;
     // var f = m[i] / r;
 
     vx[i] = vx[i] * 0.5 + f * target_x;
     vy[i] = vy[i] * 0.5 + f * target_y;
-
   }
 
 

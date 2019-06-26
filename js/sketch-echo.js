@@ -2,9 +2,9 @@ var color_rect, color_storke;
 var rotate_speed, next_angle;
 
 function setup() {
-	var canvas = createCanvas(300, 400);
-	//resizeCanvas(w,h,[noRedraw])
-	canvas.parent('section-sketch-echo');
+	var container = select('#sketch-echo');
+  var canvas = createCanvas(container.width, container.height);
+	canvas.parent('sketch-echo');
 
 	//Define color
 	color_rect = color('#DC2107');
@@ -43,14 +43,14 @@ function spinRays(center_x,center_y) {
 			}
 		pop();
 
-		img_1 = get(0, 0, width, height);
-		img_1.loadPixels();
-		for (let i = 0; i < width / 2; i++) {
-			for (let j = 0; j < height / 2; j++) {
-				img_1.set(i + height / 2, j, color(0, 0, 0, 0));
-			}
-		}
-		img_1.updatePixels();
+		// img_1 = get(0, 0, width, height);
+		// img_1.loadPixels();
+		// for (let i = 0; i < width / 2; i++) {
+		// 	for (let j = 0; j < height / 2; j++) {
+		// 		img_1.set(i + height / 2, j, color(0, 0, 0, 0));
+		// 	}
+		// }
+		// img_1.updatePixels();
 }
 
 
