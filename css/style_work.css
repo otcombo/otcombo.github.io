@@ -1,0 +1,168 @@
+:root {
+  --COLOR-BG             : #DC2107;
+  --COLOR-FONT           : #F1EC6B;
+  --SIZE-SHOWCASE-HEIGHT : 100rem;
+}
+
+.wrapper > section {
+  -moz-box-sizing    : border-box;
+  -webkit-box-sizing : border-box;
+  box-sizing         : border-box;
+  height             : 100vh;
+  max-height         : var(--SIZE-SHOWCASE-HEIGHT);
+  margin-right       : 0;
+  border-top         : solid 0.5rem var(--COLOR-BG);
+  border-bottom      : solid 0.5rem var(--COLOR-BG);
+  border-left        : solid 0.5rem var(--COLOR-BG);
+}
+
+.openning {
+  z-index          : -10;
+  display          : flex;
+  position         : relative;
+  color            : var(--COLOR-FONT);
+  background-color : var(--COLOR-BG);
+  align-items      : center;
+  flex             : 1 0 95vw;
+}
+
+.openning > h1 {
+  z-index        : 2;
+  margin-left    : 10vw;
+  text-align     : left;
+  pointer-events : none;
+  /* for the processing underneath */
+}
+
+.openning > .divider {
+  z-index          : 2;
+  width            : 0.2rem;
+  height           : 16rem;
+  margin           : 0 12rem;
+  background-color : var(--COLOR-FONT);
+  pointer-events   : none;
+  /* for the processing underneath */
+}
+
+.openning > .brief {
+  z-index        : 2;
+  max-width      : 78rem;
+  pointer-events : none;
+  /* for the processing underneath */
+}
+
+.brief > p {
+  margin-bottom : 2rem;
+  text-align    : left;
+}
+
+.brief > p:last-child {
+  margin-bottom : 0;
+}
+
+#sketch-echo {
+  z-index  : 1;
+  position : absolute;
+  top      : 1rem;
+  right    : 20vw;
+  width    : 35rem;
+  height   : 60rem;
+}
+
+/* ========== Showcase Sections ========== */
+
+.showcase {
+  display          : flex;
+  position         : relative;
+  min-width        : 100px;
+  height           : 100%;
+  overflow         : hidden;
+  background-color : #FFF;
+  align-items      : center;
+  flex             : 1 0 auto;
+  flex-direction   : row;
+  justify-content  : center;
+}
+
+.showcase > .desc {
+  position   : absolute;
+  bottom     : 3rem;
+  left       : 5rem;
+  width      : 80%;
+  color      : var(--COLOR-DARK);
+  opacity    : 0.3;
+  text-align : left;
+}
+
+.showcase-column {
+  background-color : var(--COLOR-BG);
+  flex-direction   : column;
+}
+
+.showcase-column > .cube {
+  width            : 100%;
+  margin-bottom    : 0.5rem;
+  background-color : white;
+  text-align       : center;
+  flex             : 1 1 auto;
+}
+
+.showcase-column > .cube:last-child {
+  margin-bottom : 0;
+}
+
+/* ========== Phones ========== */
+
+.phone {
+  display           : flex;
+  position          : relative;
+  width             : 64rem;
+  height            : 80rem;
+  background-image  : url("../images/hd-iphone-shadow.png");
+  background-repeat : no-repeat;
+  background-size   : contain;
+  align-items       : center;
+  flex-direction    : column;
+}
+
+.phone > .cover {
+  z-index           : 2;
+  width             : 64rem;
+  height            : 80rem;
+  background-repeat : no-repeat;
+  background-size   : contain;
+}
+
+.phone > img {
+  z-index  : 1;
+  position : absolute;
+  top      : 3.6rem;
+  width    : 27.8rem;
+}
+
+.phone > .light {
+  background-image : url("../images/hd-iphone-light.png");
+}
+
+.phone > .dark {
+  background-image : url("../images/hd-iphone-light.png");
+}
+
+.come-closer {
+  margin-left : -20rem;
+}
+
+.side-by-side {
+  margin-left : -31.5rem;
+}
+
+/* ========== Font Styles ========== */
+
+@media
+  screen
+  and (max-width : 500px) {
+  .wrapper > section {
+    border-top    : solid 1rem var(--COLOR-BG);
+    border-bottom : solid 1rem var(--COLOR-BG);
+  }
+}

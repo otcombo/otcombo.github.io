@@ -1,83 +1,109 @@
-var play_it = 1;
-var particle_amount = 2000;
+var play_it;
+var particle_amount;
+var speed;
+var gap;
+var limit_x, limit_y;
 
-var m = new Array(particle_amount);
+var speeds = new Array(particle_amount);
 var x = new Array(particle_amount);
 var y = new Array(particle_amount);
-var vx = new Array(particle_amount);
-var vy = new Array(particle_amount);
+var dis_x = new Array(particle_amount);
+var dis_y = new Array(particle_amount);
 
 //============================================================
 
 function setup() {
-  var container = select('#section-sketch-wechat');
+  var container = select('#sketch-wechat');
   var canvas = createCanvas(container.width, container.height);
-  canvas.parent('section-sketch-wechat');
-  canvas.id('section-sketch-wechat-canvas')
+  canvas.parent('sketch-wechat');
+  canvas.id('sketch-wechat-canvas')
 
   canvas.mouseOver(checkState);
   canvas.mouseOut(checkState);
-  // canvas.mouseClicked(setParticles);
+  canvas.mouseClicked(setParticles);
+
+  play_it = 1;
+  particle_amount = 10000;
+  speed = 20;
+  gap = 40;
+  limit_x = width * 0.6;
 
   setParticles();
   frameRate(60);
-
 }
 
 //============================================================
 
 function draw() {
-  background('#2C7631');
+  background(44,118,49,233);
 
-  //Set particle position
+  // if (mouseIsPressed) {
   for (var i = 0; i < particle_amount; i++) {
-    var target_x = mouseX - x[i];
-    var target_y = mouseY - y[i];
+    //(x-a)2+(y-b)2=r2
+    var r_x = x[i] - mouseX;
+    var r_y = y[i] - mouseY;
 
-    //equation of circle (x-x0)2+(y-y0)2=r2
-    var dis = sqrt(sq(target_x) + sq(target_y));
+    if ( abs(r_x) > limit_x ) {
+      x[i] = mouseX + limit_x * randomGaussian();
+      r_x = x[i] - mouseX;
+    }
 
-    var f = Math.sin(dis * 0.04) * m[i] / dis;
-    // var f = m[i] / r;
+    var r = sqrt( sq(r_x) + sq(r_y) );
 
-    vx[i] = vx[i] * 0.5 + f * target_x;
-    vy[i] = vy[i] * 0.5 + f * target_y;
+    if(r < 1){
+      r = 1;
+    }
+
+    //shape of circle
+    var circle = sin( r / gap ) / r;
+
+    //the decimals decide the length of each "step"
+    dis_x[i] = dis_y[i] * 0.5 + circle * r_x * speeds[i];
+    dis_y[i] = dis_y[i] * 0.7 + circle * r_y * speeds[i];
+
   }
 
-
+  // }
   for (var t = 0; t < particle_amount; t++) {
-    x[t] += vx[t];
-    y[t] += vy[t];
+    x[t] += dis_x[t];
+    // y[t] += dis_y[t];
 
-    if (x[t] < 0 || x[t] > width) {
-      x[t] = x[t - 1];
+    if (x[t] < 0) {
+      x[t] = width;
+    } else if (x[t] > width) {
+      x[t] = 0;
     }
 
-    if (y[t] < 0 || y[t] > height) {
-      y[t] = y[t - 1];
+
+    if (y[t] < 0) {
+      y[t] = height;
+    } else if (y[t] > height) {
+      y[t] = 0;
     }
 
-    if (m[t] < 0) {
-      stroke(255, 255, 255, 50);
+
+    if (speeds[t] < 0) {
+      stroke(215, 190, 140, 40);
+      y[t] += dis_y[t];
     } else {
-      stroke(215, 190, 140, 250);
+      stroke(215, 190, 140, 180);
+      // y[t] -= dis_y[t];
     }
+
 
     point(x[t], y[t]);
   }
 }
-
-
 //============================================================
 
 function setParticles() {
   for (var i = 0; i < particle_amount; i++) {
-    m[i] = randomGaussian() * 20;
+    speeds[i] = randomGaussian() * speed;
     x[i] = random(width);
     y[i] = random(height);
 
-    vx[i] = 0;
-    vy[i] = 0;
+    dis_x[i] = 0;
+    dis_y[i] = 0;
   }
 }
 

@@ -1,0 +1,404 @@
+@font-face {
+  font-family : 'New York';
+  src         : url('fonts/NewYork.otf') format('opentype');
+}
+
+@font-face {
+  font-family : 'Rock Salt';
+  src         : url('fonts/RockSalt.ttf') format('truetype');
+}
+
+:root {
+  --COLOR-DARK          : #232323;
+  --COLOR-RED           : #EB0000;
+  --CURVE-SHOW          : cubic-bezier(0.6,0,0,1);
+  --SIZE-SECTION-HEIGHT : 80rem;
+  --SIZE-SECTION-WIDTH  : 48rem;
+}
+
+body,
+html {
+  height      : 100%;
+  margin      : 0;
+  padding     : 0;
+  color       : var(--COLOR-DARK);
+  overflow-y  : hidden;
+  font-family : "New York",
+                "SF Pro Text",
+                "Helvetica",
+                "Tahoma",
+                sans-serif;
+  font-size   : 62.5%;
+}
+
+a,
+button,
+h1,
+iframe,
+p {
+  margin   : 0;
+  padding  : 0;
+  overflow : hidden;
+  border   : 0;
+}
+
+.wrapper {
+  display        : flex;
+  height         : 100%;
+  margin         : 0;
+  overflow-x     : auto;
+  overflow-y     : hidden;
+  align-items    : center;
+  flex-direction : row;
+  flex-wrap      : nowrap;
+  perspective    : 100rem;
+  /* for parallax */
+}
+
+.wrapper::-webkit-scrollbar {
+  /* WebKit */
+  width  : 0;
+  height : 0;
+}
+
+.wrapper > section {
+  height       : 80vh;
+  max-height   : var(--SIZE-SECTION-HEIGHT);
+  margin-right : 2rem;
+}
+
+/* ========== Sections ========== */
+
+.section-intro {
+  /* position: relative; */
+  display     : flex;
+  align-items : center;
+  flex        : 1 0 95vw;
+}
+
+.section-intro .content {
+  max-width   : 73rem;
+  margin-left : 10vw;
+  flex        : 1 1 auto;
+  transform   : translateZ(5rem);
+}
+
+.intro-name {
+  margin-bottom : 4rem;
+}
+
+.intro-os {
+  position  : relative;
+  left      : 12rem;
+  color     : var(--COLOR-RED);
+  transform : rotate(-5deg);
+}
+
+.intro-go-to-ins {
+  color           : var(--COLOR-RED);
+  text-decoration : underline;
+}
+
+.intro-go-to-ins:hover {
+  color : var(--COLOR-DARK);
+}
+
+#section-sketch-seeking {
+  z-index          : -10;
+  height           : 100%;
+  margin-left      : -18vw;
+  overflow         : hidden;
+  background-color : #F4F4F4;
+  flex             : 1 1 auto;
+}
+
+/* General settings */
+
+.section {
+  display         : flex;
+  position        : relative;
+  height          : 100%;
+  align-items     : center;
+  flex-basis      : var(--SIZE-SECTION-WIDTH);
+  flex-direction  : column;
+  flex-grow       : 1;
+  flex-shrink     : 0;
+  justify-content : flex-end;
+}
+
+.section:hover {
+  cursor : pointer;
+}
+
+.section > .content {
+  z-index         : 2;
+  display         : flex;
+  max-width       : 80%;
+  margin-bottom   : 5rem;
+  align-items     : center;
+  flex-direction  : column;
+  justify-content : flex-end;
+}
+
+.section > .content > h1 {
+  margin-bottom : 3rem;
+}
+
+.section > .hover {
+  z-index    : 20;
+  position   : absolute;
+  opacity    : 0;
+  transition : all 1s cubic-bezier(0.8,0,0.9,0);
+}
+
+/* Specific sections */
+
+.section-echo {
+  color            : #F1EC6B;
+  background-color : #DC2107;
+}
+
+.hover-echo {
+  bottom    : 15rem;
+  left      : -5rem;
+  width     : 15rem;
+  filter    : drop-shadow(1.5rem 1rem 1.5rem rgba(151, 100, 0, 0.4));
+  transform : translate3d(10rem,5rem,0);
+}
+
+.section-echo:hover > .hover-echo {
+  opacity                    : 1;
+  transform                  : translate3d(0,0,5rem);
+  transition                 : all 1s;
+  transition-timing-function : var(--CURVE-SHOW);
+}
+
+.section-wechat {
+  color            : #D7BF91;
+  background-color : #2C7631;
+}
+
+.hover-wechat {
+  filter : drop-shadow(1.5rem 1rem 1.5rem rgba(0, 114, 8, 0.4));
+}
+
+.hover-wechat-big {
+  top       : 10rem;
+  left      : -1rem;
+  width     : 10rem;
+  transform : translate3d(25rem,25rem,-20rem) rotateZ(30deg) rotateY(90deg);
+}
+
+.hover-wechat-small {
+  right     : -1rem;
+  bottom    : 25rem;
+  width     : 9rem;
+  transform : translate3d(-25rem,-25rem,-20rem) rotateZ(30deg) rotateY(-90deg);
+}
+
+.section-wechat:hover > .hover-wechat-big {
+  opacity                    : 1;
+  transform                  : translate3d(0,0,10rem);
+  transition                 : all 1s;
+  transition-timing-function : var(--CURVE-SHOW);
+}
+
+.section-wechat:hover > .hover-wechat-small {
+  opacity                    : 1;
+  transform                  : translate3d(0,0,5rem);
+  transition                 : all 1s;
+  transition-timing-function : var(--CURVE-SHOW);
+}
+
+.section-ddz {
+  color            : #FFF;
+  background-color : #353535;
+}
+
+.section-flyme {
+  color            : #FFF;
+  background-color : #46C8FF;
+  flex-basis       : 32rem;
+}
+
+.section-qq {
+  color            : #FFF;
+  background-color : #0050EC;
+  flex-basis       : 32rem;
+}
+
+.section-others {
+  background-color : none;
+  flex-basis       : 32rem;
+}
+
+.section-others > div:first-child {
+  margin-bottom : 2rem;
+}
+
+.section-olddays {
+  width            : 100%;
+  color            : #FFF;
+  background-color : #FFC2E3;
+  flex             : 1 1 auto;
+}
+
+.section-learning {
+  width            : 100%;
+  color            : #FFF;
+  background-color : #004251;
+  flex             : 1 1 auto;
+}
+
+.section-contact {
+  display         : flex;
+  position        : relative;
+  align-items     : center;
+  flex            : 1 0 95vw;
+  flex-direction  : row-reverse;
+  justify-content : flex-end;
+}
+
+.section-contact > .content {
+  margin-right : 4%;
+  text-align   : right;
+}
+
+.section-contact > .footer {
+  position : absolute;
+  right    : 4%;
+  bottom   : 0;
+}
+
+.get-in-touch {
+  padding          : 1rem;
+  color            : white;
+  background-color : var(--COLOR-RED);
+}
+
+#section-sketch-connect {
+  z-index          : -10;
+  min-width        : 80rem;
+  height           : 100%;
+  margin-right     : -10%;
+  overflow         : hidden;
+  background-color : #F4F4F4;
+  flex             : 1 1 auto;
+}
+
+/* ========== Text Styles ========== */
+
+.font-overview-headline {
+  color          : var(--COLOR-DARK);
+  font-family    : "New York";
+  font-size      : 6rem;
+  font-weight    : 500;
+  letter-spacing : -0.05rem;
+}
+
+.font-overview-subtitle {
+  color          : var(--COLOR-DARK);
+  opacity        : 0.2;
+  font-family    : "New York";
+  font-size      : 4rem;
+  font-weight    : 500;
+  letter-spacing : -0.05rem;
+}
+
+.font-overlapping-sound {
+  font-family    : "Rock Salt";
+  font-size      : 1.4rem;
+  letter-spacing : 0.2em;
+}
+
+.font-section-title {
+  text-align     : center;
+  font-family    : "New York";
+  font-size      : 4.8rem;
+  font-weight    : 500;
+  line-height    : 120%;
+  letter-spacing : -0.01em;
+}
+
+.font-section-desc {
+  text-align  : center;
+  font-family : "SF Pro Text",
+                "Helvetica",
+                "Tahoma",
+                sans-serif;
+  font-size   : 16px;
+  font-style  : normal;
+  font-weight : normal;
+  line-height : 150%;
+}
+
+.font-section-footer {
+  color          : var(--COLOR-DARK);
+  opacity        : 0.3;
+  text-align     : right;
+  font-family    : "SF Pro Text",
+                   "Helvetica",
+                   "Tahoma",
+                   sans-serif;
+  font-size      : 12px;
+  font-style     : normal;
+  font-weight    : normal;
+  letter-spacing : -0.01em;
+}
+
+/* ========== Scaling ========== */
+
+@media
+  screen
+  and (max-height : 1024px) {
+  :root {
+    --SIZE-SECTION-HEIGHT : 80vh;
+  }
+
+  .hover-wechat-big {
+    transform : translate3d(25rem,25rem,-20rem) rotateY(90deg);
+  }
+
+  .hover-wechat-small {
+    transform : translate3d(-25rem,-25rem,-20rem) rotateY(-90deg);
+  }
+}
+
+@media
+  screen
+  and (max-width : 1280px) {
+  html {
+    font-size : 52%;
+  }
+}
+
+@media
+  screen
+  and (max-width : 500px) {
+  :root {
+    --SIZE-SECTION-HEIGHT : 80vh;
+    --SIZE-SECTION-WIDTH  : 100vw;
+  }
+
+  html {
+    font-size : 43%;
+  }
+
+  .section-intro .content {
+    flex      : 0 1 80vw;
+    transform : translateZ(0rem);
+  }
+
+  #section-sketch-seeking {
+    max-width   : 130vw;
+    margin-left : -50vw;
+  }
+
+  .hover-wechat-big {
+    transform : translate3d(25rem,25rem,-20rem);
+  }
+
+  .hover-wechat-small {
+    transform : translate3d(-25rem,-25rem,-20rem);
+  }
+}
