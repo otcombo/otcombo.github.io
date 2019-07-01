@@ -1,0 +1,14 @@
+:root {
+  --COLOR-BG       : #DC2107;
+  --COLOR-BG-HOVER : #D01805;
+  --COLOR-FONT     : #F1EC6B;
+}
+
+#sketch-echo {
+  z-index  : 1;
+  position : absolute;
+  top      : 1rem;
+  right    : 20vw;
+  width    : 35rem;
+  height   : 60rem;
+}

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>> WeChat</title>
+  <title>WeChat | Han Li</title>
   <link rel='shortcut icon' type='image/png' href='images/favicon.png' />
   <script type='text/javascript' src="addons/p5.min.js"></script>
   <script type='text/javascript' src="addons/p5.dom.min.js"></script>
@@ -11,14 +11,13 @@
   <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
   <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js'></script>
   <link rel="stylesheet" type="text/css" href="css/style.css">
-  <link rel="stylesheet" type="text/css" href="css/style_work.css">
   <link rel="stylesheet" type="text/css" href="css/style_wechat.css">
+  <link rel="stylesheet" type="text/css" href="css/style_work.css">
   <script type='text/javascript'>
   $(document).ready(function() {
     $('html, body, *').mousewheel(function(event, delta) {
       this.scrollLeft -= (delta);
       event.preventDefault();
-      console.log(delta);
     });
   });
   </script>
@@ -87,8 +86,21 @@
       </div>
     </section>
 
-    <section class="next">
-      next
+    <section class="ending" onclick="location.href='wechat.html';">
+      <p class="conclusion font-section-desc">
+        As the Design Lead for this start-up project, I led not only UI design but also product design on the early stage, and worked on building design team.
+      </p>
+      <div class="next">
+        <div class="button">
+            <div class="arrow"></div>
+            <div class="line"></div>
+        </div>
+        <div class="title">
+          <span class="font-section-desc">UP NEXT</span>
+          <h1 class="font-section-title">WeChat</h1>
+        </div>
+      </div>
+    </section>
     </section>
   </div>
 

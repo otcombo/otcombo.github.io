@@ -1,6 +1,4 @@
 :root {
-  --COLOR-BG             : #DC2107;
-  --COLOR-FONT           : #F1EC6B;
   --SIZE-SHOWCASE-HEIGHT : 100rem;
 }
 
@@ -15,6 +13,8 @@
   border-bottom      : solid 0.5rem var(--COLOR-BG);
   border-left        : solid 0.5rem var(--COLOR-BG);
 }
+
+/* ========== Openning ========== */
 
 .openning {
   z-index          : -10;
@@ -58,15 +58,6 @@
 
 .brief > p:last-child {
   margin-bottom : 0;
-}
-
-#sketch-echo {
-  z-index  : 1;
-  position : absolute;
-  top      : 1rem;
-  right    : 20vw;
-  width    : 35rem;
-  height   : 60rem;
 }
 
 /* ========== Showcase Sections ========== */
@@ -154,6 +145,100 @@
 
 .side-by-side {
   margin-left : -31.5rem;
+}
+
+/* ========== Ending ========== */
+
+.ending {
+  z-index          : -10;
+  display          : flex;
+  position         : relative;
+  color            : var(--COLOR-FONT);
+  background-color : var(--COLOR-BG);
+  align-items      : center;
+  flex             : 1 0 95vw;
+  justify-content  : space-between;
+}
+
+.next {
+  display        : flex;
+  height         : 100%;
+  padding        : 0 4vw;
+  align-items    : center;
+  flex-direction : row;
+  transition     : all 0.5s ease-in-out;
+  cursor         : pointer;
+}
+
+.next > .title {
+  margin-left : 1.5rem;
+  padding-top : 0.8rem;
+  transition  : all 0.5s ease-in-out;
+}
+
+.next > .button {
+  display          : flex;
+  width            : 6.6rem;
+  height           : 6.6rem;
+  border           : 0.2rem solid var(--COLOR-FONT);
+  align-items      : center;
+  flex-direction   : row-reverse;
+  justify-content  : center;
+  transition       : all 0.2s ease-in-out;
+}
+
+.button > .arrow {
+  z-index           : 2;
+  display           : inline-block;
+  width             : 1.8rem;
+  height            : 1.8rem;
+  margin-left       : -2.2rem;
+  border            : solid var(--COLOR-FONT);
+  border-width      : 0 0.2rem 0.2rem 0;
+  -webkit-transform : rotate(-45deg);
+  transform         : rotate(-45deg);
+  transition        : all 0.3s ease-in;
+}
+
+.button > .line {
+  z-index      : 1;
+  display      : inline-block;
+  width        : 0.2rem;
+  height       : 0.2rem;
+  border       : solid var(--COLOR-FONT);
+  border-width : 0 3rem 0 0;
+  transition   : all 0.4s ease-in;
+}
+
+.conclusion {
+  max-width   : 78rem;
+  margin-left : 10vw;
+  text-align  : left;
+}
+
+.next:hover {
+  background-color : var(--COLOR-BG-HOVER);
+}
+
+.next:hover > .title {
+  margin-left : 2.5rem;
+  margin-right: -1rem;
+}
+
+.next:hover > .button {
+  background-color : var(--COLOR-FONT);
+}
+
+.next:hover > .button > .arrow {
+  margin-left  : -3rem;
+  border       : solid var(--COLOR-BG-HOVER);
+  border-width : 0 0.5rem 0.5rem 0;
+}
+
+.next:hover > .button > .line {
+  width        : 3rem;
+  opacity      : 0;
+  border-width : 0;
 }
 
 /* ========== Font Styles ========== */

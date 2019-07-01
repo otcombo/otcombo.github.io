@@ -1,4 +1,6 @@
-var play_it;
+p5.disableFriendlyErrors = true;
+
+var play_it = 1;
 var particle_amount;
 var speed;
 var gap;
@@ -20,50 +22,57 @@ function setup() {
 
   canvas.mouseOver(checkState);
   canvas.mouseOut(checkState);
-  canvas.mouseClicked(setParticles);
+  // canvas.mouseClicked(setParticles);
 
-  play_it = 1;
-  particle_amount = 10000;
-  speed = 20;
-  gap = 40;
-  limit_x = width * 0.6;
+  if( width < 800){
+    particle_amount = 5000;
+    gap = 30;
+    speed = 30;
+    limit_x = width;
+  } else {
+    particle_amount = 10000;
+    gap = 40;
+    speed = 30;
+    limit_x = width * 0.6;
+  }
 
   setParticles();
   frameRate(60);
+  noFill();
 }
 
 //============================================================
 
 function draw() {
-  background(44,118,49,233);
+  background(44,118,49);
 
   // if (mouseIsPressed) {
   for (var i = 0; i < particle_amount; i++) {
-    //(x-a)2+(y-b)2=r2
+
     var r_x = x[i] - mouseX;
     var r_y = y[i] - mouseY;
 
-    if ( abs(r_x) > limit_x ) {
+    if ( Math.abs(r_x) > limit_x ) {
       x[i] = mouseX + limit_x * randomGaussian();
       r_x = x[i] - mouseX;
     }
 
-    var r = sqrt( sq(r_x) + sq(r_y) );
+    //(x-a)2+(y-b)2=r2
+    var r = Math.sqrt( r_x * r_x + r_y * r_y );
 
-    if(r < 1){
+    if( r < 1 ){
       r = 1;
     }
 
-    //shape of circle
-    var circle = sin( r / gap ) / r;
+    var circle = Math.sin( r / gap ) / r;
 
     //the decimals decide the length of each "step"
     dis_x[i] = dis_y[i] * 0.5 + circle * r_x * speeds[i];
     dis_y[i] = dis_y[i] * 0.7 + circle * r_y * speeds[i];
 
   }
-
   // }
+
   for (var t = 0; t < particle_amount; t++) {
     x[t] += dis_x[t];
     // y[t] += dis_y[t];
@@ -83,13 +92,13 @@ function draw() {
 
 
     if (speeds[t] < 0) {
-      stroke(215, 190, 140, 40);
+      stroke(128, 153, 94);
       y[t] += dis_y[t];
+      // x[t] += dis_x[t];
     } else {
-      stroke(215, 190, 140, 180);
+      stroke(181, 176, 126);
       // y[t] -= dis_y[t];
     }
-
 
     point(x[t], y[t]);
   }
@@ -102,8 +111,8 @@ function setParticles() {
     x[i] = random(width);
     y[i] = random(height);
 
-    dis_x[i] = 0;
-    dis_y[i] = 0;
+    dis_x[i] = x[i] + speeds[i];
+    dis_y[i] = y[i] + speeds[i];
   }
 }
 
