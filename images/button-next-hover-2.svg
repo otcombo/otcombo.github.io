@@ -1,7 +1,0 @@
-<svg width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g id="btn-next">
-<rect id="rect-border" x="1" y="1" width="68" height="68" stroke="#F1EC6B" stroke-width="2"/>
-<path id="rect-fill" d="M0 0H70V70H0V0Z" fill="#F1EC6B"/>
-<path id="arrow" d="M47.5 35H50M50 35L31 16M50 35L31 54" stroke="#DC2107" stroke-width="4"/>
-</g>
-</svg>

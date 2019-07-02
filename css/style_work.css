@@ -2,6 +2,58 @@
   --SIZE-SHOWCASE-HEIGHT : 100rem;
 }
 
+#home {
+  z-index         : 30;
+  display         : flex;
+  position        : absolute;
+  top             : 0;
+  left            : 5rem;
+  width           : 7rem;
+  height          : 7rem;
+  border          : 0.2rem solid white;
+  border-top      : 0;
+  align-items     : center;
+  justify-content : center;
+  cursor          : pointer;
+  transition        : all 0.8s;
+  transition-timing-function : var(--CURVE-SHOW);
+}
+
+.svg-lh {
+  stroke            : var(--COLOR-BG);
+  stroke-dasharray  : 102px;
+  stroke-dashoffset : 204px;
+  transition        : all 0.6s ease-out;
+}
+
+.svg-home {
+  stroke            : var(--COLOR-FONT);
+  stroke-dasharray  : 82px;
+  stroke-dashoffset : 82px;
+  transition        : all 0.6s ease-in;
+}
+
+.svg-bg {
+  transition       : all 0.8s;
+  transition-timing-function : var(--CURVE-SHOW);
+}
+
+#home:hover{
+  top: 0.5rem;
+}
+#home:hover .svg-bg {
+  fill             : var(--COLOR-BG);
+}
+
+#home:hover .svg-lh {
+  stroke-dashoffset : 102px;
+}
+
+#home:hover .svg-home {
+  stroke-dashoffset : 0;
+  transition-delay  : 0;
+}
+
 .wrapper > section {
   -moz-box-sizing    : border-box;
   -webkit-box-sizing : border-box;
@@ -31,7 +83,6 @@
   margin-left    : 10vw;
   text-align     : left;
   pointer-events : none;
-  /* for the processing underneath */
 }
 
 .openning > .divider {
@@ -41,14 +92,12 @@
   margin           : 0 12rem;
   background-color : var(--COLOR-FONT);
   pointer-events   : none;
-  /* for the processing underneath */
 }
 
 .openning > .brief {
   z-index        : 2;
   max-width      : 78rem;
   pointer-events : none;
-  /* for the processing underneath */
 }
 
 .brief > p {
@@ -177,14 +226,14 @@
 }
 
 .next > .button {
-  display          : flex;
-  width            : 6.6rem;
-  height           : 6.6rem;
-  border           : 0.2rem solid var(--COLOR-FONT);
-  align-items      : center;
-  flex-direction   : row-reverse;
-  justify-content  : center;
-  transition       : all 0.2s ease-in-out;
+  display         : flex;
+  width           : 6.6rem;
+  height          : 6.6rem;
+  border          : 0.2rem solid var(--COLOR-FONT);
+  align-items     : center;
+  flex-direction  : row-reverse;
+  justify-content : center;
+  transition      : all 0.2s ease-in-out;
 }
 
 .button > .arrow {
@@ -197,7 +246,7 @@
   border-width      : 0 0.2rem 0.2rem 0;
   -webkit-transform : rotate(-45deg);
   transform         : rotate(-45deg);
-  transition        : all 0.3s ease-in;
+  transition        : all 0.3s ease-out;
 }
 
 .button > .line {
@@ -207,7 +256,7 @@
   height       : 0.2rem;
   border       : solid var(--COLOR-FONT);
   border-width : 0 3rem 0 0;
-  transition   : all 0.4s ease-in;
+  transition   : all 0.4s ease-out;
 }
 
 .conclusion {
@@ -221,8 +270,8 @@
 }
 
 .next:hover > .title {
-  margin-left : 2.5rem;
-  margin-right: -1rem;
+  margin-right : -1rem;
+  margin-left  : 2.5rem;
 }
 
 .next:hover > .button {

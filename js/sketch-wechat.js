@@ -1,10 +1,11 @@
 p5.disableFriendlyErrors = true;
 
-var play_it = 1;
+var play_it = 1,first_time = 1;
 var particle_amount;
 var speed;
 var gap;
-var limit_x, limit_y;
+var limit;
+var init_x,init_y;
 
 var speeds = new Array(particle_amount);
 var x = new Array(particle_amount);
@@ -28,13 +29,16 @@ function setup() {
     particle_amount = 5000;
     gap = 30;
     speed = 30;
-    limit_x = width;
+    limit = width;
   } else {
     particle_amount = 10000;
     gap = 40;
     speed = 30;
-    limit_x = width * 0.6;
+    limit = width * 0.6;
   }
+
+  init_x = random(width);
+  init_y = random(height);
 
   setParticles();
   frameRate(60);
@@ -45,30 +49,26 @@ function setup() {
 
 function draw() {
   background(44,118,49);
-
+  if( mouseX != 0 || mouseY != 0 ){
+    first_time = 0;
+  }
   // if (mouseIsPressed) {
   for (var i = 0; i < particle_amount; i++) {
+    var r = dist( mouseX, mouseY, x[i], y[i])
 
-    var r_x = x[i] - mouseX;
-    var r_y = y[i] - mouseY;
-
-    if ( Math.abs(r_x) > limit_x ) {
-      x[i] = mouseX + limit_x * randomGaussian();
-      r_x = x[i] - mouseX;
+    if ( first_time ){
+      r = dist( init_x, init_y, x[i], y[i]);
     }
 
-    //(x-a)2+(y-b)2=r2
-    var r = Math.sqrt( r_x * r_x + r_y * r_y );
-
-    if( r < 1 ){
-      r = 1;
+    if ( r > limit ) {
+      x[i] = mouseX + limit * randomGaussian();
     }
 
     var circle = Math.sin( r / gap ) / r;
 
     //the decimals decide the length of each "step"
-    dis_x[i] = dis_y[i] * 0.5 + circle * r_x * speeds[i];
-    dis_y[i] = dis_y[i] * 0.7 + circle * r_y * speeds[i];
+    dis_x[i] = dis_y[i] * 0.5 + circle * (x[i] - mouseX) * speeds[i];
+    dis_y[i] = dis_y[i] * 0.7 + circle * (y[i] - mouseY) * speeds[i];
 
   }
   // }
@@ -82,7 +82,6 @@ function draw() {
     } else if (x[t] > width) {
       x[t] = 0;
     }
-
 
     if (y[t] < 0) {
       y[t] = height;
