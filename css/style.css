@@ -43,7 +43,6 @@ p {
   border   : 0;
 }
 
-
 .wrapper {
   display        : flex;
   height         : 100%;
@@ -146,6 +145,13 @@ p {
   margin-bottom : 3rem;
 }
 
+.section > img {
+  position  : absolute;
+  top       : 0;
+  max-width : 100%;
+  height    : auto;
+}
+
 .section > .hover {
   z-index    : 20;
   position   : absolute;
@@ -153,7 +159,7 @@ p {
   transition : all 1s cubic-bezier(0.8,0,0.9,0);
 }
 
-/* Specific sections */
+/* ========== Specific sections ========== */
 
 .section-echo {
   color            : #F1EC6B;
@@ -255,15 +261,20 @@ p {
 .section-contact {
   display         : flex;
   position        : relative;
-  align-items     : center;
   flex            : 1 0 95vw;
   flex-direction  : row-reverse;
   justify-content : flex-end;
 }
 
 .section-contact > .content {
-  margin-right : 4%;
-  text-align   : right;
+  z-index         : 2;
+  display         : flex;
+  max-width       : 80rem;
+  margin-right    : 4%;
+  text-align      : left;
+  align-items     : flex-start;
+  flex-direction  : column;
+  justify-content : center;
 }
 
 .section-contact > .footer {
@@ -272,18 +283,84 @@ p {
   bottom   : 0;
 }
 
+.section-contact > .content > p {
+  max-width     : 40rem;
+  margin-bottom : 2rem;
+}
+
 .get-in-touch {
-  padding          : 1rem;
+  z-index          : 3;
+  margin-top       : 1rem;
+  padding          : 2rem;
   color            : white;
+  background-color : var(--COLOR-DARK);
+  text-align       : left;
+  font-family      : Tahoma;
+  font-size        : 2.4rem;
+  font-style       : normal;
+  font-weight      : bold;
+  line-height      : 3rem;
+  letter-spacing   : -0.01em;
+}
+
+.primary {
   background-color : var(--COLOR-RED);
 }
 
+.dots {
+  z-index  : 2;
+  position : absolute;
+  top      : 18.5rem;
+  right    : 32.6rem;
+  width    : 582px;
+  height   : 432px;
+}
+
+.qrcode {
+  z-index  : 1;
+  position : absolute;
+  top      : 23.1rem;
+  right    : 50.2rem;
+}
+.qrcode > rect{
+  stroke                     : #F4F4F4;
+  stroke-width               : 10;
+}
+
+.code-1 {
+  transition                 : all 0.3s;
+  transition-timing-function : ease-in-out;
+}
+.code-2 {
+  transition                 : all 0.4s;
+  transition-timing-function : ease-in-out;
+}
+.code-3 {
+  transition                 : all 0.6s;
+  transition-timing-function : ease-in-out;
+}
+.code-4 {
+  transition                 : all 0.8s;
+  transition-timing-function : ease-in-out;
+}
+
+.section-contact > .content:hover .code-1 {
+  stroke-width : 0;
+}
+.section-contact > .content:hover .code-2 {
+  stroke-width : 0;
+}
+.section-contact > .content:hover .code-3 {
+  stroke-width : 0;
+}
+.section-contact > .content:hover .code-4 {
+  stroke-width : 0;
+}
+
 #section-sketch-connect {
-  z-index          : -10;
   min-width        : 80rem;
   height           : 100%;
   margin-right     : -10%;
-  overflow         : hidden;
   background-color : #F4F4F4;
   flex             : 1 1 auto;
 }

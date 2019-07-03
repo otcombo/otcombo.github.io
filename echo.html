@@ -11,13 +11,12 @@
   <link rel="stylesheet" type="text/css" href="css/style_echo.css">
   <link rel="stylesheet" type="text/css" href="css/style_work.css">
   <script type='text/javascript'>
-  // $(document).ready(function() {
-  //   $('html, body, *').mousewheel(function(event, delta) {
-  //     this.scrollLeft -= (delta);
-  //     event.preventDefault();
-  //     console.log(delta);
-  //   });
-  // });
+  $(document).ready(function() {
+    $('html, body, *').mousewheel(function(event, delta) {
+      this.scrollLeft -= (delta);
+      event.preventDefault();
+    });
+  });
   </script>
   <script type='text/javascript' src="addons/p5.min.js"></script>
   <script type='text/javascript' src="addons/p5.dom.min.js"></script>
@@ -113,18 +112,5 @@
 
   </div>
 
-<script>
-var prevScrollpos = window.pageYOffset;
-window.onscroll = function() {
-  console.log(prevScrollpos);
-var currentScrollPos = window.pageYOffset;
-  if (prevScrollpos > currentScrollPos) {
-    document.getElementById("home").style.top = "0";
-  } else {
-    document.getElementById("home").style.top = "-50px";
-  }
-  prevScrollpos = currentScrollPos;
-}
-</script>
 </body>
 </html>

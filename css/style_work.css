@@ -3,20 +3,18 @@
 }
 
 #home {
-  z-index         : 30;
-  display         : flex;
-  position        : absolute;
-  top             : 0;
-  left            : 5rem;
-  width           : 7rem;
-  height          : 7rem;
-  border          : 0.2rem solid white;
-  border-top      : 0;
-  align-items     : center;
-  justify-content : center;
-  cursor          : pointer;
-  transition        : all 0.8s;
+  z-index                    : 30;
+  display                    : flex;
+  position                   : absolute;
+  top                        : -0.1rem;
+  left                       : 5rem;
+  width                      : 7rem;
+  height                     : 7rem;
+  align-items                : center;
+  justify-content            : center;
+  transition                 : top 0.8s;
   transition-timing-function : var(--CURVE-SHOW);
+  cursor                     : pointer;
 }
 
 .svg-lh {
@@ -34,15 +32,16 @@
 }
 
 .svg-bg {
-  transition       : all 0.8s;
+  transition                 : all 0.8s;
   transition-timing-function : var(--CURVE-SHOW);
 }
 
-#home:hover{
-  top: 0.5rem;
+#home:hover {
+  top : 0.5rem;
 }
+
 #home:hover .svg-bg {
-  fill             : var(--COLOR-BG);
+  fill : var(--COLOR-BG);
 }
 
 #home:hover .svg-lh {
@@ -298,5 +297,11 @@
   .wrapper > section {
     border-top    : solid 1rem var(--COLOR-BG);
     border-bottom : solid 1rem var(--COLOR-BG);
+  }
+
+  #home {
+    left   : 3rem;
+    width  : 5rem;
+    height : 5rem;
   }
 }

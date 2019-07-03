@@ -16,16 +16,8 @@
   <script type='text/javascript'>
   $(document).ready(function() {
     $('html, body, *').mousewheel(function(event, delta) {
-      var prevScrollpos = this.scrollLeft;
       this.scrollLeft -= (delta);
       event.preventDefault();
-      if(window.screen.width < 500){
-        if (prevScrollpos > this.scrollLeft) {
-          document.getElementById("home").style.top = "0";
-        } else if (prevScrollpos < this.scrollLeft) {
-          document.getElementById("home").style.top = "-8rem";
-        }
-      }
     });
   });
   </script>
@@ -40,7 +32,6 @@
   </div>
 
   <div class="wrapper">
-
 
     <section class="openning">
       <h1 class="font-section-title">WeChat</h1>
