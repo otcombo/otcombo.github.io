@@ -1,0 +1,14 @@
+:root {
+  --COLOR-BG       : #C3EBFF;
+  --COLOR-BG-HOVER : #ACDCF4;
+  --COLOR-FONT     : #3A64B5;
+}
+
+#sketch-flyme {
+  z-index  : 1;
+  position : absolute;
+  top      : 0;
+  left     : 0;
+  width    : 100%;
+  height   : 100%;
+}

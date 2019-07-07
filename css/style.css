@@ -139,10 +139,12 @@ p {
   align-items     : center;
   flex-direction  : column;
   justify-content : flex-end;
+  transition      : all 0.5s var(--CURVE-SHOW);
 }
 
 .section > .content > h1 {
   margin-bottom : 3rem;
+  transition    : all 0.5s var(--CURVE-SHOW);
 }
 
 .section > img {
@@ -156,7 +158,19 @@ p {
   z-index    : 20;
   position   : absolute;
   opacity    : 0;
-  transition : all 1s cubic-bezier(0.8,0,0.9,0);
+  transition : all 1s var(--CURVE-SHOW);
+}
+
+.section:hover > .content > h1 {
+  transform : translate(0,-2rem);
+}
+
+.section:hover > .content {
+  transform : translate(0,-2rem);
+}
+
+.section:active > .content {
+  transform : translate(0,-1rem);
 }
 
 /* ========== Specific sections ========== */
@@ -168,17 +182,13 @@ p {
 
 .hover-echo {
   bottom    : 15rem;
-  left      : -5rem;
-  width     : 15rem;
-  filter    : drop-shadow(1.5rem 1rem 1.5rem rgba(151, 100, 0, 0.4));
+  left      : -8rem;
   transform : translate3d(10rem,5rem,0);
 }
 
 .section-echo:hover > .hover-echo {
-  opacity                    : 1;
-  transform                  : translate3d(0,0,5rem);
-  transition                 : all 1s;
-  transition-timing-function : var(--CURVE-SHOW);
+  opacity   : 1;
+  transform : translate3d(0,0,5rem);
 }
 
 .section-wechat {
@@ -186,47 +196,48 @@ p {
   background-color : #2C7631;
 }
 
-.hover-wechat {
-  filter : drop-shadow(1.5rem 1rem 1.5rem rgba(0, 114, 8, 0.4));
-}
-
 .hover-wechat-big {
   top       : 10rem;
   left      : -1rem;
-  width     : 10rem;
-  transform : translate3d(25rem,25rem,-20rem) rotateZ(30deg) rotateY(90deg);
+  transform : translate3d(35rem,35rem,-20rem) rotateZ(30deg) rotateY(80deg);
 }
 
 .hover-wechat-small {
   right     : -1rem;
   bottom    : 25rem;
-  width     : 9rem;
-  transform : translate3d(-25rem,-25rem,-20rem) rotateZ(30deg) rotateY(-90deg);
+  transform : translate3d(-8rem,-8rem,-20rem) rotateZ(30deg) rotateY(-80deg);
 }
 
 .section-wechat:hover > .hover-wechat-big {
-  opacity                    : 1;
-  transform                  : translate3d(0,0,10rem);
-  transition                 : all 1s;
-  transition-timing-function : var(--CURVE-SHOW);
+  opacity   : 1;
+  transform : translate3d(0,0,10rem);
 }
 
 .section-wechat:hover > .hover-wechat-small {
-  opacity                    : 1;
-  transform                  : translate3d(0,0,5rem);
-  transition                 : all 1s;
-  transition-timing-function : var(--CURVE-SHOW);
+  opacity   : 1;
+  transform : translate3d(0,0,5rem);
 }
 
 .section-ddz {
-  color            : #FFF;
-  background-color : #353535;
+  color            : #6B4700;
+  background-color : #F1C772;
 }
 
 .section-flyme {
   color            : #FFF;
   background-color : #46C8FF;
   flex-basis       : 32rem;
+}
+
+.hover-flyme {
+  top       : 10rem;
+  left      : -3rem;
+  transform : translate3d(0,5rem,0);
+}
+
+.section-flyme:hover > .hover-flyme {
+  opacity   : 1;
+  transform : translate3d(0,0,5rem);
 }
 
 .section-qq {
@@ -245,10 +256,9 @@ p {
 }
 
 .section-olddays {
-  width            : 100%;
-  color            : #FFF;
-  background-color : #FFC2E3;
-  flex             : 1 1 auto;
+  color            : #B0A394;
+  background-color : #000;
+  flex-basis       : 32rem;
 }
 
 .section-learning {
@@ -274,6 +284,7 @@ p {
   text-align      : left;
   align-items     : flex-start;
   flex-direction  : column;
+  flex-shrink     : 0;
   justify-content : center;
 }
 
@@ -322,23 +333,27 @@ p {
   top      : 23.1rem;
   right    : 50.2rem;
 }
-.qrcode > rect{
-  stroke                     : #F4F4F4;
-  stroke-width               : 10;
+
+.qrcode > rect {
+  stroke       : #F4F4F4;
+  stroke-width : 10;
 }
 
 .code-1 {
   transition                 : all 0.3s;
   transition-timing-function : ease-in-out;
 }
+
 .code-2 {
   transition                 : all 0.4s;
   transition-timing-function : ease-in-out;
 }
+
 .code-3 {
   transition                 : all 0.6s;
   transition-timing-function : ease-in-out;
 }
+
 .code-4 {
   transition                 : all 0.8s;
   transition-timing-function : ease-in-out;
@@ -347,12 +362,15 @@ p {
 .section-contact > .content:hover .code-1 {
   stroke-width : 0;
 }
+
 .section-contact > .content:hover .code-2 {
   stroke-width : 0;
 }
+
 .section-contact > .content:hover .code-3 {
   stroke-width : 0;
 }
+
 .section-contact > .content:hover .code-4 {
   stroke-width : 0;
 }
@@ -412,19 +430,20 @@ p {
   font-size      : 4.8rem;
   font-weight    : 500;
   line-height    : 120%;
-  letter-spacing : -0.01em;
+  /* letter-spacing : -0.01em; */
 }
 
 .font-section-desc {
-  text-align  : center;
-  font-family : "SF Pro Text",
-                "Helvetica",
-                "Tahoma",
-                sans-serif;
-  font-size   : 16px;
-  font-style  : normal;
-  font-weight : normal;
-  line-height : 150%;
+  text-align     : center;
+  font-family    : "SF Pro Text",
+                   "Helvetica",
+                   "Tahoma",
+                   sans-serif;
+  font-size      : 16px;
+  font-style     : normal;
+  font-weight    : normal;
+  line-height    : 150%;
+  letter-spacing : -0.01em;
 }
 
 .font-section-footer {

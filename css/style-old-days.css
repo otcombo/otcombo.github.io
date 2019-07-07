@@ -1,0 +1,14 @@
+:root {
+  --COLOR-BG       : #000;
+  --COLOR-BG-HOVER : #111111;
+  --COLOR-FONT     : #B0A394;
+}
+
+#sketch-olddays {
+  z-index  : 1;
+  position : absolute;
+  top      : 0;
+  left     : 0;
+  width    : 100%;
+  height   : 100%;
+}

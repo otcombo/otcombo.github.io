@@ -1,0 +1,77 @@
+<svg width="123" height="112" viewBox="0 0 123 112" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g filter="url(#filter0_wechat_small)">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M78.0225 64.5191C86.6897 58.305 92.2286 49.1111 92.2286 38.8973C92.2286 20.1761 73.821 5 51.1137 5C28.4076 5 10 20.1761 10 38.8973C10 57.6185 28.4076 72.7951 51.1137 72.7951C55.805 72.7951 60.3349 72.131 64.5348 70.9359C64.9165 70.8206 65.3221 70.758 65.7427 70.758C66.5323 70.758 67.2494 70.9956 67.9259 71.3825L76.9266 76.5239C77.1784 76.6674 77.4209 76.777 77.7185 76.777C78.4757 76.777 79.0889 76.1691 79.0889 75.4206C79.0889 75.0854 78.9537 74.7502 78.8679 74.4293C78.8156 74.2376 77.7075 70.1467 77.016 67.5918C76.937 67.3048 76.8709 67.0281 76.8709 66.7273C76.8709 65.817 77.3258 65.0111 78.0225 64.5191Z" fill="#00CE52" fill-opacity="0.01"/>
+  </g>
+  <mask id="mask0_wechat_small" mask-type="alpha" maskUnits="userSpaceOnUse" x="10" y="5" width="83" height="72">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M78.0225 64.5191C86.6897 58.305 92.2286 49.1111 92.2286 38.8973C92.2286 20 73.8198 5 51.1137 5C28.4076 5 10 20.1761 10 38.8973C10 57.6185 28.4076 72.7951 51.1137 72.7951C55.805 72.7951 60.3349 72.131 64.5348 70.9359C64.9165 70.8206 65.3221 70.758 65.7427 70.758C66.5323 70.758 67.2494 70.9956 67.9259 71.3825L76.9266 76.5239C77.1784 76.6674 77.4209 76.777 77.7185 76.777C78.4757 76.777 79.0889 76.1691 79.0889 75.4206C79.0889 75.0854 78.9537 74.7502 78.8679 74.4293C78.8156 74.2376 77.7075 70.1467 77.016 67.5918C76.9371 67.3048 76.8709 67.0281 76.8709 66.7273C76.8709 65.817 77.3258 65.0111 78.0225 64.5191Z" fill="white"/>
+  </mask>
+  <g mask="url(#mask0_wechat_small)">
+    <g filter="url(#filter1_wechat_small)">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M78.0225 64.5191C86.6897 58.305 92.2286 49.1111 92.2286 38.8973C92.2286 20 73.8198 5 51.1137 5C28.4076 5 10 20.1761 10 38.8973C10 57.6185 28.4076 72.7951 51.1137 72.7951C55.805 72.7951 60.3349 72.131 64.5348 70.9359C64.9165 70.8206 65.3221 70.758 65.7427 70.758C66.5323 70.758 67.2494 70.9956 67.9259 71.3825L76.9266 76.5239C77.1784 76.6674 77.4209 76.777 77.7185 76.777C78.4757 76.777 79.0889 76.1691 79.0889 75.4206C79.0889 75.0854 78.9537 74.7502 78.8679 74.4293C78.8156 74.2376 77.7075 70.1467 77.016 67.5918C76.9371 67.3048 76.8709 67.0281 76.8709 66.7273C76.8709 65.817 77.3258 65.0111 78.0225 64.5191Z" fill="url(#paint0_wechat_small)"/>
+    </g>
+    <g style="mix-blend-mode:overlay" filter="url(#filter2_wechat_small)">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M77.4271 62.5191C86.0184 56.305 92 47.1111 92 36.8973C92 18 76.2855 4 50.7538 4C25.2221 4 10 18.1761 10 36.8973C10 55.6185 28.2465 70.7951 50.7538 70.7951C55.404 70.7951 59.8943 70.131 64.0574 68.9359C64.4358 68.8206 64.8378 68.758 65.2547 68.758C66.0374 68.758 66.7482 68.9956 67.4188 69.3825L76.3407 74.5239C76.5903 74.6674 76.8307 74.777 77.1257 74.777C77.8762 74.777 78.4841 74.1691 78.4841 73.4206C78.4841 73.0854 78.3501 72.7502 78.265 72.4293C78.2132 72.2376 77.1148 68.1467 76.4293 65.5918C76.3511 65.3048 76.2855 65.0281 76.2855 64.7273C76.2855 63.817 76.7364 63.0111 77.4271 62.5191Z" fill="white" fill-opacity="0.01"/>
+    </g>
+    <g style="mix-blend-mode:overlay" filter="url(#filter3_wechat_small)">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M93.2286 38.8973C93.2286 20 74.8198 5 52.1137 5C29.4076 5 11 20.1761 11 38.8973C11 57.6185 28.4076 71.7951 51.1137 71.7951C70.2211 71.7951 93.2286 60.1895 93.2286 38.8973Z" fill="white" fill-opacity="0.01"/>
+    </g>
+    <g style="mix-blend-mode:multiply" filter="url(#filter4_wechat_small)">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M94.2286 38.8973C94.2286 20 75.8198 5 53.1137 5C30.4076 5 12 20.1761 12 38.8973C12 57.6185 30.6137 71.7951 52.1137 71.7951C60.622 71.7951 89.4625 68.5 89.4625 68.5C89.4625 68.5 86.2279 59.8424 89.4625 55C92.477 50.4871 94.2286 45.1037 94.2286 38.8973Z" fill="white" fill-opacity="0.01"/>
+    </g>
+  </g>
+  <defs>
+    <filter id="filter0_wechat_small" x="0" y="0" width="122.229" height="111.777" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+      <feOffset dx="10" dy="15"/>
+      <feGaussianBlur stdDeviation="10"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0.445833 0 0 0 0 0.0301239 0 0 0 0.4 0"/>
+      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+    </filter>
+    <filter id="filter1_wechat_small" x="10" y="5" width="82.2286" height="71.777" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+      <feOffset/>
+      <feGaussianBlur stdDeviation="0.5"/>
+      <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0.366667 0 0 0 0 0.0272523 0 0 0 1 0"/>
+      <feBlend mode="normal" in2="shape" result="effect1_innerShadow"/>
+    </filter>
+    <filter id="filter2_wechat_small" x="9.5" y="3.5" width="83" height="71.777" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+      <feOffset dx="-1" dy="-1"/>
+      <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0"/>
+      <feBlend mode="normal" in2="shape" result="effect1_innerShadow"/>
+      <feGaussianBlur stdDeviation="0.25" result="effect2_foregroundBlur"/>
+    </filter>
+    <filter id="filter3_wechat_small" x="10.5" y="4.5" width="83.2286" height="67.7951" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+      <feOffset dx="1"/>
+      <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.3 0"/>
+      <feBlend mode="normal" in2="shape" result="effect1_innerShadow"/>
+      <feGaussianBlur stdDeviation="0.25" result="effect2_foregroundBlur"/>
+    </filter>
+    <filter id="filter4_wechat_small" x="11.5" y="4.5" width="83.2286" height="67.7951" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+      <feOffset dx="-3" dy="1"/>
+      <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0.8625 0 0 0 0 0.294643 0 0 0 1 0"/>
+      <feBlend mode="normal" in2="shape" result="effect1_innerShadow"/>
+      <feGaussianBlur stdDeviation="0.25" result="effect2_foregroundBlur"/>
+    </filter>
+    <linearGradient id="paint0_wechat_small" x1="50.5557" y1="5.42291" x2="50.5557" y2="77.1999" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#00FF66" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#00CE52" stop-opacity="0.6"/>
+    </linearGradient>
+  </defs>
+</svg>

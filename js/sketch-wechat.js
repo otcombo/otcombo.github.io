@@ -77,18 +77,10 @@ function draw() {
     x[t] += dis_x[t];
     // y[t] += dis_y[t];
 
-    if (x[t] < 0) {
-      x[t] = width;
-    } else if (x[t] > width) {
-      x[t] = 0;
-    }
-
-    if (y[t] < 0) {
-      y[t] = height;
-    } else if (y[t] > height) {
-      y[t] = 0;
-    }
-
+    if (x[t] < 0) x[t] = width;
+    if (x[t] > width) x[t] = 0;
+    if (y[t] < 0) y[t] = height;
+    if (y[t] > height) y[t] = 0;
 
     if (speeds[t] < 0) {
       stroke(128, 153, 94);

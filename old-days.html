@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BACK IN THE DAY | Han Li</title>
+  <link rel='shortcut icon' type='image/png' href='images/favicon.png' />
+  <script type='text/javascript' src="addons/p5.min.js"></script>
+  <script type='text/javascript' src="addons/p5.dom.min.js"></script>
+  <script type='text/javascript' src="js/sketch-old-days.js"></script>
+  <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+  <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js'></script>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="css/style-old-days.css">
+  <link rel="stylesheet" type="text/css" href="css/style-work.css">
+  <script type='text/javascript'>
+  $(document).ready(function() {
+    $('html, body, *').mousewheel(function(event, delta) {
+      this.scrollLeft -= (delta);
+      event.preventDefault();
+    });
+  });
+  </script>
+</head>
+<body>
+  <div id="home" onclick="location.href='index.html';">
+    <svg width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect class="svg-bg" width="70" height="70" fill="white"/>
+      <path class="svg-home" d="M46 45H24L24 30.4093L35.3667 21L46 30.4093V47" stroke="white" stroke-width="4"/>
+      <path class="svg-lh" d="M26 21V41L36 43V23V32.5L46 35V25V47" stroke="#2C7632" stroke-width="4"/>
+    </svg>
+  </div>
+
+  <div class="wrapper">
+
+    <section class="openning">
+      <h1 class="font-section-title">BACK IN THE DAY</h1>
+      <span class="divider"></span>
+      <div class="brief">
+        <p class="font-section-desc">
+          Echo is primarily used for capturing daily life as photos or short videos and sharing with close friends & families, which can be edited with various stickers, text captions etc. Besides from interacting with close friends, echo also allow users to have a peek of the “outside world”, discover strangers who share their interesting moments.
+        </p>
+        <p class="font-section-desc">
+          As the Design Lead for this start-up project, I led not only UI design but also product design on the early stage, and worked on building design team.
+        </p>
+      </div>
+      <div id="sketch-olddays"></div>
+    </section>
+
+
+
+    <section class="showcase">
+      <p class="desc font-section-desc">
+        explain the hierarchy, why it was designed like this.
+      </p>
+
+      <div class="phone">
+        <div class="cover light"></div>
+        <img src="images/echo/A00-spaceline.png">
+      </div>
+      <div class="phone side-by-side">
+        <div class="cover dark"></div>
+        <img src="images/echo/A00-spaceline.png">
+      </div>
+      <div class="phone side-by-side">
+        <div class="cover dark"></div>
+        <img src="images/echo/A00-spaceline.png">
+      </div>
+    </section>
+
+    <section class="showcase">
+      <p class="desc font-section-desc">
+        Echo is primarily used for capturing daily life as photos or short videos and sharing with close friends & families, which can be edited with various stickers, text captions etc. Besides from interacting with close friends, echo also allow users to have a peek of the “outside world”, discover strangers who share their interesting moments.
+      </p>
+
+      <div class="phone">
+        <div class="cover light"></div>
+        <img src="images/echo/A00-spaceline.png">
+      </div>
+    </section>
+
+    <section class="showcase">
+      <img src="images/test.png">
+    </section>
+
+    <section class="showcase showcase-column">
+      <div class="cube">
+        top
+      </div>
+      <div class="cube">
+        bottom
+      </div>
+    </section>
+
+    <section class="ending" onclick="location.href='echo.html';">
+      <p class="conclusion font-section-desc">
+        As the Design Lead for this start-up project, I led not only UI design but also product design on the early stage, and worked on building design team.
+      </p>
+      <div class="next">
+        <div class="button">
+          <div class="arrow"></div>
+          <div class="line"></div>
+        </div>
+        <div class="title">
+          <span class="font-section-desc">UP NEXT</span>
+          <h1 class="font-section-title">BACK IN THE DAYS</h1>
+        </div>
+      </div>
+    </section>
+  </section>
+</div>
+
+</body>
+</html>
