@@ -183,7 +183,7 @@ p {
 .hover-echo {
   bottom    : 15rem;
   left      : -8rem;
-  transform : translate3d(10rem,5rem,0);
+  transform : translate3d(5rem,5rem,0);
 }
 
 .section-echo:hover > .hover-echo {
@@ -199,13 +199,13 @@ p {
 .hover-wechat-big {
   top       : 10rem;
   left      : -1rem;
-  transform : translate3d(10rem,10rem,-20rem) rotateZ(30deg);
+  transform : translate3d(0,0,-10rem));
 }
 
 .hover-wechat-small {
   right     : -1rem;
   bottom    : 25rem;
-  transform : translate3d(-5rem,-5rem,-20rem) rotateZ(30deg);
+  transform : translate3d(0,0,-10rem));
 }
 
 .section-wechat:hover > .hover-wechat-big {
@@ -468,14 +468,6 @@ p {
   :root {
     --SIZE-SECTION-HEIGHT : 80vh;
   }
-
-  .hover-wechat-big {
-    transform : translate3d(25rem,25rem,-20rem) rotateY(90deg);
-  }
-
-  .hover-wechat-small {
-    transform : translate3d(-25rem,-25rem,-20rem) rotateY(-90deg);
-  }
 }
 
 @media
@@ -506,13 +498,5 @@ p {
   #section-sketch-seeking {
     max-width   : 130vw;
     margin-left : -50vw;
-  }
-
-  .hover-wechat-big {
-    transform : translate3d(25rem,25rem,-20rem);
-  }
-
-  .hover-wechat-small {
-    transform : translate3d(-25rem,-25rem,-20rem);
   }
 }
