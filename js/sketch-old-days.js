@@ -7,10 +7,9 @@ var xoff, yoff, zoff, inc;
 //============================================================
 
 function setup() {
-  var container = select('#sketch-olddays');
+  var container = select('#sketch');
   var canvas = createCanvas(container.width, container.height);
-  canvas.parent('sketch-olddays');
-  canvas.id('sketch-olddays-canvas')
+  canvas.parent('sketch');
 
   canvas.mouseOver(checkState);
   canvas.mouseOut(checkState);

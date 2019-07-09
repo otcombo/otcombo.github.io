@@ -1,10 +1,10 @@
 :root {
-  --COLOR-BG       : #F1C772;
-  --COLOR-BG-HOVER : #286A2C;
+  --COLOR-BG       : #F8D797;
+  --COLOR-BG-HOVER : #FFDE9F;
   --COLOR-FONT     : #6B4700;
 }
 
-#sketch-wechat {
+#sketch {
   z-index  : 1;
   position : absolute;
   top      : 0;

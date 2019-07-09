@@ -82,10 +82,9 @@ var bubble_amount;
 //============================================================
 
 function setup() {
-  var container = select('#sketch-flyme');
+  var container = select('#sketch');
   var canvas = createCanvas(container.width, container.height);
-  canvas.parent('sketch-flyme');
-  canvas.id('sketch-flyme-canvas')
+  canvas.parent('sketch');
 
   if( width < 800){
     bubble_amount = 50;

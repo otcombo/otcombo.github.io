@@ -2,9 +2,9 @@ var color_rect, color_storke;
 var rotate_speed, next_angle;
 
 function setup() {
-	var container = select('#sketch-echo');
-  var canvas = createCanvas(container.width, container.height);
-	canvas.parent('sketch-echo');
+	var container = select('#sketch');
+	var canvas = createCanvas(container.width, container.height);
+	canvas.parent('sketch');
 
 	//Define color
 	color_rect = color('#DC2107');

@@ -16,10 +16,9 @@ var dis_y = new Array(particle_amount);
 //============================================================
 
 function setup() {
-  var container = select('#sketch-wechat');
+  var container = select('#sketch');
   var canvas = createCanvas(container.width, container.height);
-  canvas.parent('sketch-wechat');
-  canvas.id('sketch-wechat-canvas')
+  canvas.parent('sketch');
 
   canvas.mouseOver(checkState);
   canvas.mouseOut(checkState);
@@ -48,7 +47,7 @@ function setup() {
 //============================================================
 
 function draw() {
-  background(44,118,49);
+  background('#2C7631');
   if( mouseX != 0 || mouseY != 0 ){
     first_time = 0;
   }
