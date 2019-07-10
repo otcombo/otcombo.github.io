@@ -1,50 +1,55 @@
 p5.disableFriendlyErrors = true;
 
 var play_it = 1,first_time = 1;
-var color_bg;
-var min_size, max_size, amount, gap, spd, dis;
+var time = 0;
+var inc = 0.005;
+var xoff = 0.1;
+var yoff = 1;
+var r = 200;
+
+//============================================================
 
 function setup() {
-  var container = select('#sketch');
+  var container = select('#sketch-seeking');
   var canvas = createCanvas(container.width, container.height);
-  canvas.parent('sketch');
+  canvas.parent('sketch-seeking');
 
+  canvas.mouseOver(checkState);
+  canvas.mouseOut(checkState);
 
-    canvas.mouseOver(checkState);
-    canvas.mouseOut(checkState);
-
-
-  min_size = 100;
-  max_size = 400;
-  amount = TWO_PI;
-  gap = 80;
-  spd = 0;
-  dis = 80;
-
+  frameRate(60);
+  angleMode(DEGREES);
+  noFill();
 }
 
-function draw(){
-  //Canvas position
-  background('#F4F4F4');
-  translate(width*0.7,height/2);
-  rotate(PI/2*spd);
-  fill('#C4C4C4');
-  noStroke();
-  rect(0,0,min_size,max_size);
-  // noFill();
-  // var t = millis() / 4000;
-  // var w = abs(sin(t))*100;
-  //
-  // for (var t = millis() / 4000; t < amount+spd; t+=amount/gap) {
-  //   push();
-  //   stroke(168,168,168,255 * sin(2*t));
-  //   translate(0,0, dis * sin(2*t))
-  //   var w = min_size + max_size * abs(sin(t));
-  //   ellipse(0,0, w, w);
-  //   pop();
-  // }
-  //
-  spd += 0.01;
+//============================================================
+
+function draw() {
+  background(240);
+  translate(width / 2, height * 0.3);
+
+  for (var i = 0; i < 180; i += 3) {
+    var w = 2 * r * pow(2, sin(time + i)) + cos(time + i) * sin(time + i) / tan(time + i);
+    var x = r * noise(xoff, i / 200) * pow(2, cos(i)) + sin(i);
+    var y = r * noise(yoff, i / 200) * pow(2, sin(i)) * cos(i);
+
+    var col = map(i, 0, 90, 15, 0);
+    stroke(0, col);
+    ellipse(x, y, w, w);
+  }
+
+  for (var i = 0; i < 360; i += 2) {
+    var w = 2 * r * pow(2, sin(time + i)) + cos(time + i) * sin(time + i) / tan(time + i);
+    var x = r * noise(xoff, i / 200) * pow(2, sin(i)) + cos(i);
+    var y = r * noise(yoff, i / 200) * pow(2, cos(i)) * sin(i);
+
+    var col = map(i, 0, 360, 0, 10);
+    stroke(0, col);
+    ellipse(x, y, w, w);
+  }
+  time++;
+  xoff += inc;
+  yoff += inc;
 }
 
 //============================================================

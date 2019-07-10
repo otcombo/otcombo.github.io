@@ -95,7 +95,7 @@
 
 .openning > .brief {
   z-index        : 2;
-  max-width      : 78rem;
+  max-width      : 90rem;
   pointer-events : none;
 }
 
