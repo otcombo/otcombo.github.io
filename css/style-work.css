@@ -123,6 +123,10 @@
   justify-content  : center;
 }
 
+.showcase-left{
+  justify-content  : flex-start;
+}
+
 .showcase > .desc {
   position   : absolute;
   bottom     : 3rem;
@@ -148,6 +152,10 @@
 
 .showcase-column > .cube:last-child {
   margin-bottom : 0;
+}
+
+.showcase > .left-side-shrink{
+  margin-left: -5rem;
 }
 
 /* ========== Phones ========== */
@@ -184,7 +192,7 @@
 }
 
 .phone > .dark {
-  background-image : url("../images/hd-iphone-light.png");
+  background-image : url("../images/hd-iphone-dark.png");
 }
 
 .come-closer {

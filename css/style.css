@@ -43,6 +43,10 @@ p {
   border   : 0;
 }
 
+img {
+  pointer-events : none;
+}
+
 .wrapper {
   display        : flex;
   height         : 100%;

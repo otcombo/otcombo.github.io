@@ -36,15 +36,15 @@ function setup() {
 	canvas.mouseOver(checkState);
 	canvas.mouseOut(checkState);
 
-	strokeWeight(5);
+	strokeWeight(10);
 	noFill();
 
 	R = 2 * sqrt((4 * PI * (200 * 200) / amount) / (2 * sqrt(3)));
 
 	for (N = 0; N <= amount; N++) {
-		X[N] = random(-300, +300);
-		Y[N] = random(-300, +300);
-		Z[N] = random(-300, +300);
+		X[N] = random(-290, +290);
+		Y[N] = random(-290, +290);
+		Z[N] = random(-290, +290);
 
 		VX[N] = 0;
 		VY[N] = 0;
@@ -70,6 +70,18 @@ function setup() {
 function draw() {
 	translate(width * 0.7,height*0.3);
 	background(220, 33, 7, 200);
+
+	if(mouseIsPressed){
+		for (N = 0; N <= amount; N++) {
+			if (Z[N] > 190 ) {
+
+				L = sqrt((X[N] * X[N]) + (Y[N] * Y[N]));
+
+				dVX[N] = dVX[N] + (Y[N] / L)/10;
+				dVY[N] = dVY[N] - (X[N] / L)/10;
+			}
+		}
+	}
 
 	for (N = 0; N <= amount; N++) {
 		for (NN = N + 1; NN <= amount; NN++) {
@@ -186,21 +198,6 @@ function draw() {
 		}
 	}
 
-}
-
-//============================================================
-
-function mousePressed() {
-
-	for (N = 0; N <= amount; N++) {
-		if (Z[N] > 190 ) {
-
-			L = sqrt((X[N] * X[N]) + (Y[N] * Y[N]));
-
-			dVX[N] = dVX[N] + (Y[N] / L);
-			dVY[N] = dVY[N] - (X[N] / L);
-		}
-	}
 }
 
 //============================================================
