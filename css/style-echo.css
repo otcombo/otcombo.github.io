@@ -35,3 +35,11 @@
   background-image: url(../images/img-dots.png);
   background-size  : cover;
 }
+
+.sc-list-duotone > img{
+  margin-top: -17rem;
+}
+
+.sc-video-im{
+  max-height: 52rem;
+}

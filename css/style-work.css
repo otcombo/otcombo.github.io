@@ -123,8 +123,8 @@
   justify-content  : center;
 }
 
-.showcase-left{
-  justify-content  : flex-start;
+.showcase-left {
+  justify-content : flex-start;
 }
 
 .showcase > .desc {
@@ -133,8 +133,6 @@
   left       : 5rem;
   width      : 80%;
   color      : var(--COLOR-DARK);
-  opacity    : 0.3;
-  text-align : left;
 }
 
 .showcase-column {
@@ -148,14 +146,17 @@
   background-color : white;
   text-align       : center;
   flex             : 1 1 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .showcase-column > .cube:last-child {
   margin-bottom : 0;
 }
 
-.showcase > .left-side-shrink{
-  margin-left: -5rem;
+.showcase > .left-side-shrink {
+  margin-left : -5rem;
 }
 
 /* ========== Phones ========== */
@@ -295,6 +296,34 @@
   width        : 3rem;
   opacity      : 0;
   border-width : 0;
+}
+
+/* ========== Font Styles ========== */
+
+.font-showcase-title {
+  text-align  : left;
+  font-family : "SF Pro Display",
+                "Helvetica",
+                "Tahoma",
+                sans-serif;
+  font-size   : 36px;
+  font-style  : normal;
+  font-weight : 800;
+  line-height : 120%;
+}
+
+.font-showcase-desc{
+  opacity    : 0.3;
+  text-align : left;
+  font-family    : "SF Pro Text",
+                   "Helvetica",
+                   "Tahoma",
+                   sans-serif;
+  font-size      : 16px;
+  font-style     : normal;
+  font-weight    : normal;
+  line-height    : 150%;
+  letter-spacing : -0.01em;
 }
 
 /* ========== Font Styles ========== */
