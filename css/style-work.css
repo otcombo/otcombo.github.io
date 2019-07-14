@@ -115,7 +115,7 @@
   position         : relative;
   min-width        : 100px;
   height           : 100%;
-  overflow         : hidden;
+  /* overflow         : hidden; */
   background-color : #FFF;
   align-items      : center;
   flex             : 1 0 auto;
@@ -128,11 +128,12 @@
 }
 
 .showcase > .desc {
-  position   : absolute;
-  bottom     : 3rem;
-  left       : 5rem;
-  width      : 80%;
-  color      : var(--COLOR-DARK);
+  position  : absolute;
+  bottom    : 3rem;
+  left      : 5rem;
+  width     : 80%;
+  max-width : 80rem;
+  color     : var(--COLOR-DARK);
 }
 
 .showcase-column {
@@ -141,14 +142,14 @@
 }
 
 .showcase-column > .cube {
+  display          : flex;
   width            : 100%;
   margin-bottom    : 0.5rem;
   background-color : white;
   text-align       : center;
+  align-items      : center;
   flex             : 1 1 auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  justify-content  : center;
 }
 
 .showcase-column > .cube:last-child {
@@ -168,17 +169,22 @@
   height            : 80rem;
   background-image  : url("../images/hd-iphone-shadow.png");
   background-repeat : no-repeat;
-  background-size   : contain;
+  background-size   :contain;
   align-items       : center;
   flex-direction    : column;
 }
 
+.zoomin {
+  transform: scale(1.78);
+  margin-top: 21rem;
+}
+
 .phone > .cover {
-  z-index           : 2;
-  width             : 64rem;
-  height            : 80rem;
+  z-index           : 3;
+  width             : 100%;
+  height            : 100%;
   background-repeat : no-repeat;
-  background-size   : contain;
+  background-size   :contain;
 }
 
 .phone > img {
@@ -213,8 +219,10 @@
   color            : var(--COLOR-FONT);
   background-color : var(--COLOR-BG);
   align-items      : center;
-  flex             : 1 0 95vw;
-  justify-content  : space-between;
+  flex             : 1 0 35vw;
+  justify-content  : center;
+  transition       : all 0.5s ease-in-out;
+  cursor           : pointer;
 }
 
 .next {
@@ -223,8 +231,6 @@
   padding        : 0 4vw;
   align-items    : center;
   flex-direction : row;
-  transition     : all 0.5s ease-in-out;
-  cursor         : pointer;
 }
 
 .next > .title {
@@ -273,7 +279,7 @@
   text-align  : left;
 }
 
-.next:hover {
+.ending:hover {
   background-color : var(--COLOR-BG-HOVER);
 }
 
@@ -301,20 +307,21 @@
 /* ========== Font Styles ========== */
 
 .font-showcase-title {
-  text-align  : left;
-  font-family : "SF Pro Display",
-                "Helvetica",
-                "Tahoma",
-                sans-serif;
-  font-size   : 36px;
-  font-style  : normal;
-  font-weight : 800;
-  line-height : 120%;
+  text-align     : left;
+  text-transform : uppercase;
+  font-family    : "SF Pro Display",
+                   "Helvetica",
+                   "Tahoma",
+                   sans-serif;
+  font-size      : 24px;
+  font-style     : normal;
+  font-weight    : 800;
+  line-height    : 120%;
 }
 
-.font-showcase-desc{
-  opacity    : 0.3;
-  text-align : left;
+.font-showcase-desc {
+  opacity        : 0.3;
+  text-align     : left;
   font-family    : "SF Pro Text",
                    "Helvetica",
                    "Tahoma",

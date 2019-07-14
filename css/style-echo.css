@@ -1,6 +1,6 @@
 :root {
   --COLOR-BG       : #DC2107;
-  --COLOR-BG-HOVER : #D01805;
+  --COLOR-BG-HOVER : #F12F14;
   --COLOR-FONT     : #F1EC6B;
 }
 
@@ -14,7 +14,14 @@
 }
 
 .sc-spaceline {
-  width           : 100rem;
+  width : 100rem;
+}
+
+.sc-spaceline-video {
+  z-index  : 2;
+  position : absolute;
+  top      : 3.6rem;
+  width    : 27.8rem;
 }
 
 .sc-spaceline-bg {
@@ -24,22 +31,29 @@
   width    : 100rem;
 }
 
-.sc-camera-stickers{
-  width: 42rem;
-  height: 58rem;
-  margin: -12rem 10rem 0 -10rem;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-
-  background-image: url(../images/img-dots.png);
+.sc-camera-stickers {
+  display          : flex;
+  width            : 42rem;
+  height           : 58rem;
+  margin           : -12rem 10rem 0 -10rem;
+  background-image : url(../images/img-dots.png);
   background-size  : cover;
+  flex-wrap        : wrap;
+  justify-content  : center;
 }
 
-.sc-list-duotone > img{
-  margin-top: -17rem;
+.sc-list-duotone > img {
+  margin-top : -17rem;
 }
 
-.sc-video-im{
-  max-height: 52rem;
+.sc-video-im {
+  max-height : 52rem;
+}
+
+.sc-now-othercolor {
+  margin : -13rem 10rem 0 -20rem;
+}
+
+.sc-memoir > video {
+  margin-top : -10rem;
 }
