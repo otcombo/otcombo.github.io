@@ -22,18 +22,40 @@
   margin-top : -20rem;
 }
 
-.sc-redpocket-video {
-  z-index  : 1;
-  position : absolute;
-  top      : 10rem;
-  width    : 27.8rem;
-}
-
 .sc-phone-bg {
-  z-index          : 1;
+  z-index          : 0;
   position         : absolute;
-  top              : 12rem;
+  top              : 3rem;
   width            : 27.8rem;
   height           : 61rem;
   background-color : #F7F7F7;
+}
+
+.sc-img-main {
+  margin-top : -10rem;
+}
+
+.sc-redesign-points {
+  margin-right: 10rem;
+  margin-left: -5rem;
+  margin-top: -10rem;
+}
+
+.sc-redesign-points > .point {
+  display : flex;
+  margin-bottom: 5rem;
+}
+
+.sc-redesign-points > .point > img {
+  width  : 10rem;
+  height : 10rem;
+  margin-right: 3rem;
+  margin-top: 0.9rem;
+}
+
+.sc-redesign-points > .point > .desc > h2 {
+  margin-bottom: 0.5rem;
+}
+.sc-redesign-points > .point > .desc {
+  max-width : 50rem;
 }

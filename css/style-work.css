@@ -175,6 +175,7 @@ video {
 /* ========== Phones ========== */
 
 .phone {
+  z-index           : 30;
   display           : flex;
   position          : relative;
   width             : 64rem;
@@ -206,12 +207,41 @@ video {
   width    : 27.8rem;
 }
 
+.phone >.phone-img-short {
+  margin-top : 5rem;
+}
+
+.phone > .phone-video-short {
+  z-index  : 0;
+  position : absolute;
+  top      : 9rem;
+  width    : 27.8rem;
+}
+
 .phone > .light {
   background-image : url("../images/hd-iphone-light.png");
 }
 
 .phone > .dark {
   background-image : url("../images/hd-iphone-dark.png");
+}
+
+.phone > .bg-light {
+  z-index          : 0;
+  position         : absolute;
+  top              : 3rem;
+  width            : 27.8rem;
+  height           : 61rem;
+  background-color : #F7F7F7;
+}
+
+.phone > .bg-dark {
+  z-index          : 0;
+  position         : absolute;
+  top              : 3rem;
+  width            : 27.8rem;
+  height           : 61rem;
+  background-color : #202020;
 }
 
 .come-closer {
