@@ -13,6 +13,10 @@
   height   : 100%;
 }
 
+.divider-adjust{
+  height: 16rem;
+}
+
 .sc-spaceline {
   width : 100rem;
 }

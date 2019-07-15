@@ -193,7 +193,7 @@ img {
 
 .section-echo {
   color            : #F1EC6B;
-  background-image : url('../images/cover-echo.png');
+  background-image : url('../images/cover-echo.jpg');
   background-color : #DC2107;
   background-size  : cover;
 }
@@ -211,7 +211,7 @@ img {
 
 .section-wechat {
   color            : #D7BF91;
-  background-image : url('../images/cover-wechat.png');
+  background-image : url('../images/cover-wechat.jpg');
   background-color : #2C7631;
   background-size  : cover;
 }
@@ -240,7 +240,7 @@ img {
 
 .section-ddz {
   color            : #6B4700;
-  background-image : url('../images/cover-ddz.png');
+  background-image : url('../images/cover-ddz.jpg');
   background-color : #F8D797;
   background-size  : cover;
 }
@@ -257,7 +257,7 @@ img {
 
 .section-flyme {
   color            : #FFF;
-  background-image : url('../images/cover-flyme.png');
+  background-image : url('../images/cover-flyme.jpg');
   background-color : #46C8FF;
   background-size  : cover;
   flex-basis       : 32rem;
@@ -276,7 +276,7 @@ img {
 
 .section-qq {
   color            : #AAFFFA;
-  background-image : url('../images/cover-qq.png');
+  background-image : url('../images/cover-qq.jpg');
   background-color : #0050EC;
   background-size  : cover;
   flex-basis       : 32rem;
@@ -304,7 +304,7 @@ img {
 
 .section-olddays {
   color            : #B0A394;
-  background-image : url('../images/cover-olddays.png');
+  background-image : url('../images/cover-olddays.jpg');
   background-color : #000;
   background-size  : cover;
   flex-basis       : 32rem;
