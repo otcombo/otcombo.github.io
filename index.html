@@ -13,12 +13,15 @@
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <script type='text/javascript'>
   $(document).ready(function() {
-    console.log(window.scrollX,window.scrollY);
-    $('html, body, *').mousewheel(function(e, delta) {
-      console.log(e.deltaX, e.deltaY, e.deltaFactor,window.scrollX,window.scrollY);
-      // this.scrollLeft -= (e.deltaX);
-      window.scroll(window.scrollX + e.deltaY * 5, window.scrollY);
-      // e.preventDefault();
+    $('html, body, *').mousewheel(function(e) {
+      console.log(e.deltaX, e.deltaY, e.deltaFactor);
+      this.scrollLeft += e.deltaX - e.deltaY;
+      // this.scrollTop = 0;
+      if ( e && e.preventDefault ){
+        e.preventDefault();
+      } else {
+        window.event.returnValue = false;  //IE
+      }
     });
 });
   </script>
@@ -27,7 +30,7 @@
 
   <div class="wrapper">
 
-    <section class="section-intro">
+    <section class="section-intro" id="intro">
       <div class="content">
 
         <p class="intro-name font-overview-subtitle">HAN LI</p>
@@ -123,7 +126,7 @@
       </svg>
       <div class="content">
         <h1 class="font-section-title">echo</h1>
-        <p class="font-section-desc">As the Design Lead for this start-up project, I led not only UI design but also product design on the early stage, and worked on building design team.</p>
+        <p class="font-section-desc">As design lead for this start-up project, I led not only UI design but also product design on the early stage, worked on building design team.</p>
       </div>
     </section>
 
@@ -285,7 +288,7 @@
       </svg>
       <div class="content">
         <h1 class="font-section-title">WeChat</h1>
-        <p class="font-section-desc">Worked as a UI designer, responsible for WeChat iOS  redesign, WeChat Reader, WeChat TV, optimizting Design to Develop workflow, and more.</p>
+        <p class="font-section-desc">Worked as UI designer, responsible for WeChat iOS redesign, Reader, hardware projects, optimizting design workflow, and more.</p>
       </div>
     </section>
 
@@ -366,7 +369,7 @@
       </svg>
       <div class="content">
         <h1 class="font-section-title">iBuilding</h1>
-        <p class="font-section-desc">As both product and visual designer for commercial property renting service, I work on internal tools and took part in strategy making.</p>
+        <p class="font-section-desc">I was product and UI designer at iBuilding, working on office renting service.</p>
       </div>
     </section>
 

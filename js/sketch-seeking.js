@@ -1,6 +1,6 @@
 p5.disableFriendlyErrors = true;
 
-var play_it = 1,first_time = 1;
+var play_it = 1;
 var time = 0;
 var inc = 0.005;
 var xoff = 0.1;
@@ -14,8 +14,9 @@ function setup() {
   var canvas = createCanvas(container.width, container.height);
   canvas.parent('sketch-seeking');
 
-  canvas.mouseOver(checkState);
-  canvas.mouseOut(checkState);
+  var c = select('#intro');
+  c.mouseOver(checkState);
+  c.mouseOut(checkState);
 
   frameRate(60);
   angleMode(DEGREES);

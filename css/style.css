@@ -84,6 +84,7 @@ img {
 .section-intro .content {
   max-width   : 70rem;
   margin-left : 10vw;
+  margin-top: -5rem;
   flex        : 1 0 auto;
   transform   : translateZ(5rem);
 }
@@ -94,7 +95,7 @@ img {
 
 .intro-os {
   position  : relative;
-  left      : 12rem;
+  /* left      : 12rem; */
   color     : var(--COLOR-RED);
   transform : rotate(-5deg);
 }
@@ -107,7 +108,7 @@ img {
 .hover-cat {
   z-index    : 20;
   position   : absolute;
-  right      : 0rem;
+  left     : 0rem;
   bottom     : -10rem;
   width      : 27rem;
   height     : 37rem;
@@ -243,6 +244,7 @@ img {
   background-image : url('../images/cover-ddz.jpg');
   background-color : #F8D797;
   background-size  : cover;
+  flex-basis       : 32rem;
 }
 
 .hover-ddz {
@@ -331,7 +333,7 @@ img {
 .section-contact {
   display         : flex;
   position        : relative;
-  flex            : 1 0 95vw;
+  flex            : 1 0 90vw;
   flex-direction  : row-reverse;
   justify-content : flex-end;
 }
@@ -522,30 +524,40 @@ img {
 
 /* ========== Scaling ========== */
 
-@media
-  screen
-  and (max-height : 1024px) {
+@media (max-height : 800px) {
+    html {
+      font-size : 52%;
+    }
+}
+
+
+@media (max-height : 1024px) {
   :root {
     --SIZE-SECTION-HEIGHT : 80vh;
   }
+
 }
 
-@media
-  screen
-  and (max-width : 1280px) {
+@media (min-width: 761px) and (max-width: 1280px) {
   html {
     font-size : 52%;
   }
 
   .section-intro .content {
-    max-width : 60rem;
-    transform : translateZ(0rem);
+    max-width : 58rem;
+  }
+  #sketch-seeking {
+    margin-left : -25vw;
+  }
+  .dots {
+    top      : 10.5rem;
+  }
+
+  .qrcode {
+    top      : 15.1rem;
   }
 }
-
-@media
-  screen
-  and (max-width : 500px) {
+@media (min-width: 320px) and (max-width: 760px){
   :root {
     --SIZE-SECTION-HEIGHT : 80vh;
     --SIZE-SECTION-WIDTH  : 100vw;
