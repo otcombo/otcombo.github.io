@@ -53,4 +53,5 @@
 
 .sc-memoir > video {
   margin-top : -10rem;
+  max-width: 80rem;
 }

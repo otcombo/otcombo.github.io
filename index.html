@@ -14,7 +14,7 @@
   <script type='text/javascript'>
   $(document).ready(function() {
     $('html, body, *').mousewheel(function(event, delta) {
-      this.scrollLeft -= (delta);
+      this.scrollLeft -= (delta*1.5);
       event.preventDefault();
     });
   });

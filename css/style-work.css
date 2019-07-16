@@ -112,7 +112,7 @@
 .showcase {
   display          : flex;
   position         : relative;
-  min-width        : 100px;
+  min-width        : 10rem;
   height           : 100%;
   overflow         : hidden;
   background-color : #FFF;
@@ -143,12 +143,21 @@
 .showcase-column > .cube {
   display          : flex;
   width            : 100%;
+  max-width        : 60rem;
   margin-bottom    : 0.5rem;
+  overflow         : hidden;
   background-color : white;
-  text-align       : center;
   align-items      : center;
   flex             : 1 1 0;
   justify-content  : center;
+}
+
+.cube > img {
+  max-height : 100%;
+}
+
+.cube > .height-auto {
+  height : auto;
 }
 
 .showcase-column > .cube:last-child {
@@ -167,8 +176,7 @@
   margin-right : 5rem;
 }
 
-.showcase > img,
-video {
+.showcase > img {
   max-height : 100%;
 }
 
@@ -201,6 +209,12 @@ video {
 }
 
 .phone > img {
+  z-index  : 1;
+  position : absolute;
+  top      : 3.6rem;
+  width    : 27.8rem;
+}
+.phone > .phone-video{
   z-index  : 1;
   position : absolute;
   top      : 3.6rem;

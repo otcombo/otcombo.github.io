@@ -16,7 +16,7 @@
   <script type='text/javascript'>
   $(document).ready(function() {
     $('html, body, *').mousewheel(function(event, delta) {
-      this.scrollLeft -= (delta);
+      this.scrollLeft -= (delta*1.5);
       event.preventDefault();
     });
   });
@@ -35,23 +35,130 @@
 
     <section class="openning">
       <h1 class="font-section-title">iBuilding</h1>
-      <span class="divider"></span>
+      <span class="divider divider-adjust"></span>
       <div class="brief">
         <p class="font-section-desc">
-          iBuilding is a commercial real estate renting platform, and there are serval huge sales teams in different cities. My goal
+          iBuilding is a commercial real estate renting platform, and there are serval huge sales teams in different cities. My goal was to increase the efficiency of our sales teams. As both product and visual designer, I work with the other managers to set the new regulation of bidding order and career promotion, and emphasized these new features in the app and the web back-end.
         </p>
         <p class="font-section-desc">
-          As both product and visual designer at DDZ, which focuses on commercial property renting service, I work on internal tools and took part in strategies for marketing efficiency.
+          In a company that focus more on offline sales, I also got chances to participated some researches about traditional sale field.
         </p>
       </div>
       <div id="sketch"></div>
     </section>
 
 
-    <section class="showcase sc-memoir">
-      <p class="desc font-showcase-desc">
-        Every moment shared after 24hr will be archived in the profile as Memoir. Memories usually are kinda messy, but selected moments shown as Highlight look like a hand of cards well organized.
-      </p>
+    <section class="showcase">
+      <div class="desc">
+        <h2 class="font-showcase-title ">Cooperated orders</h2>
+        <p class="font-showcase-desc">
+          Sharing resources was one of things that we encouraged our sales teams to do, but we don't want to let the order owners encounter too much request which could have been kind of annoying. So we let the owner be the one to select who to work with.
+        </p>
+      </div>
+      <div class="phone">
+        <div class="cover light"></div>
+        <img class="phone-img-short" src="images/ddz/01-0.jpg">
+        <div class="bg-light"></div>
+      </div>
+      <div class="phone side-by-side">
+        <div class="cover light"></div>
+        <img class="phone-img-short" src="images/ddz/01-1.jpg">
+        <div class="bg-light"></div>
+      </div>
+      <div class="phone side-by-side">
+        <div class="cover light"></div>
+        <img class="phone-img-short" src="images/ddz/01-2.jpg">
+        <div class="bg-light"></div>
+      </div>
+      <div class="phone side-by-side">
+        <div class="cover light"></div>
+        <img class="phone-img-short" src="images/ddz/01-3.jpg">
+        <div class="bg-light"></div>
+      </div>
+    </section>
+
+    <section class="showcase">
+      <div class="desc">
+        <h2 class="font-showcase-title ">Bidding</h2>
+        <p class="font-showcase-desc">
+          Orders coming from customers will show in iBuilding Assitant and notifies salesmans at once, to make the repsonse to our customers even faster, we dicided to turn order distribution into a bid competition.
+        </p>
+      </div>
+      <div class="phone">
+        <div class="cover light"></div>
+        <img class="phone-img-short" src="images/ddz/02-0.jpg">
+        <div class="bg-light"></div>
+      </div>
+      <div class="phone side-by-side">
+        <div class="cover light"></div>
+        <img class="phone-img-short" src="images/ddz/02-1.jpg">
+        <div class="bg-light"></div>
+      </div>
+      <div class="phone side-by-side">
+        <div class="cover light"></div>
+        <img class="phone-img-short" src="images/ddz/02-2.jpg">
+        <div class="bg-light"></div>
+      </div>
+    </section>
+
+    <section class="showcase showcase-column">
+
+      <div class="cube">
+        <video autoplay loop muted playsinline>
+          <source src="images//ddz/video-bid-small.mp4" type="video/mp4"/>
+          YOU BROWSER DOESN'T SUPPORT VIDEO.
+        </video>
+      </div>
+      <div class="cube">
+        <img class="phone-img-short" src="images/ddz/02-3.jpg">
+      </div>
+    </section>
+
+    <section class="showcase">
+      <div class="desc">
+        <h2 class="font-showcase-title ">Resources & Data</h2>
+        <p class="font-showcase-desc">
+          Informations about every office are the key to sales. They can get the latest informations here, and also can earn benefits from updating valid information here, like a wikipedia.
+        </p>
+      </div>
+      <div class="phone">
+        <div class="cover light"></div>
+        <img class="phone-img-short" src="images/ddz/03-0.jpg">
+        <div class="bg-light"></div>
+      </div>
+      <div class="phone side-by-side">
+        <div class="cover light"></div>
+        <img class="phone-img-short" src="images/ddz/03-1.jpg">
+        <div class="bg-light"></div>
+      </div>
+    </section>
+
+    <section class="showcase">
+      <img class="showcase-img-only sc-data" src="images/ddz/03-2.jpg">
+    </section>
+
+
+
+    <section class="showcase">
+      <div class="desc">
+        <h2 class="font-showcase-title ">Preformance & Promotion</h2>
+        <p class="font-showcase-desc">
+          Career is always a serious thing, especially when there has to be ups and downs, but we need to keep the competition atmosphese, so we tried to make it more like a game to ease the tension feeling.
+        </p>
+      </div>
+      <div class="phone">
+        <div class="cover light"></div>
+        <img class="phone-img-short" src="images/ddz/04-0.jpg">
+        <div class="bg-light"></div>
+      </div>
+      <div class="phone side-by-side">
+        <div class="cover light"></div>
+        <img class="phone-img-short" src="images/ddz/04-1.jpg">
+        <div class="bg-light"></div>
+      </div>
+    </section>
+
+    <section class="showcase">
       <div class="phone">
         <div class="cover dark"></div>
         <video class="phone-video-short" autoplay loop muted playsinline>
@@ -62,16 +169,15 @@
       </div>
     </section>
 
-
     <section class="ending next" onclick="location.href='flyme.html';">
-        <div class="button">
-          <div class="arrow"></div>
-          <div class="line"></div>
-        </div>
-        <div class="title">
-          <span class="font-section-desc">UP NEXT</span>
-          <h1 class="font-section-title">Flyme OS</h1>
-        </div>
+      <div class="button">
+        <div class="arrow"></div>
+        <div class="line"></div>
+      </div>
+      <div class="title">
+        <span class="font-section-desc">UP NEXT</span>
+        <h1 class="font-section-title">Flyme OS</h1>
+      </div>
     </section>
   </section>
 </div>

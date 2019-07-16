@@ -16,7 +16,7 @@
   <script type='text/javascript'>
   $(document).ready(function() {
     $('html, body, *').mousewheel(function(event, delta) {
-      this.scrollLeft -= (delta);
+      this.scrollLeft -= (delta*1.5);
       event.preventDefault();
     });
   });
@@ -63,7 +63,7 @@
         <img src="images/qq/02.jpg">
       </div>
       <div class="cube">
-        <img src="images/qq/022.jpg">
+        <img class="height-auto" src="images/qq/022.jpg">
       </div>
     </section>
 

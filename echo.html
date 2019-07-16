@@ -13,7 +13,7 @@
   <script type='text/javascript'>
   $(document).ready(function() {
     $('html, body, *').mousewheel(function(event, delta) {
-      this.scrollLeft -= (delta);
+      this.scrollLeft -= (delta*1.5);
       event.preventDefault();
     });
   });
@@ -52,11 +52,11 @@
     <section class="showcase sc-spaceline">
       <div class="phone zoomin">
         <div class="cover light"></div>
-        <video class="sc-spaceline-video" autoplay loop muted playsinline>
+        <video class="phone-video" autoplay loop muted playsinline>
           <source src="images/echo/video-index.mp4" type="video/mp4"/>
           YOU BROWSER DOESN'T SUPPORT VIDEO.
         </video>
-        <img src="images/echo/A00-Login.jpg">
+        <!-- <img src="images/echo/A00-Login.jpg"> -->
       </div>
 
       <!-- <img class="sc-spaceline-bg" src="images/echo/A00-spaceline-bg.jpg"> -->
@@ -105,7 +105,7 @@
       <p class="desc font-showcase-desc">
         Every moment shared after 24hr will be archived in the profile as Memoir. Memories usually are kinda messy, but selected moments shown as Highlight look like a hand of cards well organized.
       </p>
-      <video width="800" height="800" autoplay loop muted playsinline>
+      <video autoplay loop muted playsinline>
         <source src="images/echo/video-memoir.mp4" type="video/mp4"/>
         YOU BROWSER DOESN'T SUPPORT VIDEO.
       </video>
