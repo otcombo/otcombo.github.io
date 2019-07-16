@@ -9,15 +9,18 @@
   <script type='text/javascript' src="addons/p5.dom.min.js"></script>
   <script type='text/javascript' src="js/sketch-seeking.js"></script>
   <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
-  <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js'></script>
+  <script type='text/javascript' src='addons/jquery.mousewheel.min.js'></script>
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <script type='text/javascript'>
   $(document).ready(function() {
-    $('html, body, *').mousewheel(function(event, delta) {
-      this.scrollLeft -= (delta*1.5);
-      event.preventDefault();
+    console.log(window.scrollX,window.scrollY);
+    $('html, body, *').mousewheel(function(e, delta) {
+      console.log(e.deltaX, e.deltaY, e.deltaFactor,window.scrollX,window.scrollY);
+      // this.scrollLeft -= (e.deltaX);
+      window.scroll(window.scrollX + e.deltaY * 5, window.scrollY);
+      // e.preventDefault();
     });
-  });
+});
   </script>
 </head>
 <body>
