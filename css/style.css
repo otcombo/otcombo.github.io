@@ -459,7 +459,7 @@ img {
 /* ========== Scaling ========== */
 
 @media
-  (hover : hove) {
+  (hover : hover) {
   .intro-ins:hover {
     color : var(--COLOR-DARK);
   }
