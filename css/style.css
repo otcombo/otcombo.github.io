@@ -143,8 +143,6 @@ img {
   justify-content     : flex-end;
 }
 
-
-
 .section > .content {
   z-index         : 2;
   display         : flex;
@@ -168,10 +166,6 @@ img {
   transition : all 1s var(--CURVE-SHOW);
 }
 
-
-
-
-
 /* ========== Specific sections ========== */
 
 .section-echo {
@@ -185,8 +179,6 @@ img {
   left      : -5rem;
   transform : translate3d(5rem,5rem,0);
 }
-
-
 
 .section-wechat {
   color            : #D7BF91;
@@ -218,8 +210,6 @@ img {
   transform : translate3d(0,0,0);
 }
 
-
-
 .section-flyme {
   color            : #FFF;
   background-image : url('../images/cover-flyme.jpg');
@@ -232,8 +222,6 @@ img {
   left      : -3rem;
   transform : translate3d(0,5rem,0);
 }
-
-
 
 .section-qq {
   color            : #AAFFFA;
@@ -260,8 +248,6 @@ img {
   right     : -5rem;
   transform : translate3d(-10rem,10rem,0) rotate(-30deg);
 }
-
-
 
 .section-learning {
   width            : 100%;
@@ -309,7 +295,9 @@ img {
   color            : white;
   background-color : var(--COLOR-DARK);
   text-align       : left;
-  font-family      : Tahoma;
+  font-family      : "Tahoma",
+                     "SF Pro Text",
+                     "Helvetica";
   font-size        : 2.4rem;
   font-style       : normal;
   font-weight      : bold;
@@ -367,23 +355,21 @@ img {
   transition-timing-function : ease-in-out;
 }
 
+.section-contact > .content:hover .code-1 {
+  stroke-width : 0;
+}
 
-  .section-contact > .content:hover .code-1 {
-    stroke-width : 0;
-  }
+.section-contact > .content:hover .code-2 {
+  stroke-width : 0;
+}
 
-  .section-contact > .content:hover .code-2 {
-    stroke-width : 0;
-  }
+.section-contact > .content:hover .code-3 {
+  stroke-width : 0;
+}
 
-  .section-contact > .content:hover .code-3 {
-    stroke-width : 0;
-  }
-
-  .section-contact > .content:hover .code-4 {
-    stroke-width : 0;
-  }
-
+.section-contact > .content:hover .code-4 {
+  stroke-width : 0;
+}
 
 .section-contact > .bg {
   min-width        : 80rem;
@@ -472,8 +458,8 @@ img {
 
 /* ========== Scaling ========== */
 
-@media (hover:hover){
-
+@media
+  (hover : hove) {
   .intro-ins:hover {
     color : var(--COLOR-DARK);
   }
@@ -482,9 +468,11 @@ img {
     opacity   : 1;
     transform : translate3d(0,0,5rem) rotate(8deg);
   }
+
   .section:hover {
     cursor : pointer;
   }
+
   .section:hover > .content > h1 {
     transform : translate(0,-2rem);
   }
@@ -492,14 +480,16 @@ img {
   .section:hover > .content {
     transform : translate(0,-2rem);
   }
+  
   .section:active > .content {
     transform : translate(0,-1rem);
   }
-  
+
   .section-echo:hover > .hover-echo {
     opacity   : 1;
     transform : translate3d(0,0,5rem);
   }
+
   .section-wechat:hover > .hover-wechat-big {
     opacity   : 1;
     transform : translate3d(0,0,5rem);
@@ -514,10 +504,12 @@ img {
     opacity   : 1;
     transform : translate3d(0,0,5rem);
   }
+
   .section-ddz:hover > .hover-ddz {
     opacity   : 1;
     transform : translate3d(0,0,5rem);
   }
+
   .section-qq:hover > .hover-qq {
     opacity   : 1;
     transform : translate3d(0,0,5rem)rotate(-5deg);
@@ -527,9 +519,7 @@ img {
     opacity   : 1;
     transform : translate3d(0,0,5rem) rotate(0);
   }
-
 }
-
 
 @media
   (max-height : 800px) {
@@ -557,14 +547,6 @@ img {
 
   #sketch-seeking {
     margin-left : -25vw;
-  }
-
-  .dots {
-    top : 10.5rem;
-  }
-
-  .qrcode {
-    top : 15.1rem;
   }
 }
 
@@ -601,34 +583,35 @@ img {
 
   .section-contact > .content {
     /* margin:48rem auto 0 auto; */
-    max-width : 80vw;
-    justify-content: flex-end;
-    margin-left: 3rem;
-    margin-bottom: 8rem;
+    max-width       : 80vw;
+    margin-bottom   : 8rem;
+    margin-left     : 3rem;
+    justify-content : flex-end;
   }
 
   .section-contact > .content > p {
-
     max-width : 80%;
   }
-  .get-in-touch{
-    font-size: 2rem;
-    padding: 1rem;
+
+  .get-in-touch {
+    padding   : 1rem;
+    font-size : 2rem;
   }
 
   .dots-codes {
-    top: -15rem;
-    right: -20rem;
-    transform    : scale(0.6);
+    top       : -15rem;
+    right     : -20rem;
+    transform : scale(0.6);
   }
 
   .section-contact > .bg {
     display : none;
   }
 
-  .section-contact > .footer{
-    bottom: 2rem;
+  .section-contact > .footer {
+    bottom : 2rem;
   }
+
   .font-overview-headline {
     font-size      : 4.2rem;
     letter-spacing : -0.1rem;
