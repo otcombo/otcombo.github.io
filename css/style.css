@@ -117,15 +117,6 @@ img {
   transition : all 1s var(--CURVE-SHOW);
 }
 
-.intro-ins:hover {
-  color : var(--COLOR-DARK);
-}
-
-.os:hover > .hover-cat {
-  opacity   : 1;
-  transform : translate3d(0,0,5rem) rotate(8deg);
-}
-
 #sketch-seeking {
   z-index          : -10;
   width            : 100%;
@@ -152,9 +143,7 @@ img {
   justify-content     : flex-end;
 }
 
-.section:hover {
-  cursor : pointer;
-}
+
 
 .section > .content {
   z-index         : 2;
@@ -179,13 +168,7 @@ img {
   transition : all 1s var(--CURVE-SHOW);
 }
 
-.section:hover > .content > h1 {
-  transform : translate(0,-2rem);
-}
 
-.section:hover > .content {
-  transform : translate(0,-2rem);
-}
 
 .section:active > .content {
   transform : translate(0,-1rem);
@@ -205,10 +188,7 @@ img {
   transform : translate3d(5rem,5rem,0);
 }
 
-.section-echo:hover > .hover-echo {
-  opacity   : 1;
-  transform : translate3d(0,0,5rem);
-}
+
 
 .section-wechat {
   color            : #D7BF91;
@@ -228,16 +208,6 @@ img {
   transform : translate3d(10rem,0,-10rem);
 }
 
-.section-wechat:hover > .hover-wechat-big {
-  opacity   : 1;
-  transform : translate3d(0,0,5rem);
-}
-
-.section-wechat:hover > .hover-wechat-small {
-  opacity   : 1;
-  transform : translate3d(0,0,5rem);
-}
-
 .section-ddz {
   color            : #6B4700;
   background-image : url('../images/cover-ddz.jpg');
@@ -250,10 +220,7 @@ img {
   transform : translate3d(0,0,0);
 }
 
-.section-ddz:hover > .hover-ddz {
-  opacity   : 1;
-  transform : translate3d(0,0,5rem);
-}
+
 
 .section-flyme {
   color            : #FFF;
@@ -268,10 +235,7 @@ img {
   transform : translate3d(0,5rem,0);
 }
 
-.section-flyme:hover > .hover-flyme {
-  opacity   : 1;
-  transform : translate3d(0,0,5rem);
-}
+
 
 .section-qq {
   color            : #AAFFFA;
@@ -284,20 +248,6 @@ img {
   bottom    : 25rem;
   left      : -5rem;
   transform : translate3d(5rem,-5rem,0) rotate(0);
-}
-
-.section-qq:hover > .hover-qq {
-  opacity   : 1;
-  transform : translate3d(0,0,5rem)rotate(-5deg);
-}
-
-.section-others {
-  background-color : none;
-  flex-basis       : 32rem;
-}
-
-.section-others > div:first-child {
-  margin-bottom : 2rem;
 }
 
 .section-olddays {
@@ -313,10 +263,7 @@ img {
   transform : translate3d(-10rem,10rem,0) rotate(-30deg);
 }
 
-.section-olddays:hover > .hover-olddays {
-  opacity   : 1;
-  transform : translate3d(0,0,5rem) rotate(0);
-}
+
 
 .section-learning {
   width            : 100%;
@@ -422,21 +369,23 @@ img {
   transition-timing-function : ease-in-out;
 }
 
-.section-contact > .content:hover .code-1 {
-  stroke-width : 0;
-}
 
-.section-contact > .content:hover .code-2 {
-  stroke-width : 0;
-}
+  .section-contact > .content:active .code-1 {
+    stroke-width : 0;
+  }
 
-.section-contact > .content:hover .code-3 {
-  stroke-width : 0;
-}
+  .section-contact > .content:active .code-2 {
+    stroke-width : 0;
+  }
 
-.section-contact > .content:hover .code-4 {
-  stroke-width : 0;
-}
+  .section-contact > .content:active .code-3 {
+    stroke-width : 0;
+  }
+
+  .section-contact > .content:active .code-4 {
+    stroke-width : 0;
+  }
+
 
 .section-contact > .bg {
   min-width        : 80rem;
@@ -524,6 +473,76 @@ img {
 }
 
 /* ========== Scaling ========== */
+
+@media (hover:hover){
+
+  .intro-ins:hover {
+    color : var(--COLOR-DARK);
+  }
+
+  .os:hover > .hover-cat {
+    opacity   : 1;
+    transform : translate3d(0,0,5rem) rotate(8deg);
+  }
+  .section:hover {
+    cursor : pointer;
+  }
+  .section:hover > .content > h1 {
+    transform : translate(0,-2rem);
+  }
+
+  .section:hover > .content {
+    transform : translate(0,-2rem);
+  }
+  .section-echo:hover > .hover-echo {
+    opacity   : 1;
+    transform : translate3d(0,0,5rem);
+  }
+  .section-wechat:hover > .hover-wechat-big {
+    opacity   : 1;
+    transform : translate3d(0,0,5rem);
+  }
+
+  .section-wechat:hover > .hover-wechat-small {
+    opacity   : 1;
+    transform : translate3d(0,0,5rem);
+  }
+
+  .section-flyme:hover > .hover-flyme {
+    opacity   : 1;
+    transform : translate3d(0,0,5rem);
+  }
+  .section-ddz:hover > .hover-ddz {
+    opacity   : 1;
+    transform : translate3d(0,0,5rem);
+  }
+  .section-qq:hover > .hover-qq {
+    opacity   : 1;
+    transform : translate3d(0,0,5rem)rotate(-5deg);
+  }
+
+  .section-olddays:hover > .hover-olddays {
+    opacity   : 1;
+    transform : translate3d(0,0,5rem) rotate(0);
+  }
+
+  .section-contact > .content:hover .code-1 {
+    stroke-width : 0;
+  }
+
+  .section-contact > .content:hover .code-2 {
+    stroke-width : 0;
+  }
+
+  .section-contact > .content:hover .code-3 {
+    stroke-width : 0;
+  }
+
+  .section-contact > .content:hover .code-4 {
+    stroke-width : 0;
+  }
+}
+
 
 @media
   (max-height : 800px) {
