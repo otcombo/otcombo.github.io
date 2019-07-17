@@ -83,8 +83,8 @@ img {
 
 .section-intro .content {
   max-width   : 70rem;
+  margin-top  : -5rem;
   margin-left : 10vw;
-  margin-top: -5rem;
   flex        : 1 0 auto;
   transform   : translateZ(5rem);
 }
@@ -95,7 +95,6 @@ img {
 
 .intro-os {
   position  : relative;
-  /* left      : 12rem; */
   color     : var(--COLOR-RED);
   transform : rotate(-5deg);
 }
@@ -108,8 +107,8 @@ img {
 .hover-cat {
   z-index    : 20;
   position   : absolute;
-  left     : 0rem;
   bottom     : -10rem;
+  left       : 0rem;
   width      : 27rem;
   height     : 37rem;
   opacity    : 0;
@@ -140,15 +139,17 @@ img {
 /* General settings */
 
 .section {
-  display         : flex;
-  position        : relative;
-  height          : 100%;
-  align-items     : center;
-  flex-basis      : var(--SIZE-SECTION-WIDTH);
-  flex-direction  : column;
-  flex-grow       : 1;
-  flex-shrink     : 0;
-  justify-content : flex-end;
+  display             : flex;
+  position            : relative;
+  height              : 100%;
+  background-position : center;
+  background-size     : cover;
+  align-items         : center;
+  flex-basis          : var(--SIZE-SECTION-WIDTH);
+  flex-direction      : column;
+  flex-grow           : 1;
+  flex-shrink         : 0;
+  justify-content     : flex-end;
 }
 
 .section:hover {
@@ -196,7 +197,6 @@ img {
   color            : #F1EC6B;
   background-image : url('../images/cover-echo.jpg');
   background-color : #DC2107;
-  background-size  : cover;
 }
 
 .hover-echo {
@@ -214,7 +214,6 @@ img {
   color            : #D7BF91;
   background-image : url('../images/cover-wechat.jpg');
   background-color : #2C7631;
-  background-size  : cover;
 }
 
 .hover-wechat-big {
@@ -243,7 +242,6 @@ img {
   color            : #6B4700;
   background-image : url('../images/cover-ddz.jpg');
   background-color : #F8D797;
-  background-size  : cover;
   flex-basis       : 32rem;
 }
 
@@ -261,7 +259,6 @@ img {
   color            : #FFF;
   background-image : url('../images/cover-flyme.jpg');
   background-color : #46C8FF;
-  background-size  : cover;
   flex-basis       : 32rem;
 }
 
@@ -280,7 +277,6 @@ img {
   color            : #AAFFFA;
   background-image : url('../images/cover-qq.jpg');
   background-color : #0050EC;
-  background-size  : cover;
   flex-basis       : 32rem;
 }
 
@@ -308,7 +304,6 @@ img {
   color            : #B0A394;
   background-image : url('../images/cover-olddays.jpg');
   background-color : #000;
-  background-size  : cover;
   flex-basis       : 32rem;
 }
 
@@ -339,7 +334,7 @@ img {
 }
 
 .section-contact > .content {
-  z-index         : 2;
+  z-index         : 3;
   display         : flex;
   max-width       : 80rem;
   margin-right    : 4%;
@@ -357,6 +352,7 @@ img {
 }
 
 .section-contact > .content > p {
+  z-index       : 3;
   max-width     : 40rem;
   margin-bottom : 2rem;
 }
@@ -380,8 +376,7 @@ img {
   background-color : var(--COLOR-RED);
 }
 
-.dots {
-  z-index  : 2;
+.dots-codes {
   position : absolute;
   top      : 18.5rem;
   right    : 32.6rem;
@@ -389,11 +384,17 @@ img {
   height   : 432px;
 }
 
-.qrcode {
-  z-index  : 1;
+.dots {
+  z-index  : 2;
   position : absolute;
-  top      : 23.1rem;
-  right    : 50.2rem;
+  width    : 100%;
+}
+
+.qrcode {
+  z-index  : 0;
+  position : absolute;
+  right    : 17.6rem;
+  bottom   : 5.7rem;
 }
 
 .qrcode > rect {
@@ -407,17 +408,17 @@ img {
 }
 
 .code-2 {
-  transition                 : all 0.4s;
+  transition                 : all 0.3s 0.1s;
   transition-timing-function : ease-in-out;
 }
 
 .code-3 {
-  transition                 : all 0.6s;
+  transition                 : all 0.3s 0.15s;
   transition-timing-function : ease-in-out;
 }
 
 .code-4 {
-  transition                 : all 0.8s;
+  transition                 : all 0.3s 0.25s;
   transition-timing-function : ease-in-out;
 }
 
@@ -524,21 +525,22 @@ img {
 
 /* ========== Scaling ========== */
 
-@media (max-height : 800px) {
-    html {
-      font-size : 52%;
-    }
+@media
+  (max-height : 800px) {
+  html {
+    font-size : 52%;
+  }
 }
 
-
-@media (max-height : 1024px) {
+@media
+  (max-height : 1024px) {
   :root {
     --SIZE-SECTION-HEIGHT : 80vh;
   }
-
 }
 
-@media (min-width: 761px) and (max-width: 1280px) {
+@media
+  (max-width : 1280px) {
   html {
     font-size : 52%;
   }
@@ -546,34 +548,83 @@ img {
   .section-intro .content {
     max-width : 58rem;
   }
+
   #sketch-seeking {
     margin-left : -25vw;
   }
+
   .dots {
-    top      : 10.5rem;
+    top : 10.5rem;
   }
 
   .qrcode {
-    top      : 15.1rem;
+    top : 15.1rem;
   }
 }
-@media (min-width: 320px) and (max-width: 760px){
+
+@media
+  (max-width : 760px) {
   :root {
     --SIZE-SECTION-HEIGHT : 80vh;
-    --SIZE-SECTION-WIDTH  : 100vw;
+    --SIZE-SECTION-WIDTH  : 80vw;
   }
 
   html {
-    font-size : 43%;
+    font-size : 45%;
   }
 
-  .section-intro .content {
-    flex      : 0 1 80vw;
-    transform : translateZ(0rem);
+  .section-intro > .content {
+    max-width  : 82vw;
+    margin-top : 0;
+    transform  : translateZ(0rem);
+  }
+
+  .intro-os {
+    margin-top : 2rem;
   }
 
   #sketch-seeking {
-    max-width   : 130vw;
-    margin-left : -50vw;
+    width       : 100vw;
+    margin-left : -40vw;
+  }
+
+  .section-contact {
+    overflow         : hidden;
+    background-color : #F4F4F4;
+  }
+
+  .section-contact > .content {
+    /* margin:48rem auto 0 auto; */
+    max-width : 80vw;
+    justify-content: flex-end;
+    margin-left: 3rem;
+    margin-bottom: 8rem;
+  }
+
+  .section-contact > .content > p {
+
+    max-width : 80%;
+  }
+  .get-in-touch{
+    font-size: 2rem;
+    padding: 1rem;
+  }
+
+  .dots-codes {
+    top: -15rem;
+    right: -20rem;
+    transform    : scale(0.6);
+  }
+
+  .section-contact > .bg {
+    display : none;
+  }
+
+  .section-contact > .footer{
+    bottom: 2rem;
+  }
+  .font-overview-headline {
+    font-size      : 4.2rem;
+    letter-spacing : -0.1rem;
   }
 }
