@@ -9,15 +9,21 @@
   <script type='text/javascript' src="addons/p5.dom.min.js"></script>
   <script type='text/javascript' src="js/sketch-qq.js"></script>
   <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
-  <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js'></script>
+  <script type='text/javascript' src='addons/jquery.mousewheel.min.js'></script>
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <link rel="stylesheet" type="text/css" href="css/style-qq.css">
   <link rel="stylesheet" type="text/css" href="css/style-work.css">
   <script type='text/javascript'>
   $(document).ready(function() {
-    $('html, body, *').mousewheel(function(event, delta) {
-      this.scrollLeft -= (delta);
-      event.preventDefault();
+    $('html, body, *').mousewheel(function(e) {
+      console.log(e.deltaX, e.deltaY, e.deltaFactor);
+      this.scrollLeft += e.deltaX - e.deltaY;
+      // this.scrollTop = 0;
+      if ( e && e.preventDefault ){
+        e.preventDefault();
+      } else {
+        window.event.returnValue = false;  //IE
+      }
     });
   });
   </script>
@@ -45,35 +51,44 @@
     </section>
 
     <section class="showcase">
-      <img class="showcase-img-only" src="images/qq/05.jpg">
+      <div class="showcase-wrapper">
+        <img src="images/qq/05.jpg">
+      </div>
     </section>
 
     <section class="showcase">
-      <img class="showcase-img-only" src="images/qq/00.jpg">
+      <div class="showcase-wrapper">
+        <img src="images/qq/00.jpg">
+      </div>
     </section>
 
     <section class="showcase">
-      <img class="showcase-img-only"  src="images/qq/03.jpg">
-      <img class="showcase-img-only"  src="images/qq/032.jpg">
+      <div class="showcase-wrapper">
+        <img src="images/qq/03.jpg">
+        <img src="images/qq/032.jpg">
+      </div>
     </section>
 
 
-    <section class="showcase showcase-column">
+    <section class="showcase">
       <div class="cube">
         <img src="images/qq/02.jpg">
       </div>
       <div class="cube">
-        <img class="height-auto" src="images/qq/022.jpg">
+        <img src="images/qq/022.jpg">
       </div>
     </section>
-
 
     <section class="showcase">
       <img src="images/qq/01.jpg">
     </section>
+
     <section class="showcase">
-      <img class="showcase-img-only" src="images/qq/04.jpg">
+      <div class="showcase-wrapper">
+        <img src="images/qq/04.jpg">
+      </div>
     </section>
+
     <section class="ending next" onclick="location.href='old-days.html';">
       <div class="button">
         <div class="arrow"></div>

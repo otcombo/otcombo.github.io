@@ -13,45 +13,43 @@
   height   : 100%;
 }
 
-.divider-adjust{
-  height: 16rem;
+.divider-adjust {
+  height : 16rem;
 }
 
 .sc-spaceline {
   width : 100rem;
 }
 
-.sc-spaceline-bg {
-  position : absolute;
-  top      : 6rem;
-  right    : 0;
-  width    : 100rem;
-}
-
 .sc-camera-stickers {
   display          : flex;
   width            : 42rem;
   height           : 58rem;
-  margin           : -12rem 10rem 0 -10rem;
+  margin-left      : 5rem;
   background-image : url(../images/img-dots.png);
   background-size  : cover;
   flex-wrap        : wrap;
   justify-content  : center;
 }
 
-.sc-list-duotone > img {
-  margin-top : -17rem;
-}
-
 .sc-video-im {
   max-height : 52rem;
 }
 
-.sc-now-othercolor {
-  margin : -13rem 10rem 0 -20rem;
+.sc-now-othercolor {}
+
+.sc-video-memoir {
+  max-width : 80rem;
 }
 
-.sc-memoir > video {
-  margin-top : -10rem;
-  max-width: 80rem;
+.sc-echo-loading1,
+.sc-echo-loading2 {
+  width : 22rem;
+}
+
+@media
+  (max-width : 1280px) {
+  .sc-memoir > video {
+    max-width : 70rem;
+  }
 }

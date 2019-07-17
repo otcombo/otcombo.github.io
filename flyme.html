@@ -9,15 +9,21 @@
   <script type='text/javascript' src="addons/p5.dom.min.js"></script>
   <script type='text/javascript' src="js/sketch-flyme.js"></script>
   <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
-  <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js'></script>
+  <script type='text/javascript' src='addons/jquery.mousewheel.min.js'></script>
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <link rel="stylesheet" type="text/css" href="css/style-flyme.css">
   <link rel="stylesheet" type="text/css" href="css/style-work.css">
   <script type='text/javascript'>
   $(document).ready(function() {
-    $('html, body, *').mousewheel(function(event, delta) {
-      this.scrollLeft -= (delta);
-      event.preventDefault();
+    $('html, body, *').mousewheel(function(e) {
+      console.log(e.deltaX, e.deltaY, e.deltaFactor);
+      this.scrollLeft += e.deltaX - e.deltaY;
+      // this.scrollTop = 0;
+      if ( e && e.preventDefault ){
+        e.preventDefault();
+      } else {
+        window.event.returnValue = false;  //IE
+      }
     });
   });
   </script>
@@ -45,22 +51,30 @@
     </section>
 
     <section class="showcase">
-        <img class="showcase-img-only" src="images/flyme/03.jpg">
+      <div class="showcase-wrapper">
+        <img src="images/flyme/03.jpg">
+      </div>
     </section>
 
     <section class="showcase">
+      <div class="showcase-wrapper nomargin">
       <video autoplay loop muted playsinline>
         <source src="images/flyme/all.mp4" type="video/mp4"/>
         YOU BROWSER DOESN'T SUPPORT VIDEO.
       </video>
+    </div>
     </section>
 
     <section class="showcase">
+      <div class="showcase-wrapper nomargin">
         <img src="images/flyme/01.jpg">
+      </div>
     </section>
 
     <section class="showcase">
-        <img class="showcase-img-only" src="images/flyme/02.jpg">
+      <div class="showcase-wrapper">
+        <img src="images/flyme/02.jpg">
+      </div>
     </section>
 
     <section class="ending next" onclick="location.href='qq.html';">

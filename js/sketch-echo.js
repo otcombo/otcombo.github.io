@@ -1,11 +1,9 @@
 p5.disableFriendlyErrors = true;
 
-var play_it = 1;
+var play_it = 1,first_time = 1;
 var amount = 800;
 var radius_scale = 2.5;
-var rotate_speed = 0.000005
-var M = 1000;
-
+var rotate_speed = 0.000005;
 
 var X = new Array(amount + 1);
 var Y = new Array(amount + 1);
@@ -19,6 +17,7 @@ var dVX = new Array(amount + 1);
 var dVY = new Array(amount + 1);
 var dVZ = new Array(amount + 1);
 
+var M = 1000;
 var L,R,N,NN;
 
 var KX,KY,KZ;
@@ -36,15 +35,23 @@ function setup() {
 	canvas.mouseOver(checkState);
 	canvas.mouseOut(checkState);
 
-	strokeWeight(10);
+	if( width < 1200){
+		radius_scale = 2;
+		strokeWeight(8);
+	} else {
+		radius_scale = 2.5;
+		strokeWeight(10);
+	}
+
+
 	noFill();
 
 	R = 2 * sqrt((4 * PI * (200 * 200) / amount) / (2 * sqrt(3)));
 
 	for (N = 0; N <= amount; N++) {
-		X[N] = random(-290, +290);
-		Y[N] = random(-290, +290);
-		Z[N] = random(-290, +290);
+		X[N] = random(-320, +320);
+		Y[N] = random(-320, +320);
+		Z[N] = random(-320, +320);
 
 		VX[N] = 0;
 		VY[N] = 0;
@@ -68,8 +75,11 @@ function setup() {
 //============================================================
 
 function draw() {
-	translate(width * 0.7,height*0.3);
+
+	translate(width * 0.2,height*0.3);
 	background(220, 33, 7, 200);
+
+
 
 	if(mouseIsPressed){
 		for (N = 0; N <= amount; N++) {
@@ -189,7 +199,7 @@ function draw() {
 		L = sqrt((VZ[N] * VZ[N]) + (L * L));
 
 		if (L > 10) {
-			stroke(255, 85+ Z[N] / 8, 62+ Z[N] / 8, 150 + Z[N] / 4);
+			stroke(255, 85+ Z[N] / 8, 62+ Z[N] / 8, 90 + Z[N] / 5);
 			let x1 = (X[N] + (VX[N] * (L - 12.5) / L)) * radius_scale;
 			let y1 = (Y[N] + (VY[N] * (L - 12.5) / L)) * radius_scale;
 			let x2 = X[N] * radius_scale;
@@ -197,12 +207,19 @@ function draw() {
 			line(x1, y1, x2, y2);
 		}
 	}
+	if( mouseX != 0 || mouseY != 0 ){
+		first_time = 0;
+	}else if (first_time) {
+		noLoop();
+	}
+
 
 }
 
 //============================================================
 
 function checkState() {
+	first_time = 0;
 	if (play_it) {
 		loop();
 		play_it = 0;

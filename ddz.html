@@ -9,15 +9,21 @@
   <script type='text/javascript' src="addons/p5.dom.min.js"></script>
   <script type='text/javascript' src="js/sketch-ddz.js"></script>
   <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
-  <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js'></script>
+  <script type='text/javascript' src='addons/jquery.mousewheel.min.js'></script>
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <link rel="stylesheet" type="text/css" href="css/style-ddz.css">
   <link rel="stylesheet" type="text/css" href="css/style-work.css">
   <script type='text/javascript'>
   $(document).ready(function() {
-    $('html, body, *').mousewheel(function(event, delta) {
-      this.scrollLeft -= (delta);
-      event.preventDefault();
+    $('html, body, *').mousewheel(function(e) {
+      console.log(e.deltaX, e.deltaY, e.deltaFactor);
+      this.scrollLeft += e.deltaX - e.deltaY;
+      // this.scrollTop = 0;
+      if ( e && e.preventDefault ){
+        e.preventDefault();
+      } else {
+        window.event.returnValue = false;  //IE
+      }
     });
   });
   </script>
@@ -49,60 +55,56 @@
 
 
     <section class="showcase">
-      <div class="desc">
+      <div class="showcase-desc">
         <h2 class="font-showcase-title ">Cooperated orders</h2>
         <p class="font-showcase-desc">
           Sharing resources was one of things that we encouraged our sales teams to do, but we don't want to let the order owners encounter too much request which could have been kind of annoying. So we let the owner be the one to select who to work with.
         </p>
       </div>
-      <div class="phone">
-        <div class="cover light"></div>
-        <img class="phone-img-short" src="images/ddz/01-0.jpg">
-        <div class="bg-light"></div>
-      </div>
-      <div class="phone side-by-side">
-        <div class="cover light"></div>
-        <img class="phone-img-short" src="images/ddz/01-1.jpg">
-        <div class="bg-light"></div>
-      </div>
-      <div class="phone side-by-side">
-        <div class="cover light"></div>
-        <img class="phone-img-short" src="images/ddz/01-2.jpg">
-        <div class="bg-light"></div>
-      </div>
-      <div class="phone side-by-side">
-        <div class="cover light"></div>
-        <img class="phone-img-short" src="images/ddz/01-3.jpg">
-        <div class="bg-light"></div>
+      <div class="showcase-wrapper">
+        <div class="phone bg-light">
+          <div class="cover light"></div>
+          <img class="phone-img-short" src="images/ddz/01-0.jpg">
+        </div>
+        <div class="phone bg-light">
+          <div class="cover light"></div>
+          <img class="phone-img-short" src="images/ddz/01-1.jpg">
+        </div>
+        <div class="phone bg-light">
+          <div class="cover light"></div>
+          <img class="phone-img-short" src="images/ddz/01-2.jpg">
+        </div>
+        <div class="phone bg-light">
+          <div class="cover light"></div>
+          <img class="phone-img-short" src="images/ddz/01-3.jpg">
+        </div>
       </div>
     </section>
 
     <section class="showcase">
-      <div class="desc">
+      <div class="showcase-desc">
         <h2 class="font-showcase-title ">Bidding</h2>
         <p class="font-showcase-desc">
           Orders coming from customers will show in iBuilding Assitant and notifies salesmans at once, to make the repsonse to our customers even faster, we dicided to turn order distribution into a bid competition.
         </p>
       </div>
-      <div class="phone">
-        <div class="cover light"></div>
-        <img class="phone-img-short" src="images/ddz/02-0.jpg">
-        <div class="bg-light"></div>
-      </div>
-      <div class="phone side-by-side">
-        <div class="cover light"></div>
-        <img class="phone-img-short" src="images/ddz/02-1.jpg">
-        <div class="bg-light"></div>
-      </div>
-      <div class="phone side-by-side">
-        <div class="cover light"></div>
-        <img class="phone-img-short" src="images/ddz/02-2.jpg">
-        <div class="bg-light"></div>
+      <div class="showcase-wrapper">
+        <div class="phone bg-light">
+          <div class="cover light"></div>
+          <img class="phone-img-short" src="images/ddz/02-0.jpg">
+        </div>
+        <div class="phone bg-light">
+          <div class="cover light"></div>
+          <img class="phone-img-short" src="images/ddz/02-1.jpg">
+        </div>
+        <div class="phone bg-light">
+          <div class="cover light"></div>
+          <img class="phone-img-short" src="images/ddz/02-2.jpg">
+        </div>
       </div>
     </section>
 
-    <section class="showcase showcase-column">
-
+    <section class="showcase">
       <div class="cube">
         <video autoplay loop muted playsinline>
           <source src="images//ddz/video-bid-small.mp4" type="video/mp4"/>
@@ -112,24 +114,25 @@
       <div class="cube">
         <img class="phone-img-short" src="images/ddz/02-3.jpg">
       </div>
+
     </section>
 
     <section class="showcase">
-      <div class="desc">
+      <div class="showcase-desc">
         <h2 class="font-showcase-title ">Resources & Data</h2>
         <p class="font-showcase-desc">
           Informations about every office are the key to sales. They can get the latest informations here, and also can earn benefits from updating valid information here, like a wikipedia.
         </p>
       </div>
-      <div class="phone">
-        <div class="cover light"></div>
-        <img class="phone-img-short" src="images/ddz/03-0.jpg">
-        <div class="bg-light"></div>
-      </div>
-      <div class="phone side-by-side">
-        <div class="cover light"></div>
-        <img class="phone-img-short" src="images/ddz/03-1.jpg">
-        <div class="bg-light"></div>
+      <div class="showcase-wrapper">
+        <div class="phone bg-light">
+          <div class="cover light"></div>
+          <img class="phone-img-short" src="images/ddz/03-0.jpg">
+        </div>
+        <div class="phone bg-light">
+          <div class="cover light"></div>
+          <img class="phone-img-short" src="images/ddz/03-1.jpg">
+        </div>
       </div>
     </section>
 
@@ -140,32 +143,28 @@
 
 
     <section class="showcase">
-      <div class="desc">
-        <h2 class="font-showcase-title ">Preformance & Promotion</h2>
+      <div class="showcase-desc">
+        <h2 class="font-showcase-title ">Performance & Promotion</h2>
         <p class="font-showcase-desc">
           Career is always a serious thing, especially when there has to be ups and downs, but we need to keep the competition atmosphese, so we tried to make it more like a game to ease the tension feeling.
         </p>
       </div>
-      <div class="phone">
-        <div class="cover light"></div>
-        <img class="phone-img-short" src="images/ddz/04-0.jpg">
-        <div class="bg-light"></div>
-      </div>
-      <div class="phone side-by-side">
-        <div class="cover light"></div>
-        <img class="phone-img-short" src="images/ddz/04-1.jpg">
-        <div class="bg-light"></div>
-      </div>
-    </section>
-
-    <section class="showcase">
-      <div class="phone">
-        <div class="cover dark"></div>
-        <video class="phone-video-short" autoplay loop muted playsinline>
-          <source src="images/ddz/video-levelup.mp4" type="video/mp4"/>
-          YOU BROWSER DOESN'T SUPPORT VIDEO.
-        </video>
-        <div class="bg-dark"></div>
+      <div class="showcase-wrapper">
+        <div class="phone bg-dark">
+          <div class="cover dark"></div>
+          <img src="images/ddz/04-0.jpg">
+        </div>
+        <div class="phone bg-dark">
+          <div class="cover dark"></div>
+          <img src="images/ddz/04-1.jpg">
+        </div>
+        <div class="phone bg-dark">
+          <div class="cover dark"></div>
+          <video class="phone-video-short" autoplay loop muted playsinline>
+            <source src="images/ddz/video-levelup.mp4" type="video/mp4"/>
+            YOU BROWSER DOESN'T SUPPORT VIDEO.
+          </video>
+        </div>
       </div>
     </section>
 

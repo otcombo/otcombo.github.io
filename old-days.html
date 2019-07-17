@@ -9,15 +9,21 @@
   <script type='text/javascript' src="addons/p5.dom.min.js"></script>
   <script type='text/javascript' src="js/sketch-old-days.js"></script>
   <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
-  <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js'></script>
+  <script type='text/javascript' src='addons/jquery.mousewheel.min.js'></script>
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <link rel="stylesheet" type="text/css" href="css/style-old-days.css">
   <link rel="stylesheet" type="text/css" href="css/style-work.css">
   <script type='text/javascript'>
   $(document).ready(function() {
-    $('html, body, *').mousewheel(function(event, delta) {
-      this.scrollLeft -= (delta);
-      event.preventDefault();
+    $('html, body, *').mousewheel(function(e) {
+      console.log(e.deltaX, e.deltaY, e.deltaFactor);
+      this.scrollLeft += e.deltaX - e.deltaY;
+      // this.scrollTop = 0;
+      if ( e && e.preventDefault ){
+        e.preventDefault();
+      } else {
+        window.event.returnValue = false;  //IE
+      }
     });
   });
   </script>
@@ -39,62 +45,31 @@
     </section>
 
     <section class="showcase">
-      <div class="phone">
+      <div class="showcase-wrapper">
+      <div class="phone bg-dark">
         <div class="cover dark"></div>
-        <video class="phone-video-short" autoplay loop muted playsinline>
+        <video autoplay loop muted playsinline>
           <source src="images/olddays/faded.mp4" type="video/mp4"/>
           YOU BROWSER DOESN'T SUPPORT VIDEO.
         </video>
-        <div class="bg-dark"></div>
       </div>
-      <div class="phone side-by-side">
+      <div class="phone bg-dark">
         <div class="cover dark"></div>
-        <video class="phone-video-short" autoplay loop muted playsinline>
+        <video autoplay loop muted playsinline>
           <source src="images/olddays/faded3.mp4" type="video/mp4"/>
           YOU BROWSER DOESN'T SUPPORT VIDEO.
         </video>
-        <div class="bg-dark"></div>
       </div>
-      <div class="phone side-by-side">
+      <div class="phone bg-dark">
         <div class="cover dark"></div>
-        <video class="phone-video-short" autoplay loop muted playsinline>
+        <video autoplay loop muted playsinline>
           <source src="images/olddays/faded2.mp4" type="video/mp4"/>
           YOU BROWSER DOESN'T SUPPORT VIDEO.
         </video>
-        <div class="bg-dark"></div>
       </div>
+    </div>
     </section>
-
-
-    <section class="showcase showcase-column">
-      <div class="cube">
-        <img src="images/olddays/01.jpg">
-      </div>
-      <div class="cube">
-        <img src="images/olddays/02.jpg">
-      </div>
-    </section>
-
     <section class="showcase">
-      <div class="phone">
-        <div class="cover light"></div>
-        <img class="phone-img-short" src="images/olddays/10.jpg">
-        <div class="bg-light"></div>
-      </div>
-      <div class="phone side-by-side">
-        <div class="cover light"></div>
-        <img class="phone-img-short" src="images/olddays/11.jpg">
-        <div class="bg-light"></div>
-      </div>
-      <div class="phone side-by-side">
-        <div class="cover light"></div>
-        <img class="phone-img-short" src="images/olddays/12.jpg">
-        <div class="bg-light"></div>
-      </div>
-    </section>
-
-
-    <section class="showcase showcase-column">
       <div class="cube">
         <img src="images/olddays/07.jpg">
       </div>
@@ -104,19 +79,52 @@
     </section>
 
     <section class="showcase">
-      <div class="phone">
+      <div class="showcase-wrapper">
+      <div class="phone bg-light">
         <div class="cover light"></div>
-        <video class="phone-video-short" autoplay loop muted playsinline>
+        <video autoplay loop muted playsinline>
           <source src="images/olddays/task.mp4" type="video/mp4"/>
           YOU BROWSER DOESN'T SUPPORT VIDEO.
         </video>
-        <div class="bg-light"></div>
+      </div>
+    </section>
+    <section class="showcase">
+      <div class="showcase-wrapper">
+      <div class="phone bg-light">
+        <div class="cover light"></div>
+        <img src="images/olddays/10.jpg">
+      </div>
+      <div class="phone bg-light">
+        <div class="cover light"></div>
+        <img src="images/olddays/11.jpg">
+      </div>
+      <div class="phone bg-light">
+        <div class="cover light"></div>
+        <img src="images/olddays/12.jpg">
       </div>
     </section>
 
 
+
+
+
+        <section class="showcase">
+          <div class="cube">
+            <img src="images/olddays/01.jpg">
+          </div>
+          <div class="cube">
+            <img src="images/olddays/02.jpg">
+          </div>
+          <div class="cube">
+            <img src="images/olddays/03.jpg">
+          </div>
+        </section>
+
+
     <section class="showcase">
-      <img class="showcase-img-only" src="images/olddays/06.jpg">
+      <div class="showcase-wrapper">
+        <img class="showcase-img-only" src="images/olddays/06.jpg">
+      </div>
     </section>
 
 
