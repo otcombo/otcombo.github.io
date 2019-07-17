@@ -170,9 +170,7 @@ img {
 
 
 
-.section:active > .content {
-  transform : translate(0,-1rem);
-}
+
 
 /* ========== Specific sections ========== */
 
@@ -370,19 +368,19 @@ img {
 }
 
 
-  .section-contact > .content:active .code-1 {
+  .section-contact > .content:hover .code-1 {
     stroke-width : 0;
   }
 
-  .section-contact > .content:active .code-2 {
+  .section-contact > .content:hover .code-2 {
     stroke-width : 0;
   }
 
-  .section-contact > .content:active .code-3 {
+  .section-contact > .content:hover .code-3 {
     stroke-width : 0;
   }
 
-  .section-contact > .content:active .code-4 {
+  .section-contact > .content:hover .code-4 {
     stroke-width : 0;
   }
 
@@ -494,6 +492,10 @@ img {
   .section:hover > .content {
     transform : translate(0,-2rem);
   }
+  .section:active > .content {
+    transform : translate(0,-1rem);
+  }
+  
   .section-echo:hover > .hover-echo {
     opacity   : 1;
     transform : translate3d(0,0,5rem);
@@ -526,21 +528,6 @@ img {
     transform : translate3d(0,0,5rem) rotate(0);
   }
 
-  .section-contact > .content:hover .code-1 {
-    stroke-width : 0;
-  }
-
-  .section-contact > .content:hover .code-2 {
-    stroke-width : 0;
-  }
-
-  .section-contact > .content:hover .code-3 {
-    stroke-width : 0;
-  }
-
-  .section-contact > .content:hover .code-4 {
-    stroke-width : 0;
-  }
 }
 
 
