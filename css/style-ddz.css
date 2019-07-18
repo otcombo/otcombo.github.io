@@ -1,21 +1,21 @@
 :root {
-  --COLOR-BG       : #F8D797;
-  --COLOR-BG-HOVER : #FFDE9F;
-  --COLOR-FONT     : #6B4700;
+  --COLOR-BG: #F8D797;
+  --COLOR-BG-HOVER: #FFDE9F;
+  --COLOR-FONT: #6B4700;
 }
 
 #sketch {
-  z-index  : 1;
-  position : absolute;
-  top      : 0;
-  left     : 0;
-  width    : 100%;
-  height   : 100%;
-}
-.divider-adjust{
-  height: 16rem;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
-.sc-data{
-  height: 80%;
+.divider-adjust {
+  height: 16rem;
 }
+/* .sc-data{
+  height: 80%;
+} */

@@ -1,227 +1,229 @@
 <!DOCTYPE html>
 <html lang="">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>echo | Han Li</title>
-  <link rel='shortcut icon' type='image/jpg' href='images/favicon.png' />
-  <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
-  <script type='text/javascript' src='addons/jquery.mousewheel.min.js'></script>
-  <link rel="stylesheet" type="text/css" href="css/style.css">
-  <link rel="stylesheet" type="text/css" href="css/style-echo.css">
-  <link rel="stylesheet" type="text/css" href="css/style-work.css">
-  <script type='text/javascript'>
-  $(document).ready(function() {
-    $('html, body, *').mousewheel(function(e) {
-      console.log(e.deltaX, e.deltaY, e.deltaFactor);
-      this.scrollLeft += e.deltaX - e.deltaY;
-      // this.scrollTop = 0;
-      if ( e && e.preventDefault ){
-        e.preventDefault();
-      } else {
-        window.event.returnValue = false;  //IE
-      }
-    });
-  });
-  </script>
-  <script type='text/javascript' src="addons/p5.min.js"></script>
-  <script type='text/javascript' src="addons/p5.dom.min.js"></script>
-  <script type='text/javascript' src="js/sketch-echo.js"></script>
-</head>
-<body>
-  <div id="home" onclick="location.href='index.html';">
-    <svg width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect class="svg-bg" width="70" height="70" fill="white"/>
-      <path class="svg-home" d="M46 45H24L24 30.4093L35.3667 21L46 30.4093V47" stroke="white" stroke-width="4"/>
-      <path class="svg-lh" d="M26 21V41L36 43V23V32.5L46 35V25V47" stroke="#2C7632" stroke-width="4"/>
-    </svg>
-  </div>
 
-  <div class="wrapper">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>echo | Han Li</title>
+    <link rel='shortcut icon' type='image/jpg' href='images/favicon.png'/>
+    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+    <script type='text/javascript' src='addons/jquery.mousewheel.min.js'></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/style-echo.css">
+    <link rel="stylesheet" type="text/css" href="css/style-work.css">
+    <script type='text/javascript'>
+      $(document).ready(function () {
+        $('html, body, *').mousewheel(function (e) {
+          console.log(e.deltaX, e.deltaY, e.deltaFactor);
+          this.scrollLeft += e.deltaX - e.deltaY;
+          // this.scrollTop = 0;
+          if (e && e.preventDefault) {
+            e.preventDefault();
+          } else {
+            window.event.returnValue = false; //IE
+          }
+        });
+      });
+    </script>
+    <script type='text/javascript' src="addons/p5.min.js"></script>
+    <script type='text/javascript' src="addons/p5.dom.min.js"></script>
+    <script type='text/javascript' src="js/sketch-echo.js"></script>
+  </head>
 
-    <section class="openning">
-      <h1 class="font-section-title">echo</h1>
-      <span class="divider divider-adjust"></span>
-      <div class="brief">
-        <p class="font-section-desc">
-          Echo is primarily used for capturing daily life as photos or short videos and sharing with close friends & families, which can be edited with various stickers, text captions etc. Besides from interacting with close friends, echo also allow users to have a peek of the “outside world”, discover strangers who share their interesting moments.
-        </p>
-        <p class="font-section-desc">
-          Students in colleges and graduated, who would be encountering an expansion of their social network circles, are our primary target users. New generations have experienced social networking apps of various kinds and would be more likely attracted by new thing, hence, on design aspect, we tried to present something uncommon and 'weird'.
-        </p>
-      </div>
-      <div id="sketch"></div>
-    </section>
+  <body>
+    <div id="home" onclick="location.href='index.html';">
+      <svg width="70" height="70" viewbox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect class="svg-bg" width="70" height="70" fill="white"/>
+        <path class="svg-home" d="M46 45H24L24 30.4093L35.3667 21L46 30.4093V47" stroke="white" stroke-width="4"/>
+        <path class="svg-lh" d="M26 21V41L36 43V23V32.5L46 35V25V47" stroke="#2C7632" stroke-width="4"/>
+      </svg>
+    </div>
 
-    <section class="showcase sc-spaceline">
-      <div class="showcase-wrapper">
-        <div class="phone zoomin">
-          <div class="cover light"></div>
-          <video class="phone-video" autoplay loop muted playsinline>
-            <source src="images/echo/video-index.mp4" type="video/mp4"/>
+    <div class="wrapper">
+
+      <section class="openning">
+        <h1 class="font-section-title">echo</h1>
+        <span class="divider divider-adjust"></span>
+        <div class="brief">
+          <p class="font-section-desc">
+            Echo is primarily used for capturing daily life as photos or short videos and sharing with close friends & families, which can be edited with various stickers, text captions etc. Besides from interacting with close friends, echo also allow users to
+            have a peek of the “outside world”, discover strangers who share their interesting moments.
+          </p>
+          <p class="font-section-desc">
+            Students in colleges and graduated, encountering an expansion of their social network circles, are our primary target users. New generations have experienced social networking apps of various kinds and would be more likely attracted by new thing.
+            Therefore we tried to present something uncommon and 'weird'.
+          </p>
+        </div>
+        <div id="sketch"></div>
+      </section>
+
+      <section class="showcase sc-spaceline">
+        <div class="showcase-wrapper">
+          <div class="phone zoomin">
+            <div class="cover light"></div>
+            <video autoplay="autoplay" loop="loop" muted="muted" playsinline="playsinline">
+              <source src="images/echo/video-index.mp4" type="video/mp4"/>
+              YOU BROWSER DOESN'T SUPPORT VIDEO.
+            </video>
+          </div>
+        </div>
+      </section>
+
+      <section class="showcase">
+        <div class="showcase-desc">
+          <h2 class="font-showcase-title ">Simplified hierarchy for fullscreen</h2>
+          <p class="font-showcase-desc">
+            Traditional horizontal hierarchy would sometime let users get lost in pages with countless left swipe returns. As the trend of fullscreen goes, finger gestures becomes more convenient because top corners are harder to reach. So we took advantage of
+            the increasing vertical space, let all kinds of module as a slide-up card, close with swiping down.
+          </p>
+        </div>
+        <div class="showcase-wrapper nomargin">
+          <img src="images/echo/C00-hierarchy.jpg">
+        </div>
+      </section>
+
+      <section class="showcase">
+        <div class="showcase-desc">
+          <h2 class="font-showcase-title ">DUOTONE COVER</h2>
+          <p class="font-showcase-desc">
+            Since the list of moments is the primary element that user would see and interact with, we needed to present maximum amount of content, and one of the difficulties we encountered here was the messy feeling that these photo covers would made. We made
+            a duotone filter to unify the color of photos, adjusting colors according to the status of the moment.
+          </p>
+        </div>
+        <div class="showcase-wrapper nomargin">
+          <img src="images/echo/DUOTONE-COVER.jpg">
+        </div>
+      </section>
+
+      <section class="showcase">
+        <div class="showcase-desc">
+          <p class="font-showcase-desc">
+            When browsing moments, we want to keep the story-like immersive experience, and fullscreen everything with a strict rules adapting to various resolution ratios. And because of this, we try to make comments can be marked on the photo that related to
+            and let leaving a comment more intuitive. Just tap and hold at wherever you want to leave the comment, and type and done.
+          </p>
+        </div>
+        <div class="showcase-wrapper">
+          <div class="phone come-closer-left ">
+            <div class="cover dark"></div>
+            <img src="images/echo/B00-My-Snap.jpg">
+          </div>
+          <div class="phone come-closer-right">
+            <div class="cover dark"></div>
+            <img src="images/echo/B04-ViewSnap-Comment.jpg">
+          </div>
+        </div>
+      </section>
+
+      <section class="showcase">
+        <div class="showcase-desc shorter">
+          <p class="font-showcase-desc">
+            Every moment shared after 24hr will be archived in the profile as Memoir. Memories usually are kinda messy, but selected moments shown as Highlight look like a hand of cards well organized.
+          </p>
+        </div>
+        <div class="showcase-wrapper nomargin">
+          <video class="sc-video-memoir" autoplay="autoplay" loop="loop" muted="muted" playsinline="playsinline">
+            <source src="images/echo/video-memoir.mp4" type="video/mp4"/>
             YOU BROWSER DOESN'T SUPPORT VIDEO.
           </video>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="showcase">
-      <div class="showcase-desc longer">
-        <h2 class="font-showcase-title ">Simplified hierarchy for fullscreen</h2>
-        <p class="font-showcase-desc">
-          Traditional horizontal hierarchy desgin would sometime let users get lost in multi-page hierarchy with countless left swipe returns. As the trend of fullscreen goes, finger gestures becomes more convenient since top corners are harder to touch.
-          Making good use of the vertical space can be another hierarchy solution, so we designed the relations between all kinds of module as a slide-up card, close with swiping down.
-        </p>
-      </div>
-      <div class="showcase-wrapper nomargin">
-        <img src="images/echo/C00-hierarchy.jpg">
-      </div>
-    </section>
-
-    <section class="showcase">
-      <div class="showcase-desc longer">
-        <h2 class="font-showcase-title ">DUOTONE COVER</h2>
-        <p class="font-showcase-desc">
-          Since the list of moments is basically the most primary element that user would see and interact with, we needed to present maximum amount of content, and one of the difficulties we encountered here was the messy feeling that these photo covers would made.
-        </p>
-        <p class="font-showcase-desc">
-          We made a duotone filter to unify the color of photos, adjusting colors according to the status of the moment.
-        </p>
-      </div>
-      <div class="showcase-wrapper nomargin">
-        <img src="images/echo/DUOTONE-COVER.jpg">
-      </div>
-    </section>
-
-
-    <section class="showcase">
-      <div class="showcase-desc">
-        <p class="font-showcase-desc">
-          When browsing moments, we want to keep the story-like immersive experience, and fullscreen everything with a strict rules adapting to various resolution ratios. And because of this, we try to make comments can be marked on the photo that related to and let leaving a comment more intuitive. Just tap and hold at wherever you want to leave the comment, and type and done.
-        </p>
-      </div>
-      <div class="showcase-wrapper">
-        <div class="phone come-closer-left ">
-          <div class="cover dark"></div>
-          <img src="images/echo/B00-My-Snap.jpg">
+      <section class="showcase">
+        <div class="showcase-desc longer">
+          <p class="font-showcase-desc">
+            The goal of our camera is to capture every moment and thoughts in different ways as soon as possible. The consistency between different ways here keep the same experience through different media and ensure 'speed' of capture moments and thoughts that
+            we want.
+          </p>
         </div>
-        <div class="phone come-closer-right">
-          <div class="cover dark"></div>
-          <img src="images/echo/B04-ViewSnap-Comment.jpg">
+        <div class="showcase-wrapper">
+          <div class="phone bg-light">
+            <div class="cover light"></div>
+            <img src="images/echo/B00-Camera.jpg">
+          </div>
+          <div class="phone bg-light">
+            <div class="cover light"></div>
+            <img src="images/echo/B02-Camera-Edit.jpg">
+          </div>
+          <div class="phone bg-light">
+            <div class="cover light"></div>
+            <img src="images/echo/A00-Text-Mode.jpg">
+          </div>
+          <div class="phone bg-light">
+            <div class="cover light"></div>
+            <img src="images/echo/C00-Record.jpg">
+          </div>
+          <div class="sc-camera-stickers">
+            <img width="180px" height="180px" src="images/echo/gif-5.gif">
+            <img width="180px" height="180px" src="images/echo/gif-1.gif">
+            <img width="180px" height="180px" src="images/echo/gif-4.gif">
+            <img width="180px" height="180px" src="images/echo/gif-6.gif">
+            <img width="180px" height="180px" src="images/echo/gif-3.gif">
+            <img width="180px" height="180px" src="images/echo/gif-2.gif">
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="showcase">
-      <div class="showcase-desc">
-        <p class="desc font-showcase-desc">
-          Every moment shared after 24hr will be archived in the profile as Memoir. Memories usually are kinda messy, but selected moments shown as Highlight look like a hand of cards well organized.
-        </p>
-      </div>
-      <div class="showcase-wrapper nomargin">
-        <video class="sc-video-memoir" autoplay loop muted playsinline>
-          <source src="images/echo/video-memoir.mp4" type="video/mp4"/>
-          YOU BROWSER DOESN'T SUPPORT VIDEO.
-        </video>
-      </div>
-    </section>
+      <section class="showcase">
+        <div class="cube cube-nor">
+          <video class="sc-echo-loading2" autoplay="autoplay" loop="loop" muted="muted" playsinline="playsinline">
+            <source src="images/echo/video-echo-loading2.mp4" type="video/mp4"/>
+            YOU BROWSER DOESN'T SUPPORT VIDEO.
+          </video>
+        </div>
+        <div class="cube cube-nor">
+          <video class="sc-echo-loading1" autoplay="autoplay" loop="loop" muted="muted" playsinline="playsinline">
+            <source src="images/echo/video-echo-loading.mp4" type="video/mp4"/>
+            YOU BROWSER DOESN'T SUPPORT VIDEO.
+          </video>
+        </div>
+        <div class="cube cube-main">
+          <video autoplay="autoplay" loop="loop" muted="muted" playsinline="playsinline">
+            <source src="images/echo/video-im-notify.mp4" type="video/mp4"/>
+            YOU BROWSER DOESN'T SUPPORT VIDEO.
+          </video>
+        </div>
+      </section>
 
-    <section class="showcase">
-      <div class="showcase-desc longer">
-        <p class="font-showcase-desc">
-          The goal of our camera is to capture every moment and thoughts in different ways asap. The consistency between different ways here keep the same experience through different media and ensure 'speed' of capture moments and thoughts that we want.
-        </p>
-      </div>
-      <div class="showcase-wrapper">
-        <div class="phone bg-light">
-          <div class="cover light"></div>
-          <img src="images/echo/B00-Camera.jpg">
+      <section class="showcase">
+        <div class="showcase-desc longer">
+          <p class="font-showcase-desc">
+            Besides from interacting with close friends, pull down from the top will enter another space full of thoughts and moments shared by strangers about various topics happening right at that moment.
+          </p>
+          <p class="font-showcase-desc">
+            Same horizontal list, but we use words instead of photos because that's much more close to thoughts which would be the majority of contents here. A series of rule were set to limit people here would probably someone have a few connections /
+            similarities, yet you don't know each other.
+          </p>
         </div>
-        <div class="phone bg-light">
-          <div class="cover light"></div>
-          <img src="images/echo/B02-Camera-Edit.jpg">
+        <div class="showcase-wrapper">
+          <div class="phone bg-dark">
+            <div class="cover dark"></div>
+            <img src="images/echo/D00.jpg">
+          </div>
+          <div class="phone bg-dark">
+            <div class="cover dark"></div>
+            <img src="images/echo/D06-Spaceline-new.jpg">
+          </div>
+          <div class="phone bg-dark">
+            <div class="cover dark"></div>
+            <img src="images/echo/D05-Spaceline-new.jpg">
+          </div>
+          <div class="sc-now-othercolor">
+            <img src="images/echo/D01.jpg">
+          </div>
         </div>
-        <div class="phone bg-light">
-          <div class="cover light"></div>
-          <img src="images/echo/A00-Text-Mode.jpg">
-        </div>
-        <div class="phone bg-light">
-          <div class="cover light"></div>
-          <img src="images/echo/C00-Record.jpg">
-        </div>
-        <div class="sc-camera-stickers">
-          <img width="180px" height="180px" src="images/echo/gif-5.gif">
-          <img width="180px" height="180px" src="images/echo/gif-1.gif">
-          <img width="180px" height="180px" src="images/echo/gif-4.gif">
-          <img width="180px" height="180px" src="images/echo/gif-6.gif">
-          <img width="180px" height="180px" src="images/echo/gif-3.gif">
-          <img width="180px" height="180px" src="images/echo/gif-2.gif">
-        </div>
-      </div>
-    </section>
+      </section>
 
-
-    <section class="showcase">
-      <div class="cube">
-        <video class="sc-echo-loading2" autoplay loop muted playsinline>
-          <source src="images/echo/video-echo-loading2.mp4" type="video/mp4"/>
-          YOU BROWSER DOESN'T SUPPORT VIDEO.
-        </video>
-      </div>
-      <div class="cube">
-        <video class="sc-echo-loading1" autoplay loop muted playsinline>
-          <source src="images/echo/video-echo-loading.mp4" type="video/mp4"/>
-          YOU BROWSER DOESN'T SUPPORT VIDEO.
-        </video>
-      </div>
-      <div class="cube sc-video-im">
-        <video autoplay loop muted playsinline>
-          <source src="images/echo/video-im-notify.mp4" type="video/mp4"/>
-          YOU BROWSER DOESN'T SUPPORT VIDEO.
-        </video>
-      </div>
-    </section>
-
-    <section class="showcase">
-      <div class="showcase-desc longer">
-        <p class="font-showcase-desc">
-          Besides from interacting with close friends, pull down from the top will enter another space full of thoughts and moments shared by strangers about various topics happening right at that moment.
-        </p>
-        <p class="font-showcase-desc">
-          Same horizontal list, but we use words instead of photos because that's much more close to thoughts which would be the majority of contents here. A series of rule were set to limit people here would probably someone have a few connections / similarities, yet you don't know each other.
-        </p>
-      </div>
-      <div class="showcase-wrapper">
-        <div class="phone bg-dark">
-          <div class="cover dark"></div>
-          <img src="images/echo/D00.jpg">
+      <section class="ending next" onclick="location.href='wechat.html';">
+        <div class="button">
+          <div class="arrow"></div>
+          <div class="line"></div>
         </div>
-        <div class="phone bg-dark">
-          <div class="cover dark"></div>
-          <img src="images/echo/D06-Spaceline-new.jpg">
+        <div class="title">
+          <span class="font-section-desc">UP NEXT</span>
+          <h1 class="font-section-title">WeChat</h1>
         </div>
-        <div class="phone bg-dark">
-          <div class="cover dark"></div>
-          <img src="images/echo/D05-Spaceline-new.jpg">
-        </div>
-        <div class="sc-now-othercolor">
-          <img src="images/echo/D01.jpg">
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="ending next" onclick="location.href='wechat.html';">
-      <div class="button">
-        <div class="arrow"></div>
-        <div class="line"></div>
-      </div>
-      <div class="title">
-        <span class="font-section-desc">UP NEXT</span>
-        <h1 class="font-section-title">WeChat</h1>
-      </div>
-    </section>
-
-  </div>
-
-</body>
+    </div>
+  </body>
 </html>

@@ -1,55 +1,48 @@
 :root {
-  --COLOR-BG       : #DC2107;
-  --COLOR-BG-HOVER : #F12F14;
-  --COLOR-FONT     : #F1EC6B;
+  --COLOR-BG: #DC2107;
+  --COLOR-BG-HOVER: #F12F14;
+  --COLOR-FONT: #F1EC6B;
 }
 
 #sketch {
-  z-index  : 1;
-  position : absolute;
-  top      : 0;
-  left     : 0;
-  width    : 100%;
-  height   : 100%;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .divider-adjust {
-  height : 16rem;
+  height: 16rem;
 }
 
 .sc-spaceline {
-  width : 100rem;
+  min-width: 90rem;
 }
 
 .sc-camera-stickers {
-  display          : flex;
-  width            : 42rem;
-  height           : 58rem;
-  margin-left      : 5rem;
-  background-image : url(../images/img-dots.png);
-  background-size  : cover;
-  flex-wrap        : wrap;
-  justify-content  : center;
-}
-
-.sc-video-im {
-  max-height : 52rem;
-}
-
-.sc-now-othercolor {}
-
-.sc-video-memoir {
-  max-width : 80rem;
+  display: flex;
+  width: 42rem;
+  height: 58rem;
+  margin-left: 5rem;
+  background-image: url("../images/img-dots.png");
+  background-size: cover;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .sc-echo-loading1,
 .sc-echo-loading2 {
-  width : 22rem;
+  width: 22rem;
 }
-
-@media
-  (max-width : 1280px) {
-  .sc-memoir > video {
-    max-width : 70rem;
+@media (max-width : 1280px) {
+  .sc-spaceline {
+    min-width: 50rem;
+  }
+}
+@media (max-height : 800px) {
+  .sc-now-othercolor {
+    display: none;
   }
 }

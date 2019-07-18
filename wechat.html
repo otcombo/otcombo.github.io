@@ -1,249 +1,245 @@
 <!DOCTYPE html>
 <html lang="">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>WeChat | Han Li</title>
-  <link rel='shortcut icon' type='image/png' href='images/favicon.png' />
-  <script type='text/javascript' src="addons/p5.min.js"></script>
-  <script type='text/javascript' src="addons/p5.dom.min.js"></script>
-  <script type='text/javascript' src="js/sketch-wechat.js"></script>
-  <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
-  <script type='text/javascript' src='addons/jquery.mousewheel.min.js'></script>
-  <link rel="stylesheet" type="text/css" href="css/style.css">
-  <link rel="stylesheet" type="text/css" href="css/style-wechat.css">
-  <link rel="stylesheet" type="text/css" href="css/style-work.css">
-  <script type='text/javascript'>
-  $(document).ready(function() {
-    $('html, body, *').mousewheel(function(e) {
-      console.log(e.deltaX, e.deltaY, e.deltaFactor);
-      this.scrollLeft += e.deltaX - e.deltaY;
-      // this.scrollTop = 0;
-      if ( e && e.preventDefault ){
-        e.preventDefault();
-      } else {
-        window.event.returnValue = false;  //IE
-      }
-    });
-  });
-  </script>
-</head>
-<body>
-  <div id="home" onclick="location.href='index.html';">
-    <svg width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect class="svg-bg" width="70" height="70" fill="white"/>
-      <path class="svg-home" d="M46 45H24L24 30.4093L35.3667 21L46 30.4093V47" stroke="white" stroke-width="4"/>
-      <path class="svg-lh" d="M26 21V41L36 43V23V32.5L46 35V25V47" stroke="#2C7632" stroke-width="4"/>
-    </svg>
-  </div>
-
-  <div class="wrapper">
-
-    <section class="openning">
-      <h1 class="font-section-title">WeChat</h1>
-      <span class="divider divider-adjust"></span>
-      <div class="brief">
-        <p class="font-section-desc">
-          Designing for one of the world's largest messaging and social media apps is like dancing with shackles.  Countless thoughts and schemes were made to polish every detail, the standard would be even more strict for the redesign.
-        </p>
-        <p class="font-section-desc">
-          We won't measure growth just by the number of active users or messages sent every day, but by how deeply WeChat is engaged in every aspect of a user’s lifestyle. Therefore we tried to explore different fields with our insights and experience, like WeChat Reader, WeChat TV and so on.
-        </p>
-      </div>
-      <div id="sketch"></div>
-    </section>
-
-    <section class="showcase">
-      <div class="showcase-desc">
-        <h2 class="font-showcase-title">WeChat 6.0 Redesign</h2>
-        <p class="font-showcase-desc">
-          For a long time, WeChat was regarded as characterless and hard to describe the feeling about it, even though we all spent most of our time with it every day.
-          Therefore defining ‘What we are’ is primary, difficult but meaningful.
-        </p>
-      </div>
-      <div class="showcase-wrapper">
-        <img class="sc-img-main" src="images/wechat/01.jpg">
-      </div>
-    </section>
-
-    <section class="showcase">
-      <div class="showcase-wrapper">
-        <div class="phone bg-light">
-          <div class="cover light"></div>
-          <img class="phone-img-short" src="images/wechat/0112.jpg">
-        </div>
-
-        <div class="sc-redesign-points">
-          <div class="point">
-            <img src="images/wechat/011-1.jpg">
-            <div class="desc">
-              <h2 class="font-showcase-title">Consistency</h2>
-              <p class="font-showcase-desc">
-                Keep the feeling of clean and efficiency over all platforms and show the character of WeChat - concise and elegant.
-              </p>
-            </div>
-          </div>
-          <div class="point">
-            <img src="images/wechat/011-2.jpg">
-            <div class="desc">
-              <h2 class="font-showcase-title">Branding Color</h2>
-              <p class="font-showcase-desc">
-                Adjust the branding color with more light grey and the WeChat green, trying to make the app more concise and elegant.
-              </p>
-            </div>
-          </div>
-          <div class="point">
-            <img src="images/wechat/011-3.jpg">
-            <div class="desc">
-              <h2 class="font-showcase-title">Icon Style</h2>
-              <p class="font-showcase-desc">
-                Change the cute icons to a more clean-cut style, matching the character of WeChat.
-              </p>
-            </div>
-          </div>
-          <div class="point">
-            <img src="images/wechat/011-4.jpg">
-            <div class="desc">
-              <h2 class="font-showcase-title">Guidelines</h2>
-              <p class="font-showcase-desc">
-                Set up the guidelines and templates for designers, unify the design output, optimize the workflow between departments.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="showcase">
-      <img src="images/wechat/00.jpg">
-    </section>
-
-    <section class="showcase">
-      <img src="images/wechat/001.jpg">
-    </section>
-
-    <section class="showcase">
-      <div class="showcase-desc showcase-desc-single">
-        <h2 class="font-showcase-title">WeChat Redpocket</h2>
-        <p class="font-showcase-desc">
-          The debut of Redpocket was on the Spring Festival Gala with audiences in the whole country, there were tremendous amount of users expected. To keep the fluency and reduce the anxitey of waiting, we emphasized feedback animations.
-        </p>
-      </div>
-      <div class="showcase-wrapper">
-        <div class="phone bg-light">
-          <div class="cover light"></div>
-          <video class="phone-video-short" autoplay loop muted playsinline>
-            <source src="images/wechat/video-redpocket.mp4" type="video/mp4"/>
-            YOU BROWSER DOESN'T SUPPORT VIDEO.
-          </video>
-        </div>
-      </div>
-    </section>
-
-    <section class="showcase">
-      <div class="showcase-desc showcase-desc-single">
-        <h2 class="font-showcase-title">WeChat Login</h2>
-        <p class="font-showcase-desc">
-          To login WeChat on Mac / PC / iPad, we had made countless efforts trying to solve the notification between logined devices, synchronizing messages and avoiding repeated notices at the same time.
-        </p>
-      </div>
-      <div class="showcase-wrapper">
-        <div class="phone bg-light">
-          <div class="cover light"></div>
-          <img class="phzone-img-short" src="images/wechat/11.jpg">
-        </div>
-      </div>
-    </section>
-
-
-    <section class="showcase sc-reader">
-      <div class="showcase-desc">
-        <h2 class="font-showcase-title">WeChat Reader</h2>
-        <p class="font-showcase-desc">
-          Make a better place for tons of media contents produced and forwarded in WeChat. Keypoints are the logic of content generation and reading experience.
-        </p>
-      </div>
-      <div class="showcase-wrapper">
-        <img class="sc-img-main" src="images/wechat/02.jpg">
-      </div>
-    </section>
-
-    <section class="showcase">
-      <div class="showcase-wrapper">
-        <img src="images/wechat/03.jpg">
-      </div>
-    </section>
-
-    <section class="showcase">
-      <div class="cube">
-        <img src="images/wechat/04.jpg">
-      </div>
-      <div class="cube">
-        <img src="images/wechat/05.jpg">
-      </div>
-    </section>
-
-    <section class="showcase">
-      <div class="showcase-desc showcase-desc-single">
-        <h2 class="font-showcase-title">WeChat Reader iPhone ver.</h2>
-        <p class="font-showcase-desc">
-          Different from Reader for iPad which focuses on better reading experience, We tried to focus on high quality recommendations and sharing in Reader for iPhone.
-        </p>
-      </div>
-      <div class="showcase-wrapper">
-        <div class="phone bg-light">
-          <div class="cover light"></div>
-          <video class="phone-video-short" autoplay loop muted playsinline>
-            <source src="images/wechat/video-reader.mp4" type="video/mp4"/>
-            YOU BROWSER DOESN'T SUPPORT VIDEO.
-          </video>
-        </div>
-      </div>
-    </section>
-
-
-    <section class="showcase">
-      <div class="showcase-desc">
-        <h2 class="font-showcase-title">WeChat Hardware Project</h2>
-        <p class="font-showcase-desc">
-          Work with TCL, Skyworth and serval manufacturers to explore the prossibilities in daily life scenario.
-        </p>
-      </div>
-      <div class="showcase-wrapper">
-        <img class="sc-img-main" src="images/wechat/07.jpg">
-        <img class="sc-img-main" src="images/wechat/071.jpg">
-        <div>
-        </section>
-
-
-        <section class="showcase">
-          <div class="showcase-desc showcase-desc-single">
-            <h2 class="font-showcase-title">Style Sheet For Designer</h2>
-            <p class="font-showcase-desc">
-              Since resolution ratio kept chaning, adaptive design became a tough problem to solve, yet we hadn't fully applied auto layout at that time, we work on a walk around solution - style sheet.
-            </p>
-            <p class="font-showcase-desc">
-              Linking serval readable style sheets, designers can adjust details by changing varibles set by themselves, and pack a test version with Jenkins to check on hand at once, all on their own.
-            </p>
-          </div>
-          <div class="showcase-wrapper">
-            <div class="sc-stylesheet"><img src="images/wechat/011.jpg"></div>
-          </div>
-        </section>
-
-
-        <section class="ending next" onclick="location.href='ddz.html';">
-          <div class="button">
-            <div class="arrow"></div>
-            <div class="line"></div>
-          </div>
-          <div class="title">
-            <span class="font-section-desc">UP NEXT</span>
-            <h1 class="font-section-title">iBuilding</h1>
-          </div>
-        </section>
-
-      </section>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeChat | Han Li</title>
+    <link rel='shortcut icon' type='image/png' href='images/favicon.png'/>
+    <script type='text/javascript' src="addons/p5.min.js"></script>
+    <script type='text/javascript' src="addons/p5.dom.min.js"></script>
+    <script type='text/javascript' src="js/sketch-wechat.js"></script>
+    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+    <script type='text/javascript' src='addons/jquery.mousewheel.min.js'></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/style-wechat.css">
+    <link rel="stylesheet" type="text/css" href="css/style-work.css">
+    <script type='text/javascript'>
+      $(document).ready(function () {
+        $('html, body, *').mousewheel(function (e) {
+          console.log(e.deltaX, e.deltaY, e.deltaFactor);
+          this.scrollLeft += e.deltaX - e.deltaY;
+          // this.scrollTop = 0;
+          if (e && e.preventDefault) {
+            e.preventDefault();
+          } else {
+            window.event.returnValue = false; //IE
+          }
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div id="home" onclick="location.href='index.html';">
+      <svg width="70" height="70" viewbox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect class="svg-bg" width="70" height="70" fill="white"/>
+        <path class="svg-home" d="M46 45H24L24 30.4093L35.3667 21L46 30.4093V47" stroke="white" stroke-width="4"/>
+        <path class="svg-lh" d="M26 21V41L36 43V23V32.5L46 35V25V47" stroke="#2C7632" stroke-width="4"/>
+      </svg>
     </div>
 
-  </body>
-  </html>
+    <div class="wrapper">
+
+      <section class="openning">
+        <h1 class="font-section-title">WeChat</h1>
+        <span class="divider divider-adjust"></span>
+        <div class="brief">
+          <p class="font-section-desc">
+            Designing for one of the world's largest messaging and social media apps is like dancing with shackles. Countless thoughts and schemes were made to polish every detail, the standard would be even more strict for the redesign.
+          </p>
+          <p class="font-section-desc">
+            We won't measure growth just by the number of active users or messages sent every day, but by how deeply WeChat is engaged in every aspect of a user’s lifestyle. Therefore we tried to explore different fields with our insights and experience, like
+            WeChat Reader, WeChat TV and so on.
+          </p>
+        </div>
+        <div id="sketch"></div>
+      </section>
+
+      <section class="showcase">
+        <div class="showcase-desc">
+          <h2 class="font-showcase-title">WeChat 6.0 Redesign</h2>
+          <p class="font-showcase-desc">
+            For a long time, WeChat was regarded as characterless and hard to describe the feeling about it, even though we all spent most of our time with it every day. Therefore defining ‘What we are’ is primary, difficult but meaningful.
+          </p>
+        </div>
+        <div class="showcase-wrapper">
+          <img class="sc-img-main" src="images/wechat/01.jpg">
+        </div>
+      </section>
+
+      <section class="showcase">
+        <div class="showcase-wrapper">
+          <div class="phone bg-light">
+            <div class="cover light"></div>
+            <img class="phone-img-short" src="images/wechat/0112.jpg">
+          </div>
+
+          <div class="sc-redesign-points">
+            <div class="point">
+              <img src="images/wechat/011-1.jpg">
+              <div class="desc">
+                <h2 class="font-showcase-title">Consistency</h2>
+                <p class="font-showcase-desc">
+                  Keep the feeling of clean and efficiency over all platforms and show the character of WeChat - concise and elegant.
+                </p>
+              </div>
+            </div>
+            <div class="point">
+              <img src="images/wechat/011-2.jpg">
+              <div class="desc">
+                <h2 class="font-showcase-title">Branding Color</h2>
+                <p class="font-showcase-desc">
+                  Adjust the branding color with more light grey and the WeChat green, trying to make the app more concise and elegant.
+                </p>
+              </div>
+            </div>
+            <div class="point">
+              <img src="images/wechat/011-3.jpg">
+              <div class="desc">
+                <h2 class="font-showcase-title">Icon Style</h2>
+                <p class="font-showcase-desc">
+                  Change the cute icons to a more clean-cut style, matching the character of WeChat.
+                </p>
+              </div>
+            </div>
+            <div class="point">
+              <img src="images/wechat/011-4.jpg">
+              <div class="desc">
+                <h2 class="font-showcase-title">Guidelines</h2>
+                <p class="font-showcase-desc">
+                  Set up the guidelines and templates for designers, unify the design output, optimize the workflow between departments.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="showcase">
+        <img src="images/wechat/00.jpg">
+      </section>
+
+      <section class="showcase">
+        <img src="images/wechat/001.jpg">
+      </section>
+
+      <section class="showcase">
+        <div class="showcase-desc shorter">
+          <h2 class="font-showcase-title">WeChat Redpocket</h2>
+          <p class="font-showcase-desc">
+            The debut of Redpocket was on the Spring Festival Gala with audiences in the whole country, there were tremendous amount of users expected. To keep the fluency and reduce the anxitey of waiting, we emphasized feedback animations.
+          </p>
+        </div>
+        <div class="showcase-wrapper">
+          <div class="phone bg-light">
+            <div class="cover light"></div>
+            <video class="phone-video-short" autoplay="autoplay" loop="loop" muted="muted" playsinline="playsinline">
+              <source src="images/wechat/video-redpocket.mp4" type="video/mp4"/>
+              YOU BROWSER DOESN'T SUPPORT VIDEO.
+            </video>
+          </div>
+        </div>
+      </section>
+
+      <section class="showcase">
+        <div class="showcase-desc shorter">
+          <h2 class="font-showcase-title">WeChat Login</h2>
+          <p class="font-showcase-desc">
+            To login WeChat on Mac / PC / iPad, we had made countless efforts trying to solve the notification between logined devices, synchronizing messages and avoiding repeated notices at the same time.
+          </p>
+        </div>
+        <div class="showcase-wrapper">
+          <div class="phone bg-light">
+            <div class="cover light"></div>
+            <img class="phzone-img-short" src="images/wechat/11.jpg">
+          </div>
+        </div>
+      </section>
+
+      <section class="showcase sc-reader">
+        <div class="showcase-desc">
+          <h2 class="font-showcase-title">WeChat Reader</h2>
+          <p class="font-showcase-desc">
+            Make a better place for tons of media contents produced and forwarded in WeChat. Keypoints are the logic of content generation and reading experience.
+          </p>
+        </div>
+        <div class="showcase-wrapper">
+          <img class="sc-img-main" src="images/wechat/02.jpg">
+        </div>
+      </section>
+
+      <section class="showcase">
+        <div class="showcase-wrapper">
+          <img src="images/wechat/03.jpg">
+        </div>
+      </section>
+
+      <section class="showcase">
+        <div class="cube cube-nor">
+          <img src="images/wechat/04.jpg">
+        </div>
+        <div class="cube cube-main">
+          <img src="images/wechat/05.jpg">
+        </div>
+      </section>
+
+      <section class="showcase">
+        <div class="showcase-desc shorter">
+          <h2 class="font-showcase-title">WeChat Reader iPhone ver.</h2>
+          <p class="font-showcase-desc">
+            Different from Reader for iPad which focuses on better reading experience, We tried to focus on high quality recommendations and sharing in Reader for iPhone.
+          </p>
+        </div>
+        <div class="showcase-wrapper">
+          <div class="phone bg-light">
+            <div class="cover light"></div>
+            <video class="phone-video-short" autoplay="autoplay" loop="loop" muted="muted" playsinline="playsinline">
+              <source src="images/wechat/video-reader.mp4" type="video/mp4"/>
+              YOU BROWSER DOESN'T SUPPORT VIDEO.
+            </video>
+          </div>
+        </div>
+      </section>
+
+      <section class="showcase">
+        <div class="showcase-desc">
+          <h2 class="font-showcase-title">WeChat Hardware Project</h2>
+          <p class="font-showcase-desc">
+            Work with TCL, Skyworth and serval manufacturers to explore the prossibilities in daily life scenario.
+          </p>
+        </div>
+        <div class="showcase-wrapper">
+          <img src="images/wechat/07.jpg">
+          <img src="images/wechat/071.jpg">
+        </div>
+      </section>
+
+      <section class="showcase">
+        <div class="showcase-desc shorter">
+          <h2 class="font-showcase-title">Style Sheet For Designer</h2>
+          <p class="font-showcase-desc">
+            Since resolution ratio kept chaning, adaptive design became a tough problem to solve, yet we hadn't fully applied auto layout at that time, we work on a walk around solution - style sheet.
+          </p>
+          <p class="font-showcase-desc">
+            Linking serval readable style sheets, designers can adjust details by changing varibles set by themselves, and pack a test version with Jenkins to check on hand at once, all on their own.
+          </p>
+        </div>
+        <!-- <div class="showcase-wrapper "> -->
+        <img class="sc-style" src="images/wechat/011.jpg">
+        <!-- </div> -->
+      </section>
+
+      <section class="ending next" onclick="location.href='ddz.html';">
+        <div class="button">
+          <div class="arrow"></div>
+          <div class="line"></div>
+        </div>
+        <div class="title">
+          <span class="font-section-desc">UP NEXT</span>
+          <h1 class="font-section-title">iBuilding</h1>
+        </div>
+      </section>
+
+    </section>
+  </div>
+
+</body>
+</html>
