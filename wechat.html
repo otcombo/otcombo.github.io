@@ -26,6 +26,10 @@
           }
         });
       });
+      document.addEventListener("WeixinJSBridgeReady", function () {
+        video.play();
+        video.pause();
+      }, false)
     </script>
   </head>
   <body>
@@ -131,7 +135,7 @@
         <div class="showcase-wrapper">
           <div class="phone bg-light">
             <div class="cover light"></div>
-            <video class="phone-video-short" autoplay="autoplay" loop="loop" muted="muted" playsinline="playsinline">
+            <video autoplay="autoplay" loop="loop" muted="muted" preload="auto" webkit-playsinline="true" playsinline="true" x5-video-player-type="h5" x-webkit-airplay="allow" style="object-fit:fill">
               <source src="images/wechat/video-redpocket.mp4" type="video/mp4"/>
               YOU BROWSER DOESN'T SUPPORT VIDEO.
             </video>
@@ -191,7 +195,7 @@
         <div class="showcase-wrapper">
           <div class="phone bg-light">
             <div class="cover light"></div>
-            <video class="phone-video-short" autoplay="autoplay" loop="loop" muted="muted" playsinline="playsinline">
+            <video autoplay="autoplay" loop="loop" muted="muted" preload="auto" webkit-playsinline="true" playsinline="true" x5-video-player-type="h5" x-webkit-airplay="allow" style="object-fit:fill">
               <source src="images/wechat/video-reader.mp4" type="video/mp4"/>
               YOU BROWSER DOESN'T SUPPORT VIDEO.
             </video>

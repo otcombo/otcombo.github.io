@@ -26,6 +26,10 @@
           }
         });
       });
+      document.addEventListener("WeixinJSBridgeReady", function () {
+        video.play();
+        video.pause();
+      }, false)
     </script>
   </head>
   <body>
@@ -48,21 +52,21 @@
         <div class="showcase-wrapper">
           <div class="phone bg-dark">
             <div class="cover dark"></div>
-            <video autoplay="autoplay" loop="loop" muted="muted" playsinline="playsinline">
+            <video autoplay="autoplay" loop="loop" muted="muted" preload="auto" webkit-playsinline="true" playsinline="true" x5-video-player-type="h5" x-webkit-airplay="allow" style="object-fit:fill">
               <source src="images/olddays/faded.mp4" type="video/mp4"/>
               YOU BROWSER DOESN'T SUPPORT VIDEO.
             </video>
           </div>
           <div class="phone bg-dark">
             <div class="cover dark"></div>
-            <video autoplay="autoplay" loop="loop" muted="muted" playsinline="playsinline">
+            <video autoplay="autoplay" loop="loop" muted="muted" preload="auto" webkit-playsinline="true" playsinline="true" x5-video-player-type="h5" x-webkit-airplay="allow" style="object-fit:fill">
               <source src="images/olddays/faded3.mp4" type="video/mp4"/>
               YOU BROWSER DOESN'T SUPPORT VIDEO.
             </video>
           </div>
           <div class="phone bg-dark">
             <div class="cover dark"></div>
-            <video autoplay="autoplay" loop="loop" muted="muted" playsinline="playsinline">
+            <video autoplay="autoplay" loop="loop" muted="muted" preload="auto" webkit-playsinline="true" playsinline="true" x5-video-player-type="h5" x-webkit-airplay="allow" style="object-fit:fill">
               <source src="images/olddays/faded2.mp4" type="video/mp4"/>
               YOU BROWSER DOESN'T SUPPORT VIDEO.
             </video>
@@ -82,7 +86,7 @@
         <div class="showcase-wrapper">
           <div class="phone bg-light">
             <div class="cover light"></div>
-            <video autoplay="autoplay" loop="loop" muted="muted" playsinline="playsinline">
+            <video autoplay="autoplay" loop="loop" muted="muted" preload="auto" webkit-playsinline="true" playsinline="true" x5-video-player-type="h5" x-webkit-airplay="allow" style="object-fit:fill">
               <source src="images/olddays/task.mp4" type="video/mp4"/>
               YOU BROWSER DOESN'T SUPPORT VIDEO.
             </video>
@@ -118,7 +122,7 @@
 
           <section class="showcase">
             <div class="showcase-wrapper">
-              <img class="showcase-img-only" src="images/olddays/06.jpg">
+              <img src="images/olddays/06.jpg">
             </div>
           </section>
 

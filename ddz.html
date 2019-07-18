@@ -26,6 +26,10 @@
           }
         });
       });
+      document.addEventListener("WeixinJSBridgeReady", function () {
+        video.play();
+        video.pause();
+      }, false)
     </script>
   </head>
   <body>
@@ -106,7 +110,7 @@
 
       <section class="showcase">
         <div class="cube cube-nor">
-          <video autoplay="autoplay" loop="loop" muted="muted" playsinline="playsinline">
+          <video autoplay="autoplay" loop="loop" muted="muted" preload="auto" webkit-playsinline="true" playsinline="true" x5-video-player-type="h5" x-webkit-airplay="allow" style="object-fit:fill">
             <source src="images//ddz/video-bid-small.mp4" type="video/mp4"/>
             YOU BROWSER DOESN'T SUPPORT VIDEO.
           </video>
@@ -160,7 +164,7 @@
           </div>
           <div class="phone bg-dark">
             <div class="cover dark"></div>
-            <video class="phone-video-short" autoplay="autoplay" loop="loop" muted="muted" playsinline="playsinline">
+            <video autoplay="autoplay" loop="loop" muted="muted" preload="auto" webkit-playsinline="true" playsinline="true" x5-video-player-type="h5" x-webkit-airplay="allow" style="object-fit:fill">
               <source src="images/ddz/video-levelup.mp4" type="video/mp4"/>
               YOU BROWSER DOESN'T SUPPORT VIDEO.
             </video>
