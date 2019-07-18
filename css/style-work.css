@@ -441,6 +441,10 @@ video {
   .showcase-wrapper {
     margin: 0 3rem;
   }
+
+  .nomargin {
+    margin: 0;
+  }
 }
 @media (min-height : 801px) and (max-width : 1800px) {
   .openning > .brief {
