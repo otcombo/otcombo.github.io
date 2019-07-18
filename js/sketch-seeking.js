@@ -14,9 +14,11 @@ function setup() {
   var canvas = createCanvas(container.width, container.height);
   canvas.parent('sketch-seeking');
 
-  var c = select('#intro');
-  c.mouseOver(checkState);
-  c.mouseOut(checkState);
+  if (width > 800) {
+    var c = select('#intro');
+    c.mouseOver(checkState);
+    c.mouseOut(checkState);
+  }
 
   frameRate(60);
   angleMode(DEGREES);

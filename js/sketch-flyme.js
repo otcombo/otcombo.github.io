@@ -7,7 +7,7 @@ class BUBBLE {
     this.first_time = 1;
     this.mass = 1;
 
-    if( width < 800){
+    if (width < 800) {
       this.size = 100;
       this.g = createVector(-0.01, 0);
     } else {
@@ -27,7 +27,7 @@ class BUBBLE {
     this.vel = createVector(0, 0);
     this.acc = createVector(0, 0);
 
-    let t = map(this.pos.y, 0, height/2, 0, PI / 2);
+    let t = map(this.pos.y, 0, height / 2, 0, PI / 2);
     this.life = sin(t) * this.size;
     this.color_H = map(sin(t), 0, 1, 200, 270);
     this.color_S = 90;
@@ -60,9 +60,9 @@ class BUBBLE {
 
   update() {
     let offset = map(this.pos.y, 0, height, 1, 0) / 3;
-    if(this.first_time){
+    if (this.first_time) {
       this.opacity = 0;
-    }else {
+    } else {
       this.opacity += offset;
     }
     this.life -= this.size / 220;
@@ -86,7 +86,7 @@ function setup() {
   var canvas = createCanvas(container.width, container.height);
   canvas.parent('sketch');
 
-  if( width < 800){
+  if (width < 800) {
     bubble_amount = 50;
   } else {
     bubble_amount = 100;
@@ -97,8 +97,10 @@ function setup() {
     bubbles[i].initial();
   }
 
-  canvas.mouseOver(checkState);
-  canvas.mouseOut(checkState);
+  if (width > 800) {
+    canvas.mouseOver(checkState);
+    canvas.mouseOut(checkState);
+  }
 
   frameRate(60);
   noStroke();

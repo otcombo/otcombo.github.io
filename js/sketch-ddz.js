@@ -76,8 +76,10 @@ function setup() {
   // stroke(255, 200);
   strokeWeight(0.5);
 
-  canvas.mouseOver(checkState);
-  canvas.mouseOut(checkState);
+  if (width > 800) {
+    canvas.mouseOver(checkState);
+    canvas.mouseOut(checkState);
+  }
 
   waves = new Waves(height); //max radius
 }

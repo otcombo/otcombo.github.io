@@ -20,11 +20,10 @@ function setup() {
   var canvas = createCanvas(container.width, container.height);
   canvas.parent('sketch');
 
-  canvas.mouseOver(checkState);
-  canvas.mouseOut(checkState);
+
   // canvas.mouseClicked(setParticles);
 
-  if( width < 800){
+  if (width < 800) {
     particle_amount = 5000;
     gap = 30;
     speed = 30;
@@ -34,6 +33,8 @@ function setup() {
     gap = 40;
     speed = 30;
     limit = width * 0.6;
+    canvas.mouseOver(checkState);
+    canvas.mouseOut(checkState);
   }
 
   init_x = random(width);

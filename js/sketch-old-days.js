@@ -11,9 +11,10 @@ function setup() {
   var canvas = createCanvas(container.width, container.height);
   canvas.parent('sketch');
 
-  canvas.mouseOver(checkState);
-  canvas.mouseOut(checkState);
-
+  if (width > 800) {
+    canvas.mouseOver(checkState);
+    canvas.mouseOut(checkState);
+  }
   size = 40;
   cols = width / size;
   rows = height / size;
@@ -39,32 +40,32 @@ function draw() {
   let line_2 = random(width);
   for (var y = 0; y <= height; y++) {
     push();
-    stroke(255,noise(color_off_1)*80);
+    stroke(255, noise(color_off_1) * 80);
     point(line_1, y);
-    stroke(255,noise(color_off_2)*120);
+    stroke(255, noise(color_off_2) * 120);
     point(line_2, y);
     pop();
-    color_off_1+= inc;
-    color_off_2+= inc*2;
+    color_off_1 += inc;
+    color_off_2 += inc * 2;
   }
 
   for (var x = 0; x <= cols; x++) {
 
 
     push();
-    stroke(255,random(255));
-    point(random(width),random(height));
+    stroke(255, random(255));
+    point(random(width), random(height));
     pop();
 
 
 
     xoff = 0;
     for (var y = 0; y <= rows; y++) {
-      noise_size = map(noise(xoff, yoff, zoff), 0, 1, -1, 1)*size;
+      noise_size = map(noise(xoff, yoff, zoff), 0, 1, -1, 1) * size;
 
       push();
       noStroke();
-      fill(255,20);
+      fill(255, 20);
       translate(x * size, y * size);
       ellipse(0, 0, noise_size, noise_size);
       pop();

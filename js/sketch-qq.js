@@ -85,12 +85,14 @@ class BRUSH {
 //============================================================
 
 function setup() {
-	var container = select('#sketch');
+  var container = select('#sketch');
   var canvas = createCanvas(container.width, container.height);
   canvas.parent('sketch');
 
-	canvas.mouseOver(checkState);
-  canvas.mouseOut(checkState);
+  if (width > 800) {
+    canvas.mouseOver(checkState);
+    canvas.mouseOut(checkState);
+  }
 
   background(255);
   smooth();
