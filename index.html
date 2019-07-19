@@ -8,11 +8,15 @@
     <link rel='shortcut icon' type='image/png' href='images/favicon.png'/>
     <script type='text/javascript' src="addons/p5.min.js"></script>
     <script type='text/javascript' src="addons/p5.dom.min.js"></script>
-    <script type='text/javascript' src="js/sketch-seeking-compiled.js"></script>
+    <script type='text/javascript' src="js/sketch-seeking.js"></script>
     <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
     <script type='text/javascript' src='addons/jquery.mousewheel.min.js'></script>
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <script type='text/javascript'>
+      window.onload = function () {
+        document.getElementById("loading").style.right = "120%";
+        document.getElementById("loading").style.opacity = "0";
+      }
       $(document).ready(function () {
         $('html, body, *').mousewheel(function (e) {
           console.log(e.deltaX, e.deltaY, e.deltaFactor);
@@ -29,6 +33,7 @@
   </head>
 
   <body ontouchstart="">
+    <div id="loading"></div>
     <div class="wrapper">
 
       <section class="section-intro" id="intro">
