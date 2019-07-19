@@ -44,7 +44,7 @@ img {
   pointer-events: none;
 }
 
-#hideAll {
+#loading {
   position: fixed;
   left: 0;
   right: 0;

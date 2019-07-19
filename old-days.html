@@ -14,6 +14,10 @@
     <link rel="stylesheet" type="text/css" href="css/style-old-days.css">
     <link rel="stylesheet" type="text/css" href="css/style-work.css">
     <script type='text/javascript'>
+      window.onload = function () {
+        document.getElementById("loading").style.right = "120%";
+        document.getElementById("loading").style.opacity = "0";
+      }
       $(document).ready(function () {
         $('html, body, *').mousewheel(function (e) {
           console.log(e.deltaX, e.deltaY, e.deltaFactor);
@@ -33,6 +37,7 @@
     </script>
   </head>
   <body>
+    <div id="loading"></div>
     <div id="home" onclick="location.href='index.html';">
       <svg width="70" height="70" viewbox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect class="svg-bg" width="70" height="70" fill="white"/>
