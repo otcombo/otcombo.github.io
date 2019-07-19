@@ -44,6 +44,17 @@ img {
   pointer-events: none;
 }
 
+#hideAll {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: white;
+  z-index: 99;
+  transition: all 1s var(--CURVE-SHOW);
+}
+
 .wrapper {
   display: flex;
   height: 100%;

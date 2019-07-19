@@ -1,5 +1,6 @@
 p5.disableFriendlyErrors = true;
 
+var first_time = 1;
 var play_it = 1;
 var amount = 800;
 var radius_scale = 2.5;
@@ -31,14 +32,8 @@ function setup() {
   var container = select('#sketch');
   var canvas = createCanvas(container.width, container.height);
   canvas.parent('sketch');
-
-  if (width > 800) {
-    canvas.mouseOver(checkState);
-    canvas.mouseOut(checkState);
-    var first_time = 1;
-  } else {
-    var first_time = 0;
-  }
+	canvas.mouseOver(checkState);
+	canvas.mouseOut(checkState);
 
   if (width < 1200) {
     radius_scale = 2;
@@ -83,7 +78,6 @@ function draw() {
 
   translate(width * 0.2, height * 0.3);
   background(220, 33, 7, 200);
-
 
 
   if (mouseIsPressed) {
@@ -212,12 +206,12 @@ function draw() {
       line(x1, y1, x2, y2);
     }
   }
-  if (mouseX != 0 || mouseY != 0) {
+
+	if (mouseX != 0 || mouseY != 0) {
     first_time = 0;
   } else if (first_time) {
     noLoop();
   }
-
 
 }
 
