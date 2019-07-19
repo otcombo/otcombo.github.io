@@ -13,6 +13,7 @@
   --CURVE-SHOW: cubic-bezier(0.6, 0, 0, 1);
   --SIZE-SECTION-HEIGHT: 80rem;
   --SIZE-SECTION-WIDTH: 48rem;
+  --COLOR-BG: #E4E4E4;
 }
 
 body,
@@ -52,7 +53,30 @@ img {
   bottom: 0;
   background-color: white;
   z-index: 99;
-  transition: all 1s var(--CURVE-SHOW);
+  transition: all 2s var(--CURVE-SHOW);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading-svg {
+  stroke: var(--COLOR-BG);
+  stroke-dasharray: 103px;
+  stroke-dashoffset: 206px;
+  animation: loop var(--CURVE-SHOW) 1.5s infinite;
+}
+@keyframes loop {
+  0% {
+    stroke-dashoffset: 103px;
+  }
+
+  50% {
+    stroke-dashoffset: 0;
+  }
+
+  100% {
+    stroke-dashoffset: -103px;
+  }
 }
 
 .wrapper {
