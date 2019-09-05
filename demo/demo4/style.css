@@ -1,0 +1,236 @@
+@font-face {
+  font-family: 'OPPO Medium';
+  src: url("../font/OPPOSans-Medium.ttf") format('TrueType');
+}
+
+@font-face {
+  font-family: 'OPPO Regular';
+  src: url("../font/OPPOSans-Regular.ttf") format('TrueType');
+}
+
+:root {
+  --COLOR-DARK: #232323;
+  --COLOR-BG: #F9F9F9;
+  --COLOR-GREEN: #00D9AE;
+  --COLOR-BLUE: #2080F6;
+  --CURVE-SHOW: cubic-bezier(.52, .27, .82, -0.32);
+  --CURVE-2: cubic-bezier(.72, .11, .32, .89);
+  --SVG-STROKE-LENGTH: 370px;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  background-color: var(--COLOR-BG);
+  color: var(--COLOR-DARK);
+  font-family: "OPPO Regular", "Helvetica", sans-serif;
+  font-size: 62.5%;
+}
+
+.wrapper {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.kv-slogan {
+  font-size: 1.8rem;
+  margin-left: 2rem;
+  margin-top: 3rem;
+  letter-spacing: -2rem;
+  opacity: 0;
+  animation: kf-kv-slogan 1.5s var(--CURVE-2) 1.5s forwards;
+  font-weight: lighter;
+}
+
+@keyframes kf-kv-slogan {
+  0% {
+    letter-spacing: -2rem;
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0.05;
+  }
+
+  100% {
+    letter-spacing: 2rem;
+    opacity: 1;
+  }
+}
+
+#svg-os7-kv {
+  width: 539px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: visible;
+}
+
+#logo-coloros-sketch {
+  position: absolute;
+  margin-bottom: 5rem;
+}
+
+.logo-coloros-sketch {
+  fill: none;
+  stroke: var(--COLOR-DARK);
+  opacity: 0.2;
+  stroke-width: 0.5;
+}
+
+.-sketch-0 {
+  stroke-dasharray: 980;
+  stroke-dashoffset: 0;
+  animation: kf-logo-7-sketch-0 1.5s var(--CURVE-2) forwards;
+}
+
+.-sketch-1 {
+  stroke-dasharray: 223;
+  stroke-dashoffset: 223;
+  animation: kf-logo-7-sketch-1 1s var(--CURVE-2) 0.3s forwards;
+}
+
+.-sketch-2 {
+  stroke-dasharray: 49;
+  stroke-dashoffset: 49;
+  animation: kf-logo-7-sketch-2 0.5s var(--CURVE-2) 0.6s forwards;
+}
+
+.-sketch-3 {
+  stroke-dasharray: 223;
+  stroke-dashoffset: 223;
+  animation: kf-logo-7-sketch-1 1s var(--CURVE-2) 0.7s forwards;
+}
+
+.-sketch-4 {
+  stroke-dasharray: 223;
+  stroke-dashoffset: 223;
+  animation: kf-logo-7-sketch-1 1s var(--CURVE-2) 0.8s forwards;
+}
+
+.-sketch-5 {
+  stroke-dasharray: 405;
+  stroke-dashoffset: 405;
+  animation: kf-logo-7-sketch-5 1.2s var(--CURVE-2) 0.1s forwards;
+}
+
+.logo-coloros {
+  fill: none;
+  stroke-width: 20;
+  stroke-dasharray: var(--SVG-STROKE-LENGTH);
+  stroke-dashoffset: var(--SVG-STROKE-LENGTH);
+}
+
+.-green {
+  stroke: url(#grad-green);
+  animation: kf-logo-7 0.8s var(--CURVE-SHOW) 1.5s forwards;
+}
+
+.-blue {
+  stroke: url(#grad-blue);
+  animation: kf-logo-7 0.8s var(--CURVE-SHOW) 1.5s forwards;
+}
+
+.logo-coloros-outline {
+  fill: none;
+  stroke: var(--COLOR-DARK);
+  opacity: 0.2;
+  stroke-width: 1;
+  stroke-dasharray: 400;
+  stroke-dashoffset: 400;
+  animation: kf-logo-7-outline 2s var(--CURVE-2) 0.5s forwards;
+}
+
+@keyframes kf-logo-7-sketch-0 {
+  0% {
+    stroke-dashoffset: 980;
+  }
+
+  50% {
+    stroke-dashoffset: 0;
+  }
+
+  100% {
+    stroke-dashoffset: -980;
+  }
+}
+
+@keyframes kf-logo-7-sketch-1 {
+  0% {
+    stroke-dashoffset: 223;
+  }
+
+  50% {
+    stroke-dashoffset: 0;
+  }
+
+  100% {
+    stroke-dashoffset: -223;
+  }
+}
+
+@keyframes kf-logo-7-sketch-2 {
+  0% {
+    stroke-dashoffset: 49;
+  }
+
+  50% {
+    stroke-dashoffset: 0;
+  }
+
+  100% {
+    stroke-dashoffset: -49;
+  }
+}
+
+@keyframes kf-logo-7-sketch-5 {
+  0% {
+    stroke-dashoffset: 405;
+  }
+
+  50% {
+    stroke-dashoffset: 0;
+  }
+
+  100% {
+    stroke-dashoffset: -405;
+  }
+}
+
+@keyframes kf-logo-7-outline {
+  0% {
+    stroke-dashoffset: 400;
+  }
+
+  50% {
+    stroke-dashoffset: 0;
+  }
+
+  100% {
+    stroke-dashoffset: -400;
+  }
+}
+
+@keyframes kf-logo-7 {
+  0% {
+    stroke-dashoffset: var(--SVG-STROKE-LENGTH);
+  }
+
+  100% {
+    stroke-dashoffset: calc(var(--SVG-STROKE-LENGTH)*0);
+  }
+}
+
+#sketch-container {
+  z-index: -500;
+  position: absolute;
+}
