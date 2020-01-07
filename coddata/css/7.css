@@ -1,0 +1,83 @@
+#logo-7 {
+  stroke-dasharray: 160px;
+  animation: loop1 10s linear infinite;
+}
+
+@keyframes loop1 {
+  0% {
+    stroke-dashoffset: 0px;
+  }
+
+  100% {
+    stroke-dashoffset: -480px;
+  }
+}
+
+#curve-bot {
+  stroke-dasharray: 1000px;
+  animation: loop2 5s linear infinite;
+}
+
+@keyframes loop2 {
+  0% {
+    stroke-dashoffset: 0px;
+  }
+
+  100% {
+    stroke-dashoffset: -3000px;
+  }
+}
+
+#curve-top {}
+
+#square {
+  stroke-dasharray: 1500px;
+  animation: loop4 5s cubic-bezier(.91, .03, .89, .03) both;
+}
+
+@keyframes loop4 {
+  0% {
+    stroke-dashoffset: 0px;
+  }
+
+  100% {
+    stroke-dashoffset: -3000px;
+  }
+}
+
+#word {
+  stroke-dasharray: 1500px;
+  stroke-dashoffset: -4500px;
+  animation: loop3 5s linear 3s forwards;
+}
+
+#breeno {
+  stroke-dasharray: 1000px;
+  stroke-dashoffset: -3000px;
+  animation: loop3 5s linear 1s forwards;
+}
+
+@keyframes loop3 {
+  0% {
+    stroke-dashoffset: -4500px;
+  }
+
+  100% {
+    stroke-dashoffset: 0px;
+  }
+}
+
+#line {
+  stroke-dasharray: 165px;
+  animation: loop5 5s cubic-bezier(.91, .03, .89, .03) 4s infinite;
+}
+
+@keyframes loop5 {
+  0% {
+    stroke-dashoffset: 0px;
+  }
+
+  100% {
+    stroke-dashoffset: -330px;
+  }
+}

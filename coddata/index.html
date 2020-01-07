@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>ColorOS 7</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/onepage-scroll.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+  <script type="text/javascript" src="js/jquery.onepage-scroll.js"></script>
+  <script type="text/javascript" src="js/p5.min.js"></script>
+  <script type="text/javascript" src="js/p5.dom.min.js"></script>
+  <!-- <script type="text/javascript" src="circle.js"></script> -->
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $(".main").onepage_scroll({
+        sectionContainer: "section",
+        responsiveFallback: 600,
+        loop: true
+      });
+    });
+
+    function go_loading(target, color) {
+      var cover = document.getElementById("goLoading");
+      var cover_top = document.getElementById("goLoading-bg-top");
+      var cover_bot = document.getElementById("goLoading-bg-bot");
+
+      cover_bot.style.background = color;
+      cover.style.left = "0";
+
+      cover_top.style.left = "0";
+      setTimeout(function () {
+        location.href = target;
+      }, 2000);
+    };
+  </script>
+</head>
+
+<body>
+  <div class="main">
+    <section id="page1">
+      <img src="./asset/Android - 0.png">
+    </section>
+    <section id="page2">
+      <img src="./asset/Android - 1.png">
+    </section>
+    <section id="page2">
+      <img src="./asset/Android - 2.png">
+    </section>
+    <section id="page3">
+      <img src="./asset/Android - 3.png">
+    </section>
+    <section id="page4">
+      <img src="./asset/Android - 4.png">
+    </section>
+    <section id="page5">
+      <img src="./asset/Android - 5.png">
+    </section>
+    <section id="page6">
+      <img src="./asset/Android - 6.png">
+    </section>
+    <section id="page7">
+      <img src="./asset/Android - 7.png">
+    </section>
+    <section id="page8">
+      <img src="./asset/Android - 8.png">
+    </section>
+    <section id="page9">
+      <img src="./asset/Android - 9.png">
+    </section>
+
+  </div>
+</body>
+<script src="./js/framebyframe.js"></script>
+
+</html>

@@ -1,0 +1,115 @@
+@font-face {
+  font-family: 'OPPO Medium';
+  src: url("../font/OPPOSans-Medium.ttf") format('TrueType');
+}
+
+@font-face {
+  font-family: 'OPPO Regular';
+  src: url("../font/OPPOSans-Regular.ttf") format('TrueType');
+}
+
+:root {
+  --COLOR-DARK: #232323;
+  --COLOR-LIGHT: #F9F9F9;
+  --COLOR-GREEN: #00D9AE;
+  --COLOR-BLUE: #2080F6;
+  --CURVE-SHOW: cubic-bezier(.52, .27, .82, -0.32);
+  --CURVE-2: cubic-bezier(.72, .11, .32, .89);
+  --SVG-STROKE-LENGTH: 370px;
+}
+
+/* ====================================================== */
+body,
+html {
+  /* overflow: hidden; */
+  margin: 0;
+  padding: 0;
+  color: var(--COLOR-DARK);
+  font-family: "OPPO Medium", "Helvetica", sans-serif;
+  font-size: 62.5%;
+}
+
+#goLoading {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  left: 100vw;
+  right: 0;
+  background-color: white;
+  z-index: 99;
+  transition: all cubic-bezier(.6, .17, .02, 1) 1.2s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.goLoading-svg {
+  stroke: var(--COLOR-DARK);
+  stroke-dasharray: 38px;
+  stroke-width: 6;
+  animation: loop 1.5s cubic-bezier(.91, -0.07, .55, .33) infinite;
+  z-index: 1;
+}
+
+#goLoading-bg-bot {
+  width: 100%;
+  height: 100%;
+  background: #CCC;
+  position: absolute;
+  z-index: -2;
+}
+
+#goLoading-bg-top {
+  width: 100%;
+  height: 100%;
+  left: 100vw;
+  background: white;
+  transition: all 0.8s cubic-bezier(.6, .17, .02, 1) 0.2s;
+  position: absolute;
+  z-index: -1;
+}
+
+@keyframes loop {
+  0% {
+    stroke-dashoffset: 38px;
+  }
+
+  50% {
+    stroke-dashoffset: 0;
+  }
+
+  100% {
+    stroke-dashoffset: -38px;
+  }
+}
+
+
+/* ====================================================== */
+.main section {
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.main section img {
+  width: 100%;
+  /* max-width: 1440px; */
+  /* height: 800px; */
+  /* max-height: 1280px; */
+  cursor: pointer;
+}
+
+#page3 {
+  background: var(--COLOR-LIGHT);
+}
+
+#page7 {
+  background: var(--COLOR-LIGHT);
+}
+
+#page6 {
+  background: var(--COLOR-LIGHT);
+}
