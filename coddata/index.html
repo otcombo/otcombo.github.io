@@ -12,8 +12,16 @@
     $(document).ready(function () {
       $(".main").onepage_scroll({
         sectionContainer: "section",
-        responsiveFallback: 600,
-        loop: true
+        easing: "ease",
+        animationTime: 1000,
+        pagination: true,
+        updateURL: false,
+        beforeMove: null,
+        afterMove: null,
+        loop: false,
+        keyboard: false,
+        responsiveFallback: false,
+        direction: "vertical"
       });
     });
 

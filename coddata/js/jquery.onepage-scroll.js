@@ -14,11 +14,11 @@
  *
  * ========================================================== */
 
-! function($) {
+! function ($) {
 
   var defaults = {
     sectionContainer: "section",
-    easing: "cubic-bezier(.55,-0.05,.03,1.02)",
+    easing: "ease", //easing: "cubic-bezier(.55,-0.05,.03,1.02)",
     animationTime: 1000,
     loop: false, //doesn't work, I annotated related function directly
     pagination: false,
@@ -34,8 +34,8 @@
   /*  Credit: Eike Send for the awesome swipe event */
   /*------------------------------------------------*/
 
-  $.fn.swipeEvents = function() {
-    return this.each(function() {
+  $.fn.swipeEvents = function () {
+    return this.each(function () {
 
       var startX,
         startY,
@@ -80,7 +80,7 @@
   };
 
 
-  $.fn.onepage_scroll = function(options) {
+  $.fn.onepage_scroll = function (options) {
     var settings = $.extend({}, defaults, options),
       el = $(this),
       sections = $(settings.sectionContainer)
@@ -92,7 +92,7 @@
       quietPeriod = 500,
       paginationList = "";
 
-    $.fn.transformPage = function(settings, pos, index) {
+    $.fn.transformPage = function (settings, pos, index) {
       if (typeof settings.beforeMove == 'function') settings.beforeMove(index);
 
       // Just a simple edit that makes use of modernizr to detect an IE8 browser and changes the transform method into
@@ -121,12 +121,12 @@
           "transition": "all " + settings.animationTime + "ms " + settings.easing
         });
       }
-      $(this).one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(e) {
+      $(this).one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function (e) {
         if (typeof settings.afterMove == 'function') settings.afterMove(index);
       });
     }
 
-    $.fn.moveDown = function() {
+    $.fn.moveDown = function () {
       var el = $(this)
       index = $(settings.sectionContainer + ".active").data("index");
       current = $(settings.sectionContainer + "[data-index='" + index + "']");
@@ -160,7 +160,7 @@
       el.transformPage(settings, pos, next.data("index"));
     }
 
-    $.fn.moveUp = function() {
+    $.fn.moveUp = function () {
       var el = $(this)
       index = $(settings.sectionContainer + ".active").data("index");
       current = $(settings.sectionContainer + "[data-index='" + index + "']");
@@ -193,7 +193,7 @@
       el.transformPage(settings, pos, next.data("index"));
     }
 
-    $.fn.moveTo = function(page_index) {
+    $.fn.moveTo = function (page_index) {
       current = $(settings.sectionContainer + ".active")
       next = $(settings.sectionContainer + "[data-index='" + (page_index) + "']");
       if (next.length > 0) {
@@ -249,15 +249,15 @@
         }
 
 
-        el.swipeEvents().bind("swipeDown", function(event) {
+        el.swipeEvents().bind("swipeDown", function (event) {
           if (!$("body").hasClass("disabled-onepage-scroll")) event.preventDefault();
           el.moveUp();
-        }).bind("swipeUp", function(event) {
+        }).bind("swipeUp", function (event) {
           if (!$("body").hasClass("disabled-onepage-scroll")) event.preventDefault();
           el.moveDown();
         });
 
-        $(document).bind('mousewheel DOMMouseScroll MozMousePixelScroll', function(event) {
+        $(document).bind('mousewheel DOMMouseScroll MozMousePixelScroll', function (event) {
           event.preventDefault();
           var delta = event.originalEvent.wheelDelta || -event.originalEvent.detail;
           init_scroll(event, delta);
@@ -286,7 +286,7 @@
     // Prepare everything before binding wheel scroll
 
     el.addClass("onepage-wrapper").css("position", "relative");
-    $.each(sections, function(i) {
+    $.each(sections, function (i) {
       $(this).css({
         position: "absolute",
         top: topPos + "%"
@@ -312,10 +312,10 @@
       }
     });
 
-    el.swipeEvents().bind("swipeDown", function(event) {
+    el.swipeEvents().bind("swipeDown", function (event) {
       if (!$("body").hasClass("disabled-onepage-scroll")) event.preventDefault();
       el.moveUp();
-    }).bind("swipeUp", function(event) {
+    }).bind("swipeUp", function (event) {
       if (!$("body").hasClass("disabled-onepage-scroll")) event.preventDefault();
       el.moveDown();
     });
@@ -367,14 +367,14 @@
     }
 
     if (settings.pagination == true) {
-      $(".onepage-pagination li a").click(function() {
+      $(".onepage-pagination li a").click(function () {
         var page_index = $(this).data("index");
         el.moveTo(page_index);
       });
     }
 
 
-    $(document).bind('mousewheel DOMMouseScroll MozMousePixelScroll', function(event) {
+    $(document).bind('mousewheel DOMMouseScroll MozMousePixelScroll', function (event) {
       event.preventDefault();
       var delta = event.originalEvent.wheelDelta || -event.originalEvent.detail;
       if (!$("body").hasClass("disabled-onepage-scroll")) init_scroll(event, delta);
@@ -382,7 +382,7 @@
 
 
     if (settings.responsiveFallback != false) {
-      $(window).resize(function() {
+      $(window).resize(function () {
         responsive();
       });
 
@@ -390,7 +390,7 @@
     }
 
     if (settings.keyboard == true) {
-      $(document).keydown(function(e) {
+      $(document).keydown(function (e) {
         var tag = e.target.tagName.toLowerCase();
 
         if (!$("body").hasClass("disabled-onepage-scroll")) {
