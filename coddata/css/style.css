@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'OPPO Medium';
-  src: url("../font/OPPOSans-Medium.ttf") format('TrueType');
+  src: url("../font/OPPOSans-Heavy.ttf") format('TrueType');
 }
 
 @font-face {
@@ -9,11 +9,11 @@
 }
 
 :root {
-  --COLOR-DARK: #232323;
-  --COLOR-LIGHT: #F9F9F9;
-  --COLOR-GREEN: #00D9AE;
-  --COLOR-BLUE: #2080F6;
-  --CURVE-SHOW: cubic-bezier(.52, .27, .82, -0.32);
+  --COLOR-DARK: #353535;
+  --COLOR-MEDIUM: #999999;
+  --COLOR-LIGHT: #CCCCCC;
+  --COLOR-MAIN: #FFCC00;
+  --CURVE-SHOW: cubic-bezier(.89, .03, .02, .99);
   --CURVE-2: cubic-bezier(.72, .11, .32, .89);
   --SVG-STROKE-LENGTH: 370px;
 }
@@ -25,14 +25,66 @@ html {
   margin: 0;
   padding: 0;
   color: var(--COLOR-DARK);
-  font-family: "OPPO Medium", "Helvetica", sans-serif;
+  font-family: "OPPO Regular", "Helvetica", sans-serif;
   font-size: 62.5%;
+  background-color: var(--COLOR-MAIN);
+}
+
+.bg {
+  z-index: 10;
+  position: absolute;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+}
+
+.sidebar-word {
+  left: 0.5rem;
+  top: 27rem;
+  position: absolute;
+}
+
+.sidebar-arrow {
+  left: 2.5rem;
+  bottom: 9rem;
+  position: absolute;
+}
+
+.pattern {
+  width: 80rem;
+  height: auto;
+  right: -9rem;
+  position: absolute;
+}
+
+.main {
+  z-index: 100;
+  background-color: transparent;
 }
 
 #page1 {
-  background-color: #EDEDED;
+  background-color: transparent;
 }
 
+#loading {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: white;
+  z-index: 99;
+  transition: all 2s var(--CURVE-SHOW);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#loading p {
+  font-size: 3rem;
+  color: var(--COLOR-LIGHT);
+}
 
 .logo-cod {
   width: 200px;
@@ -48,8 +100,6 @@ html {
   position: fixed;
   width: 100vw;
   height: 100vh;
-  left: 100vw;
-  right: 0;
   background-color: white;
   z-index: 99;
   transition: all cubic-bezier(.6, .17, .02, 1) 1.2s;

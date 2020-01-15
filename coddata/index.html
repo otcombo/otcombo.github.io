@@ -9,6 +9,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
   <script type="text/javascript" src="js/jquery.onepage-scroll.js"></script>
   <script type="text/javascript">
+    window.onload = function () {
+      document.getElementById("loading").style.bottom = "120%";
+      document.getElementById("loading").style.opacity = "0";
+    }
     $(document).ready(function () {
       $(".main").onepage_scroll({
         sectionContainer: "section",
@@ -24,35 +28,25 @@
         direction: "vertical"
       });
     });
-
-    function go_loading(target, color) {
-      var cover = document.getElementById("goLoading");
-      var cover_top = document.getElementById("goLoading-bg-top");
-      var cover_bot = document.getElementById("goLoading-bg-bot");
-
-      cover_bot.style.background = color;
-      cover.style.left = "0";
-
-      cover_top.style.left = "0";
-      setTimeout(function () {
-        location.href = target;
-      }, 2000);
-    };
   </script>
 </head>
 
 <body>
+  <div id="loading">
+    <svg class="logo-cod" width="66" viewBox="0 0 66 12" fill="none">
+      <rect x="15.5" y="2" width="34.8" height="8" rx="4" stroke="black" stroke-width="4" />
+      <path class="ele-blink" fill-rule="evenodd" clip-rule="evenodd"
+        d="M60.2099 7.97079C59.1145 7.97079 58.2264 7.08694 58.2264 5.99658C58.2264 4.90623 59.1145 4.02238 60.2099 4.02238C61.3054 4.02238 62.1934 4.90623 62.1934 5.99658C62.1934 7.08694 61.3054 7.97079 60.2099 7.97079ZM59.9454 0.17724C58.6508 0.17724 56.6823 0.174673 55.806 0.17339V0.172699H53.0249V2.94073H55.3574V11.7808C55.3574 11.7808 58.3303 11.8205 59.9454 11.8205C63.1757 11.8205 65.7943 9.21406 65.7943 5.99887C65.7943 2.78368 63.1757 0.17724 59.9454 0.17724Z"
+        fill="black" />
+      <path class="ele-blink" fill-rule="evenodd" clip-rule="evenodd"
+        d="M7.76448 6.79121C7.45674 7.48445 6.76084 7.96902 5.9504 7.96902C4.85493 7.96902 3.96694 7.08517 3.96694 5.99481C3.96694 4.90446 4.85493 4.02061 5.9504 4.02061C6.76084 4.02061 7.45664 4.50508 7.76448 5.19832C7.78015 5.21085 7.79929 5.21885 7.82021 5.21885H11.9008C11.5131 2.25883 8.94107 -0.0179263 5.84657 0.0475186C2.7241 0.113556 0.048108 2.79423 0.000703232 5.90242C-0.0499743 9.23004 2.64486 11.9434 5.97658 11.9434C9.01287 11.9434 11.5186 9.68904 11.9008 6.77067H7.82021C7.79929 6.77067 7.78015 6.77857 7.76448 6.79121Z"
+        fill="black" />
+    </svg>
+    <p>in a minute...</p>
+  </div>
+
   <div class="main">
     <section id="page1">
-      <svg class="logo-cod" width="66" viewBox="0 0 66 12" fill="none">
-        <rect x="15.5" y="2" width="34.8" height="8" rx="4" stroke="black" stroke-width="4" />
-        <path class="ele-blink" fill-rule="evenodd" clip-rule="evenodd"
-          d="M60.2099 7.97079C59.1145 7.97079 58.2264 7.08694 58.2264 5.99658C58.2264 4.90623 59.1145 4.02238 60.2099 4.02238C61.3054 4.02238 62.1934 4.90623 62.1934 5.99658C62.1934 7.08694 61.3054 7.97079 60.2099 7.97079ZM59.9454 0.17724C58.6508 0.17724 56.6823 0.174673 55.806 0.17339V0.172699H53.0249V2.94073H55.3574V11.7808C55.3574 11.7808 58.3303 11.8205 59.9454 11.8205C63.1757 11.8205 65.7943 9.21406 65.7943 5.99887C65.7943 2.78368 63.1757 0.17724 59.9454 0.17724Z"
-          fill="black" />
-        <path class="ele-blink" fill-rule="evenodd" clip-rule="evenodd"
-          d="M7.76448 6.79121C7.45674 7.48445 6.76084 7.96902 5.9504 7.96902C4.85493 7.96902 3.96694 7.08517 3.96694 5.99481C3.96694 4.90446 4.85493 4.02061 5.9504 4.02061C6.76084 4.02061 7.45664 4.50508 7.76448 5.19832C7.78015 5.21085 7.79929 5.21885 7.82021 5.21885H11.9008C11.5131 2.25883 8.94107 -0.0179263 5.84657 0.0475186C2.7241 0.113556 0.048108 2.79423 0.000703232 5.90242C-0.0499743 9.23004 2.64486 11.9434 5.97658 11.9434C9.01287 11.9434 11.5186 9.68904 11.9008 6.77067H7.82021C7.79929 6.77067 7.78015 6.77857 7.76448 6.79121Z"
-          fill="black" />
-      </svg>
     </section>
     <section id="page2">
       <img src="./asset/Index 1.jpg">
@@ -93,6 +87,16 @@
     <section id="page14">
       <img src="./asset/12.jpg">
     </section>
+
+
+  </div>
+
+  <div class="bg">
+    <img class="sidebar-word" src="./asset/sidebar-word.png">
+    <svg class="sidebar-arrow" height="270" viewBox="0 0 8 95" fill="none">
+      <path d="M2 0V87L6 80" stroke="black" stroke-width="4" />
+    </svg>
+    <img class="pattern" src="./asset/pattern-cod.png">
 
   </div>
 </body>
