@@ -1,6 +1,6 @@
 var drawLength = 250;
 var noiseScale = 0.005;
-var strokeLength = 25;
+var strokeLength = 18;
 
 var imgNames = ["img0.jpg", "img1.jpg", "img2.jpg", "img3.jpg"]; // Add your image's name here.
 var imgs = [];
