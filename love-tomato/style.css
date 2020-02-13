@@ -1,0 +1,25 @@
+.title {
+    width: 290px;
+}
+
+.wish {
+    width: 290px;
+}
+
+.wrapper {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+    align-items: center;
+    flex-direction: column;
+    align-content: center;
+    background-color: blue;
+}
+
+#sketch {
+    width: 300px;
+    height: 450px;
+    background-color: coral;
+}
