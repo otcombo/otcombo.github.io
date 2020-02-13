@@ -9,18 +9,18 @@ var imgIndex = -1;
 var frame;
 
 
-// function preload() {
-// 	// Pre-load all images.
-// 	for (let i = 0; i < imgNames.length; i++) {
-// 		imgs.push(loadImage(imgNames[i]));
-// 	}
-// }
+function preload() {
+	// Pre-load all images.
+	for (let i = 0; i < imgNames.length; i++) {
+		imgs.push(loadImage(imgNames[i]));
+	}
+}
 
 
 function setup() {
 	createCanvas(windowWidth, windowHeight);
 	background(0);
-	// changeImage();
+	changeImage();
 }
 
 
