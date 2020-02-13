@@ -1,7 +1,7 @@
 let img;
 
 function preload() {
-  img = loadImage('../fannnqie.png');
+  img = loadImage('fannnqie.png');
 }
 
 function setup() {
