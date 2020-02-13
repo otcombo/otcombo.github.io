@@ -1,6 +1,6 @@
 var drawLength = 250;
 var noiseScale = 0.005;
-var strokeLength = 35;
+var strokeLength = 25;
 
 var imgNames = ["img0.jpg", "img1.jpg", "img2.jpg", "img3.jpg"]; // Add your image's name here.
 var imgs = [];
@@ -40,7 +40,7 @@ function draw() {
 	);
 
 	// The smaller the stroke is the more the spawn count increases to capture more detail.
-	let count = map(frame, 0, drawLength, 2, 40);
+	let count = map(frame, 0, drawLength, 2, 80);
 
 	for (let i = 0; i < count; i++) {
 		// Pick a random point on the image.
@@ -59,7 +59,7 @@ function draw() {
 		stroke(r, g, b, a);
 
 		// Start with thick strokes and decrease over time.
-		let sw = map(frame, 0, drawLength, 25, 0);
+		let sw = map(frame, 0, drawLength, 10, 0);
 		strokeWeight(sw);
 
 		push();
