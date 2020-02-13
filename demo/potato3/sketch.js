@@ -18,7 +18,7 @@ var drawLength = 250;
 var noiseScale = 0.005;
 var strokeLength = 35;
 
-var imgNames = ["fannnqie-b&w.png"]; // Add your image's name here.
+var imgNames = ["fannnqie-b&w.png", "fannnqie.png"]; // Add your image's name here.
 var imgs = [];
 var imgIndex = -1;
 
@@ -114,9 +114,4 @@ function changeImage() {
 
 function mousePressed() {
 	changeImage();
-}
-
-
-function keyPressed() {
-	saveCanvas("noiseFieldPainter", "jpg");
 }
