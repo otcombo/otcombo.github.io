@@ -1,0 +1,221 @@
+@font-face {
+  font-family: 'OPPO Medium';
+  src: url("../font/OPPOSans-Heavy.ttf") format('TrueType');
+}
+
+@font-face {
+  font-family: 'OPPO Regular';
+  src: url("../font/OPPOSans-Regular.ttf") format('TrueType');
+}
+
+:root {
+  --COLOR-DARK: #353535;
+  --COLOR-MEDIUM: #999999;
+  --COLOR-LIGHT: #CCCCCC;
+  --COLOR-MAIN: #FFCC00;
+  --CURVE-SHOW: cubic-bezier(.89, .03, .02, .99);
+  --CURVE-2: cubic-bezier(.72, .11, .32, .89);
+  --SVG-STROKE-LENGTH: 370px;
+}
+
+/* ====================================================== */
+body,
+html {
+  /* overflow: hidden; */
+  margin: 0;
+  padding: 0;
+  color: var(--COLOR-DARK);
+  font-family: "OPPO Regular", "Helvetica", sans-serif;
+  font-size: 62.5%;
+  background-color: var(--COLOR-MAIN);
+}
+
+.bg {
+  z-index: 10;
+  position: absolute;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+}
+
+.sidebar-word {
+  left: 0.5rem;
+  top: 27rem;
+  position: absolute;
+}
+
+.sidebar-arrow {
+  left: 2.5rem;
+  bottom: 9rem;
+  position: absolute;
+}
+
+.pattern {
+  width: 80rem;
+  height: auto;
+  right: -9rem;
+  position: absolute;
+}
+
+.main {
+  z-index: 100;
+  background-color: transparent;
+}
+
+#page1 {
+  background-color: transparent;
+}
+
+#loading {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: white;
+  z-index: 99;
+  transition: all 2s var(--CURVE-SHOW);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#loading p {
+  font-size: 3rem;
+  color: var(--COLOR-LIGHT);
+}
+
+.logo-cod {
+  width: 200px;
+}
+
+
+.ele-blink {
+  transform-origin: center;
+  animation: blink 3s infinite;
+}
+
+#goLoading {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  z-index: 99;
+  transition: all cubic-bezier(.6, .17, .02, 1) 1.2s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.goLoading-svg {
+  stroke: var(--COLOR-DARK);
+  stroke-dasharray: 38px;
+  stroke-width: 6;
+  animation: loop 1.5s cubic-bezier(.91, -0.07, .55, .33) infinite;
+  z-index: 1;
+}
+
+#goLoading-bg-bot {
+  width: 100%;
+  height: 100%;
+  background: #CCC;
+  position: absolute;
+  z-index: -2;
+}
+
+#goLoading-bg-top {
+  width: 100%;
+  height: 100%;
+  left: 100vw;
+  background: white;
+  transition: all 0.8s cubic-bezier(.6, .17, .02, 1) 0.2s;
+  position: absolute;
+  z-index: -1;
+}
+
+@keyframes loop {
+  0% {
+    stroke-dashoffset: 38px;
+  }
+
+  50% {
+    stroke-dashoffset: 0;
+  }
+
+  100% {
+    stroke-dashoffset: -38px;
+  }
+}
+
+@keyframes blink {
+  0% {
+    transform: scaleY(1);
+  }
+
+  4% {
+    transform: scaleY(0.1);
+  }
+
+  8% {
+    transform: scaleY(0.1);
+  }
+
+  12% {
+    transform: scaleY(1);
+  }
+
+  60% {
+    transform: scaleY(1);
+  }
+
+  65% {
+    transform: scaleY(0.1);
+  }
+
+  70% {
+    transform: scaleY(1);
+  }
+
+  75% {
+    transform: scaleY(0.1);
+  }
+
+  80% {
+    transform: scaleY(1);
+  }
+
+  100% {
+    transform: scaleY(1);
+  }
+}
+
+/* ====================================================== */
+.main section {
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.main section img {
+  width: 100%;
+  /* max-width: 1440px; */
+  /* height: 800px; */
+  /* max-height: 1280px; */
+  cursor: pointer;
+}
+
+#page3 {
+  background: var(--COLOR-LIGHT);
+}
+
+#page7 {
+  background: var(--COLOR-LIGHT);
+}
+
+#page6 {
+  background: var(--COLOR-LIGHT);
+}

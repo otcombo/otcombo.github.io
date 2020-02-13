@@ -1,0 +1,158 @@
+:root {
+  --SIZE-SHOWCASE-HEIGHT: 78rem;
+  --COLOR-BG: #FFF;
+}
+
+body,
+html {
+  height: 100%;
+  overflow-y: hidden;
+  font-size: 62.5%;
+  background-color: white;
+}
+
+#goShowing {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  background-color: white;
+  z-index: 99;
+  transition: all cubic-bezier(.6, .17, .02, 1) 1s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.goShowing-svg {
+  stroke: var(--COLOR-DARK);
+  stroke-dasharray: 38px;
+  stroke-width: 6;
+  animation: loop 1.5s cubic-bezier(.91, -0.07, .55, .33) infinite;
+  z-index: 1;
+}
+
+#goShowing-bg-bot {
+  width: 100%;
+  height: 100%;
+  background: #CCC;
+  position: absolute;
+  z-index: -2;
+}
+
+#goShowing-bg-top {
+  width: 100%;
+  height: 100%;
+  left: 0;
+  background: white;
+  transition: all 0.8s cubic-bezier(.6, .17, .02, 1) 0.2s;
+  position: absolute;
+  z-index: -1;
+}
+
+.wrapper-detail {
+  display: flex;
+  height: 100%;
+  margin: 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  perspective: 100rem;
+  /* for parallax */
+}
+
+.wrapper-detail::-webkit-scrollbar {
+  /* WebKit */
+  width: 0;
+  height: 0;
+}
+
+.wrapper-detail section {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  height: 100vh;
+  max-height: var(--SIZE-SHOWCASE-HEIGHT);
+  margin-right: 0.5rem;
+  /* border-top: solid 0.5rem var(--COLOR-BG);
+  border-bottom: solid 0.5rem var(--COLOR-BG);
+  border-left: solid 0.5rem var(--COLOR-BG); */
+}
+
+/* ========== Openning ========== */
+.openning {
+  z-index: -10;
+  display: flex;
+  position: relative;
+  color: var(--COLOR-FONT);
+  background-color: var(--COLOR-BG);
+  align-items: center;
+  flex: 1 0 1;
+  flex-direction: row;
+  margin-left: 0.5rem;
+}
+
+img {
+  width: auto;
+  /* max-width: 95vw; */
+  height: 100%;
+  align-self: center;
+  pointer-events: none;
+}
+
+/* ========== Showcase Sections ========== */
+.showcase {
+  display: flex;
+  position: relative;
+  height: 100%;
+  width: auto;
+  overflow: hidden;
+  background-color: #FFF;
+  align-items: left;
+  flex: 1 0 auto;
+  flex-direction: column-reverse;
+  justify-content: flex-start;
+}
+
+.showcase-wrapper {
+  display: flex;
+  min-width: 20rem;
+  margin: 0 5rem;
+  align-items: center;
+  flex: 1 0 auto;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.showcase .cube {
+  display: flex;
+  width: 100%;
+  max-width: 60rem;
+  overflow: hidden;
+  border-top: solid 0.5rem var(--COLOR-BG);
+  background-color: white;
+  align-items: center;
+  justify-content: center;
+}
+
+.cube-main {
+  flex: 1 2 auto;
+}
+
+.cube-nor {
+  flex: 1 1 auto;
+}
+
+.showcase .cube:last-child {
+  border-top: 0;
+}
+
+.showcase-wrapper video {
+  max-width: 80rem;
+}
+
+.cube video {
+  object-fit: contain;
+}
