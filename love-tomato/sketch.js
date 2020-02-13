@@ -2,7 +2,7 @@ var drawLength = 250;
 var noiseScale = 0.005;
 var strokeLength = 35;
 
-var imgNames = ["img0.jpg", "img1.jpg", "img2.jpg", "img4.jpg", "img5.jpg"]; // Add your image's name here.
+var imgNames = ["img0.jpg", "img1.jpg", "img2.jpg", "img3.jpg"]; // Add your image's name here.
 var imgs = [];
 var imgIndex = -1;
 
@@ -18,7 +18,10 @@ function preload() {
 
 
 function setup() {
-	createCanvas(windowWidth, windowHeight);
+	// createCanvas(windowWidth, windowHeight);
+	var container = select('#sketch');
+	var canvas = createCanvas(container.width, container.height);
+	canvas.parent('sketch');
 	background(255);
 	changeImage();
 }
@@ -37,7 +40,7 @@ function draw() {
 	);
 
 	// The smaller the stroke is the more the spawn count increases to capture more detail.
-	let count = map(frame, 0, drawLength, 2, 80);
+	let count = map(frame, 0, drawLength, 2, 40);
 
 	for (let i = 0; i < count; i++) {
 		// Pick a random point on the image.
