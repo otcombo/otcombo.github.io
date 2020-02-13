@@ -18,7 +18,7 @@ var drawLength = 250;
 var noiseScale = 0.005;
 var strokeLength = 35;
 
-var imgNames = ["fannnqie-b&w.png", "fannnqie.png"]; // Add your image's name here.
+var imgNames = ["img0.jpg", "img1.jpg", "img2.jpg", "img3.jpg", "img4.jpg", "img5.jpg"]; // Add your image's name here.
 var imgs = [];
 var imgIndex = -1;
 
