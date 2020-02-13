@@ -8,7 +8,9 @@ var isStop = false;
 var count = 0;
 
 function preload() {
-	imgs[0] = loadImage("fannnqie-b&w.png");
+	imgs[0] = loadImage("img0,jpg");
+	imgs[1] = loadImage("img1,jpg");
+	imgs[2] = loadImage("img2,jpg");
 }
 
 function setup() {
