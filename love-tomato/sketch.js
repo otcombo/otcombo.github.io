@@ -1,42 +1,26 @@
-/*
-Noise flow field painter
-
-Paints an image with strokes that are rotated by a flow field driven from noise.
-
-Controls:
-  - Click to change to the next image.
-  - Press any key to save the canvas to a jpg.
-
-Author:
-  Jason Labbe
-
-Site:
-  jasonlabbe3d.com
-*/
-
 var drawLength = 250;
 var noiseScale = 0.005;
 var strokeLength = 35;
 
-var imgNames = ["img0.jpg", "img1.jpg", "img2.jpg", "img3.jpg", "img4.jpg", "img5.jpg", "img6.jpg", "img7.jpg"]; // Add your image's name here.
+var imgNames = ["img0.jpg", "img1.jpg", "img2.jpg", "img4.jpg", "img5.jpg"]; // Add your image's name here.
 var imgs = [];
 var imgIndex = -1;
 
 var frame;
 
 
-function preload() {
-	// Pre-load all images.
-	for (let i = 0; i < imgNames.length; i++) {
-		imgs.push(loadImage(imgNames[i]));
-	}
-}
+// function preload() {
+// 	// Pre-load all images.
+// 	for (let i = 0; i < imgNames.length; i++) {
+// 		imgs.push(loadImage(imgNames[i]));
+// 	}
+// }
 
 
 function setup() {
 	createCanvas(windowWidth, windowHeight);
-	background(255);
-	changeImage();
+	background(0);
+	// changeImage();
 }
 
 

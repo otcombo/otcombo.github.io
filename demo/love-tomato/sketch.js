@@ -19,7 +19,7 @@ function preload() {
 
 function setup() {
 	createCanvas(windowWidth, windowHeight);
-	background(255);
+	background(0);
 	changeImage();
 }
 
