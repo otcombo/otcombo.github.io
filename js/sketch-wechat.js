@@ -1,11 +1,12 @@
 p5.disableFriendlyErrors = true;
 
-var play_it = 1,first_time = 1;
+var play_it = 1,
+  first_time = 1;
 var particle_amount;
 var speed;
 var gap;
 var limit;
-var init_x,init_y;
+var init_x, init_y;
 
 var speeds = new Array(particle_amount);
 var x = new Array(particle_amount);
@@ -49,22 +50,22 @@ function setup() {
 
 function draw() {
   background('#2C7631');
-  if( mouseX != 0 || mouseY != 0 ){
+  if (mouseX != 0 || mouseY != 0) {
     first_time = 0;
   }
   // if (mouseIsPressed) {
   for (var i = 0; i < particle_amount; i++) {
-    var r = dist( mouseX, mouseY, x[i], y[i])
+    var r = dist(mouseX, mouseY, x[i], y[i])
 
-    if ( first_time ){
-      r = dist( init_x, init_y, x[i], y[i]);
+    if (first_time) {
+      r = dist(init_x, init_y, x[i], y[i]);
     }
 
-    if ( r > limit ) {
+    if (r > limit) {
       x[i] = mouseX + limit * randomGaussian();
     }
 
-    var circle = Math.sin( r / gap ) / r;
+    var circle = Math.sin(r / gap) / r;
 
     //the decimals decide the length of each "step"
     dis_x[i] = dis_y[i] * 0.5 + circle * (x[i] - mouseX) * speeds[i];
