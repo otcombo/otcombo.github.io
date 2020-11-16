@@ -1,24 +1,58 @@
+/******************
+Code by Vamoss
+Original code link:
+https://www.openprocessing.org/sketch/624879
+
+Author links:
+http://vamoss.com.br
+http://twitter.com/vamoss
+http://github.com/vamoss
+******************/
+
+var circles = []
+var total = 100
 var img;
 
 function preload() {
-  // img = loadImage('hamster.jpg');
-  // img = loadImage('http://www.petwebsite.com/hamsters/hamsters_images/syrian-hamster_000008437184.jpg');
+	img = loadImage('fannnqie-b&w.png');
 }
 
 function setup() {
-  createCanvas(100, 100);
-  img = createImg('https://dss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/home/img/qrcode/zbios_x2_5869f49.png');
-  img.hide();
-  background(100);
-  // loadImage('hamster.jpg', imageLoaded);
-  // image(img, 0, 0);
+	createCanvas(img.width, img.height);
+	background(0);
+
+	for (var i = 0; i < total; i++) {
+		circles[i] = {};
+		circles[i].prevPos = {
+			x: width / 2,
+			y: height / 2
+		}
+		circles[i].pos = {
+			x: width / 2,
+			y: height / 2
+		}
+		circles[i].dir = random() > 0.5 ? 1 : -1
+		circles[i].radius = random(3, 10)
+		circles[i].angle = 0
+	}
 }
 
 function draw() {
-  image(img, 0, 0, width, height);
+	for (var i = 0; i < total; i++) {
+		var circle = circles[i]
+		circle.angle += 1 / circle.radius * circle.dir
 
+		circle.pos.x += cos(circle.angle) * circle.radius
+		circle.pos.y += sin(circle.angle) * circle.radius
+		if (brightness(img.get(round(circle.pos.x), round(circle.pos.y))) > 70 || circle.pos.x < 0 || circle.pos.x > width || circle.pos.y < 0 || circle.pos.y > height) {
+			circle.dir *= -1
+			circle.radius = random(3, 10)
+			circle.angle += PI
+		}
+		stroke(img.get(circle.pos.x, circle.pos.y))
+		line(circle.prevPos.x, circle.prevPos.y, circle.pos.x, circle.pos.y)
+
+		circle.prevPos.x = circle.pos.x
+		circle.prevPos.y = circle.pos.y
+	}
 }
-
-// function imageLoaded(img) {
-//   image(img, 0, 0);
-// }
