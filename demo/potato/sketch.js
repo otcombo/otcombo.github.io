@@ -14,7 +14,7 @@ var total = 100
 var img;
 
 function preload() {
-	img = loadImage('fannnqie-b&w.png');
+	img = loadImage('b&w.png');
 }
 
 function setup() {
