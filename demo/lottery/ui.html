@@ -1,0 +1,209 @@
+<style>
+  body{
+    width: 300px;
+    height: 200px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    background-color: #D82C2C;
+  }
+  #roll{
+    stroke: #7E0000;
+    stroke-width: 2.5;
+    fill: none;
+    width: 120px;
+    height: 120px;
+    border-radius: 100%;
+    background-color: #FFDD78;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.5s cubic-bezier(0,.6,.5,1);
+  }
+  #roll:hover{
+    transform: scale(0.9);
+  }
+  #roll:active{
+    transform: scale(0.5);
+    /* opacity: 0.8; */
+  }
+
+  #cod-c, #cod-o, #cod-d{
+    fill: #150000;
+    position: absolute;
+    transform-origin: 50%,50%;
+    z-index: -2;
+    height: 120px;
+    width: auto;
+    opacity: 0.1;
+    transition: all 0.4s cubic-bezier(0,.6,.5,1);
+  }
+  #canv{
+    position: absolute;
+    z-index: -4;
+  }
+  #canv-top{
+    position: absolute;
+    z-index: -3;
+    background: none;
+    pointer-events: none;
+  }
+</style>
+
+<body>
+
+  <div id="roll">
+    <svg id="gift" width="50" height="50" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+      <rect x="7.5" y="16.5143" width="35" height="8" rx="2.5" />
+      <path d="M32.802 7.00987C29.5621 5.50048 25.2327 7.00987 25.2327 16.0719C36.3514 16.0719 36.042 8.51926 32.802 7.00987Z" />
+      <path d="M17.2133 7.00987C20.4533 5.50048 24.7827 7.00987 24.7827 16.0719C13.664 16.0719 13.9734 8.51926 17.2133 7.00987Z" />
+      <path d="M37.5 24.5143H38.75V25.7643V41.0143C38.75 43.0854 37.0711 44.7643 35 44.7643H15C12.9289 44.7643 11.25 43.0854 11.25 41.0143V25.7643V24.5143H12.5H37.5Z" />
+      <path d="M25 15.7643L25 43.5143" />
+    </svg>
+  </div>
+  <svg id="cod-c" width="128" height="128" viewBox="0 0 128 128" ><path fill-rule="evenodd" clip-rule="evenodd" d="M81.6448 72.4506C78.5674 79.383 71.6084 84.2287 63.504 84.2287C52.5493 84.2287 43.6694 75.3902 43.6694 64.4867C43.6694 53.5832 52.5493 44.7446 63.504 44.7446C71.6084 44.7446 78.5664 49.5893 81.6448 56.5218C81.8015 56.6471 81.9929 56.7271 82.2021 56.7271H123.008C119.131 27.1268 93.4107 4.35931 62.4657 5.01376C31.241 5.67413 4.48108 32.4809 4.00703 63.5628C3.50026 96.839 30.4486 123.972 63.7658 123.972C94.1287 123.972 119.186 101.429 123.008 72.2453H82.2021C81.9929 72.2453 81.8015 72.3243 81.6448 72.4506Z" /></svg>
+  <svg id="cod-d" width="129" height="128" viewBox="0 0 129 128" ><path fill-rule="evenodd" clip-rule="evenodd" d="M72.601 83.254C61.6473 83.254 52.7663 74.4155 52.7663 63.512C52.7663 52.6085 61.6473 43.7699 72.601 43.7699C83.5556 43.7699 92.4356 52.6085 92.4356 63.512C92.4356 74.4155 83.5556 83.254 72.601 83.254ZM69.956 5.31836C57.01 5.31836 37.3251 5.29269 28.5621 5.27986V5.27295H0.750977V32.9533H24.0755V121.354C24.0755 121.354 53.8047 121.751 69.956 121.751C102.259 121.751 128.445 95.6866 128.445 63.5347C128.445 31.3828 102.259 5.31836 69.956 5.31836Z" /></svg>
+  <svg id="cod-o" width="128" height="128" viewBox="0 0 128 128" ><path fill-rule="evenodd" clip-rule="evenodd" d="M64 84C52.955 84 44 75.046 44 64C44 52.954 52.955 44 64 44C75.045 44 84 52.954 84 64C84 75.046 75.045 84 64 84ZM64 4C30.863 4 4 30.862 4 64C4 97.137 30.863 124 64 124C97.137 124 124 97.137 124 64C124 30.862 97.137 4 64 4Z" /></svg>
+  <canvas id="canv-top" width="300" height="200"></canvas>
+  <canvas id="canv" width="300" height="200"></canvas>
+</body>
+
+<script>
+var codC = document.getElementById("cod-c");
+var codO = document.getElementById("cod-o");
+var codD = document.getElementById("cod-d");
+var ctx = document.getElementById("canv").getContext("2d");
+var canvsTop = document.getElementById("canv-top")
+var ctxTop = canvsTop.getContext("2d");
+var winW = window.innerWidth;
+var winH = window.innerHeight;
+var bgColor, bgRadius, t;
+var isPressed = 0;
+var currentColor = 2;
+var color1 = "#FFDD78";
+var color1Light = "#DB4F00";
+var color1Heavy = "#7E0000";
+var color2 = "#D82C2C";
+var color2Light = "#150000";
+var color2Heavy = "#FFEEBB";
+
+setPos = function(e,x,y){
+  e.style.transform = "translate(" + x + "px," + y + "px)" + "rotate(" + Math.random()*360 + "deg)";
+}
+randomPos = function(){
+  setPos(codC, (Math.random()*-0.5-0.1)*winW,  (Math.random()*-0.5+0.1)*winH);
+  setPos(codO, (Math.random()*0.5)*winW,  (Math.random()*-0.5-0.1)*winH);
+  setPos(codD, (Math.random()*0.5)*winW,  (Math.random()*0.5+0.1)*winH);
+}
+
+window.onload = function () {
+  randomPos();
+}
+document.getElementById("roll").onmouseenter = () => {
+  setPos(codC,0,0);
+  setPos(codO,0,0);
+  setPos(codD,0,0);
+  isPressed = 0;
+}
+document.getElementById("roll").onmouseleave = () => {
+  if(isPressed == 0){
+    randomPos();
+  }
+}
+document.getElementById("roll").onmousedown = () => {
+  setPos(codC,0,0);
+  setPos(codO,0,0);
+  setPos(codD,0,0);
+  isPressed = 1;
+}
+document.getElementById("roll").onmouseup = () => {
+  randomPos();
+
+  if(currentColor == 1){
+    currentColor = 2;
+    bgColor = color2;    
+    codC.style.fill = color2Light;
+    codO.style.fill = color2Light;
+    codD.style.fill = color2Light;
+    document.getElementById("roll").style.backgroundColor = color1;
+    document.getElementById("gift").style.stroke = color1Heavy;
+    ctxTop.fillStyle = color1;
+  }else{
+    currentColor = 1;
+    bgColor = color1;
+    codC.style.fill = color1Light;
+    codO.style.fill = color1Light;
+    codD.style.fill = color1Light;
+    document.getElementById("roll").style.backgroundColor = color2;
+    document.getElementById("gift").style.stroke = color2Heavy;
+    ctxTop.fillStyle = color2;
+  }
+  bgRadius = 50;
+  t = 0;
+  window.requestAnimationFrame(ani_ripple);
+  for(var i = 0; i < pnum; i++){
+    particle(i);
+  }
+}
+
+function ani_ripple() {
+ 
+  ctx.fillStyle = bgColor;
+  ctx.beginPath(); 
+  ctx.arc(winW/2, winH/2, bgRadius, 0, 2*Math.PI);
+  ctx.fill();
+  ctx.closePath();
+  bgRadius *= 1.15;
+  t+= 1;
+  if(t <= 30){
+    window.requestAnimationFrame(ani_ripple);
+  }
+  console.log(t);
+}
+
+var pnum = 30;
+var px = [];
+var py = [];
+var pr = [];
+
+function particle(i) {
+  px[i] = Math.random()*120 - 55 + winW/2;
+  py[i] = Math.random()*120 - 55 + winH/2;
+  pr[i] = parseInt(Math.random()*10);
+
+  function pDraw() {
+    ctxTop.clearRect(0, 0, canvsTop.width, canvsTop.height);
+    for(var i = 0; i < pnum; i++){
+      ctxTop.beginPath(); 
+      if(pr[i]>0){
+        ctxTop.arc(px[i], py[i], pr[i], 0, 2*Math.PI);
+      }
+      ctxTop.fill();
+      ctxTop.closePath();
+   
+      if(px[i]>winW/2){
+        px[i]+=0.02;
+      }else{
+        px[i]-=0.02;
+      }
+      if(py[i]>winH/2){
+        py[i]+=0.02;
+      }else{
+        py[i]-=0.02;
+      }
+      pr[i]-=0.012;
+    }
+    // console.log(x,y,r);
+    if(t <= 30){
+      window.requestAnimationFrame(pDraw);
+    }
+  }
+  window.requestAnimationFrame(pDraw);
+}
+
+
+</script>

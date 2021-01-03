@@ -1,0 +1,7 @@
+{
+  "name": "lottery",
+  "id": "927199070484542356",
+  "api": "1.0.0",
+  "main": "code.js",
+  "ui": "ui.html"
+}
